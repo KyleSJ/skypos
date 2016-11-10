@@ -25,9 +25,4 @@ public class ShopManageController{
    public String shop_main()throws Exception{
       return "/shopmanage/shop_main";
    }
-   
-   @RequestMapping("/employee_manage")
-   public String employee_manage()throws Exception{
-      return "/shopmanage/employee_manage";
-   }
 }

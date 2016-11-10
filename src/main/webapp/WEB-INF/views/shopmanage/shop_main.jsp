@@ -6,20 +6,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <!-- Bootstrap -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
-	crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요한 -->
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<!-- Respond.js 으로 IE8 에서 반응형 기능을 활성화하세요 (https://github.com/scottjehl/Respond) -->
+<script src="/resources/bootstrap/js/respond.js"></script>
 
-<title>CSS 영역 나누기 연습</title>
+<title>매장 관리</title>
 
 <style>
 body {
 	background: #f8f8f8;
-	padding: 60px 0;
+	padding: 60px 60px;
 }
 
 div {
@@ -28,43 +25,47 @@ div {
 }
 
 #div_root {
-	margin: auto;
 	width: 100%;
+	height : 100%;
 }
 
 #div_top {
-	width: 100% height:100px;
+	width : 100%;
+	height : 50px;
 	text-align: center;
 }
 
-#div_menu {
+#div_left {
 	width: 20%;
-	height: 300px;
-	float: left;;
+	height : 394px;
+	float: left;
 	text-align: left;
 }
 
-#div_con {
+#div_right {
 	width: 80%;
-	height: 300px;
 	float: left;
 	text-align: center;
 }
 
 #div_bottom {
 	width: 100%;
-	height: 100px;
-	clear: both;;
+	clear: both;
 	text-align: center;
+}
+button{
+width:100%;
+height : 95px;
+font-size : 100%;
 }
 </style>
 
 </head>
 <body>
 	<div id="div_root">
-		<div id="div_top">메인메뉴</div>
-		<div id="div_menu">
-			<div class="btn-">
+		<div id="div_top">매장관리</div>
+		<div id="div_left">
+			<div>
 				<button id="table_manage" type="submit" class="btn btn-danger">테이블
 					관리</button>
 			</div>
@@ -80,26 +81,25 @@ div {
 				<button id="statistics" type="submit" class="btn btn-danger">통계</button>
 			</div>
 		</div>
-		<div id="div_con"></div>
-		<div id="div_bottom">마무리</div>
+		<div id="div_right"></div>
 
 		<script>
 			$(document).ready(function() {
 				$("#table_manage").on("click", function() {
-					$('#div_con').load("/member/listAll");
+					$('#div_right').load("/member/listAll");
 				});
 
 				$("#good_manage").on("click", function() {
-					$('#div_con').load("/shopmanage/goods_manage");
-				})
+					$('#div_right').load("/goods/listAll");
+				});
 
 				$("#eployee_manage").on("click", function() {
-					$('#div_con').load("/shopmanage/employee_manage");
-				})
+					$('#div_right').load("/shopmanage/employee_manage");
+				});
 
 				$("#statistics").on("click", function() {
-					$('#div_con').load("/shopmanage/statistics");
-				})
+					$('#div_right').load("/shopmanage/statistics");
+				});
 			});
 		</script>
 	</div>
