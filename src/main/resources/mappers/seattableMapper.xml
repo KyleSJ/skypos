@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.zerock.mapper.SeattableMapper">
+    
+<!--     <resultMap type="org.zerock.domain.MemberVO" id="Member">
+		<result property="posNum" column="POS_NUM"/>
+		<result property="regNum" column="REG_NUM"/>
+		<result property="vanNum" column="VAN_NUM"/>
+		<result property="repreName" column="REPRE_NAME"/>
+		<result property="compaName" column="COMPA_NAME"/>
+		<result property="phoneNum" column="PHONE_NUM"/>
+	</resultMap> -->
+	
+    <insert id="create">
+        insert into seattable (tableNum, tableLoc, tableColor, tableCatNum, tableName)
+        values(#{tableNum},#{tableLoc},#{tableColor},#{tableCatNum},#{tableName})
+    </insert>
+    
+    <select id="read" resultType="org.zerock.domain.SeattableVO">
+        select tableNum, tableLoc, tableColor, tableCatNum, tableName
+        from
+        seattable
+        Where tableNum=#{tableNum}
+    </select>
+    
+    <update id="update">
+        update seattable set tableNum=#{tableNum}, tableLoc=#{tableLoc}, tableColor=#{tableColor}, tableCatNum=#{tableCatNum},
+        tableName=#{tableName}
+        where tableNum=#{tableNum}
+    </update>
+    
+    <delete id="delete">
+        delete from seattable where tableNum=#{tableNum}
+    </delete>
+    
+    <select id="listAll" resultType ="org.zerock.domain.SeattableVO">
+        <![CDATA[
+        select tableNum, tableLoc, tableColor, tableCatNum, tableName
+        from
+        seattable
+        where tableNum > 0
+        order by tableNum desc
+         ]]>
+    </select>
+    
+</mapper>
