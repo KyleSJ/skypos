@@ -14,6 +14,9 @@
 <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요한 -->
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
+<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요한 -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
 </head>
 <style>
 

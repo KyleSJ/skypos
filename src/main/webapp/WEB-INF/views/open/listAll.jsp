@@ -14,6 +14,9 @@
 <!-- Respond.js 으로 IE8 에서 반응형 기능을 활성화하세요 (https://github.com/scottjehl/Respond) -->
 <script src="/resources/bootstrap/js/respond.js"></script>
 
+<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요한 -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
 </head>
 <style>
 
