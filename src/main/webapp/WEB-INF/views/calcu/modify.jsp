@@ -39,29 +39,28 @@ body {
       <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
          <div class="panel panel-success">
             <div class="panel-heading">
-               <div class="panel-title">개시 관리페이지</div>
+               <div class="panel-title">정산 일정 수정</div>
             </div>
             <div class="panel-body">
+                  <div class="control-Label" for="calcuDay">
+                     calcuDay <input id="calcuDay" class="form-control" type="text"
+                        name='calcuDay' value="${calcuVO.calcuDay}" readonly="readonly">
+                  </div>
+
+                  <div class="control-Label" for="calcuChngNum">
+                     calcuChngNum <input id="calcuChngNum" class="form-control" type="text"
+                        name='calcuChngNum' value="${calcuVO.calcuChngNum}">
+                  </div>
+
+                  <div class="control-Label" for="printNum">
+                     printNum <input id="printNum" class="form-control" type="text"
+                        name='printNum' value="${calcuVO.printNum}">
+                  </div>
+
                   <div class="control-Label" for="openDay">
                      openDay <input id="openDay" class="form-control" type="text"
-                        name='openDay' value="${openVO.openDay}" readonly="readonly">
+                        name='openDay' value="${calcuVO.openDay}">
                   </div>
-
-                  <div class="control-Label" for="empId">
-                     empId <input id="empId" class="form-control" type="text"
-                        name='empId' value=<%=request.getParameter("empId")%> >
-                  </div>
-
-                  <div class="control-Label" for="posNum">
-                     posNum <input id="posNum" class="form-control" type="text"
-                        name='posNum' value=<%=request.getParameter("posNum")%> >
-                  </div>
-
-                  <div class="control-Label" for="cashAmnt">
-                     cashAmnt <input id="cashAmnt" class="form-control" type="text"
-                        name='cashAmnt' value="${openVO.cashAmnt}">
-                  </div>
-
                   <!-- /.box-body -->
                   <br>
                   <div class="box-footer" align="center">
@@ -76,7 +75,7 @@ body {
                         console.log(formObj);
 
                         $(".btn-warning").on("click", function() {
-                           self.location = "/open/listAll";
+                           self.location = "/calcu/listAll";
                         });
 
                         $(".btn-primary").on("click", function() {

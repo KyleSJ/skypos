@@ -19,7 +19,7 @@
         values(#{openDay},#{empId},#{posNum},#{cashAmnt})
     </insert>
     
-    <select id="read" resultType="org.zerock.domain.MemberVO">
+    <select id="read" resultType="org.zerock.domain.OpenVO">
         select openDay, empId, posNum, cashAmnt
         from
         open

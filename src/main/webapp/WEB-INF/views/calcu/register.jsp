@@ -39,37 +39,35 @@ body {
       <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
          <div class="panel panel-success">
             <div class="panel-heading">
-               <div class="panel-title">POS관리자 등록</div>
+               <div class="panel-title">정산등록</div>
             </div>
             <div class="panel-body">
-                  <div class="control-label" for="openDay">
-                     openDay <input id="openDay" class="form-control" type="text"
-                        name='openDay' placeholder="Enter openDay" />
+                  <div class="control-label" for="calcuDay">
+                     calcuDay <input id="calcuDay" class="form-control" type="text"
+                        name='calcuDay' placeholder="Enter calcuDay" autofocus />
                   </div>
 
-                  <div class="control-label" for="empId">
-                     empId <input id="empId" class="form-control" type="text"
-                        name='empId' placeholder="Enter posNum" value=<%=request.getParameter("empId")%>
-                        readonly="readonly"/>
+                  <div class="control-label" for="calcuChngNum">
+                     calcuChngNum <input id="calcuChngNum" class="form-control" type="text"
+                        name='calcuChngNum' placeholder="Enter calcuChngNum" />
                   </div>
-                  
-                  <div class="control-label" for="posNum">
-                     posNum <input id="posNum" class="form-control" type="text"
-                        name='posNum' placeholder="Enter posNum" autofocus
-                        value=<%=request.getParameter("posNum")%> readonly="readonly"/>
+
+                  <div class="control-label" for="printNum">
+                     printNum <input id="printNum" class="form-control" type="text"
+                        name='printNum' placeholder="Enter printNum">
                   </div>
-                  
-                  <div class="control-label" for="openAmnt">
-                     openAmnt<input id="openAmnt" class="form-control" type="text"
-                        name='openAmnt' placeholder="Enter openAmnt">
+
+                  <div class="control-label" for="openDay">
+                     openDay<input id="openDay" class="form-control" type="text"
+                        name='openDay' placeholder="Enter openDay" value=<%=request.getParameter("openDay")%>>
                   </div>
 
                   <!-- /.box-body -->
                   <br>
                   <div class="box-footer" align="center">
                      <button type="submit" class="btn btn-primary">등록</button>
-                     <a href="/open/listAll"><button type="button"
-                           class="btn btn-primary" value="사업자 목록 페이지">개시 일정</button></a>
+                     <a href="/calcu/listAll"><button type="button"
+                           class="btn btn-primary" value="정산 페이지">정산 페이지</button></a>
                   </div>
             </div>
          </div>

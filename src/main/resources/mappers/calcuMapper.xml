@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.zerock.mapper.CalcuMapper">
+    <insert id="create">
+        insert into calcu (calcuDay, calcuChngNum, printNum, openDay)
+        values(#{calcuDay},#{calcuChngNum},#{printNum},#{openDay})
+    </insert>
+    
+    <select id="read" resultType="org.zerock.domain.CalcuVO">
+        select calcuDay, calcuChngNum, printNum, openDay
+        from
+        calcu
+        Where calcuDay=#{calcuDay}
+    </select>
+    
+    <update id="update">
+        update calcu set calcuDay=#{calcuDay}, calcuChngNum=#{calcuChngNum}, printNum=#{printNum},
+        openDay=#{openDay}
+        where calcuDay=#{calcuDay}
+    </update>
+    
+    <delete id="delete">
+        delete from calcu where calcuDay=#{calcuDay}
+    </delete>
+    
+    <select id="listAll" resultType ="org.zerock.domain.CalcuVO">
+        <![CDATA[
+        select calcuDay, calcuChngNum, printNum, openDay
+        from
+        calcu
+        where calcuDay> 0
+        order by calcuDay desc
+         ]]>
+    </select>
+    
+</mapper>

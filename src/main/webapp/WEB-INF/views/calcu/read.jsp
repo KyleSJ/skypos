@@ -38,36 +38,35 @@ body {
    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
       <div class="panel panel-success">
          <div class="panel-heading">
-            <div class="panel-title">개시 정보</div>
+            <div class="panel-title">POS관리자 정보</div>
          </div>
          <div class="panel-body">
             <form role="form" method="post">
-               <div class="form-group" for="openDay">
-                  openDay <input id="openDay" class="form-control" type="text"
-                     name='openDay' value="${openVO.openDay}" readonly="readonly">
+               <div class="form-group" for="calcuDay">
+                  calcuDay <input id="calcuDay" class="form-control" type="text"
+                     name='calcuDay' value="${calcuVO.calcuDay}" readonly="readonly">
                </div>
             </form>
-            <div class="control-Label" for="empId">
-               empId <input id="empId" class="form-control" type="text"
-                  name='empId' value=<%=request.getParameter("empId")%> readonly="readonly">
+            <div class="control-Label" for="calcuChngNum">
+               calcuChngNum <input id="calcuChngNum" class="form-control" type="text"
+                  name='calcuChngNum' value="${calcuVO.calcuChngNum}" readonly="readonly">
             </div>
 
-            <div class="control-Label" for="posNum">
-               posNum <input id="posNum" class="form-control" type="text"
-                  name='posNum' value=<%=request.getParameter("posNum")%> readonly="readonly">
+            <div class="control-Label" for="printNum">
+               printNum <input id="printNum" class="form-control" type="text"
+                  name='printNum' value="${calcuVO.printNum}" readonly="readonly">
             </div>
 
-            <div class="control-Label" for="cashAmnt">
-               cashAmnt <input id="cashAmnt" class="form-control" type="text"
-                  name='cashAmnt' value="${openVO.cashAmnt}" readonly="readonly">
+            <div class="control-Label" for="openDay">
+               openDay <input id="openDay" class="form-control" type="text"
+                  name='openDay' value="${calcuVO.openDay}" readonly="readonly">
             </div>
             <!-- /.box-body -->
-
             <br>
             <div class="box-footer" align="center">
                <button type="submit" class="btn btn-warning">수정</button>
                <button type="submit" class="btn btn-danger">삭제</button>
-               <button type="submit" class="btn btn-primary">개시 리스트</button>
+               <button type="submit" class="btn btn-primary">정산 일정 페이지</button>
             </div>
 
             <script>
@@ -77,20 +76,18 @@ body {
                   console.log(formObj);
 
                   $(".btn-warning").on("click", function() {
-                     formObj.attr("action", "/open/modify");
+                     formObj.attr("action", "/calcu/modify");
                      formObj.attr("method", "get");
                      formObj.submit();
                   });
 
                   $(".btn-danger").on("click", function() {
-                     formObj.attr("action", "/open/remove");
+                     formObj.attr("action", "/calcu/remove");
                      formObj.submit();
                   });
 
                   $(".btn-primary").on("click", function() {
-                     self.location = "/open/listAll";
-                     //formObj.attr("action", "/member/listAll");
-                     //formObj.attr("method", "get");
+                     self.location = "/calcu/listAll";
                   });
                });
             </script>

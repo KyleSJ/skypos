@@ -43,24 +43,24 @@ text-align : center;
 <body>
    <table class="table table-bordered table-hover" >
       <tr>
-       <th>OpenDay</th>
-       <th>empId</th>
+       <th>calcuDay</th>
+       <th>calcuChngNum</th>
+       <th>printNum</th>
        <th>openDay</th>
-       <th>cashAmnt</th>
       </tr>
 
-   <c:forEach items="${list}" var="OpenVO">
+   <c:forEach items="${list}" var="CalcuVO">
       <tr>
-       <td><a href='/open/read?openDay=${OpenVO.openDay}'>${OpenVO.openDay}</a></td>
-       <td>${OpenVO.empId}</td>
-       <td>${OpenVO.posNum}</td>
-       <td>${OpenVO.cashAmnt}</td>
+       <td><a href='/calcu/read?posNum=${CalcuVO.calcuDay}'>${CalcuVO.calcuDay}</a></td>
+       <td>${calcuVO.calcuChngNum}</td>
+       <td>${calcuVO.printNum}</td>
+       <td>${calcuVO.openDay}</td>
       </tr>
    </c:forEach>
    
    </table>
    <div align="right">
-   <a href="/open/register"><input type="button" class="btn btn-primary" value="개시 등록"></a>
+   <a href="/calcu/register"><input type="button" class="btn btn-primary" value="사업자 등록"></a>
    </div>
    
    <script>
