@@ -26,11 +26,6 @@ public class MemberController{
       return "mainpage";
    }
    
-   @RequestMapping("/shopmanage")
-   public String shopmanage()throws Exception{
-      return "shopmanage";
-   }
-   
    @RequestMapping(value="/register",method = RequestMethod.GET)
    public void registerGET(MemberVO member, Model model)throws Exception{
       logger.info("register get .............");

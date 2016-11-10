@@ -36,8 +36,8 @@ public class ArticleController {
 		System.out.println(request.getParameter("memo"));
 		
 		Map<String, String> result = new HashMap<String, String>();
-		result.put("data1","ë©”ëª¨ 1");
-		result.put("data2","ë©”ëª¨ 2");
+		result.put("data1","¸Þ¸ð1");
+		result.put("data2","¸Þ¸ð 2");
 		return result;
 		
 	}
