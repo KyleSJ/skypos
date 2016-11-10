@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.zerock.mapper.OpenMapper">
+    
+<!--     <resultMap type="org.zerock.domain.MemberVO" id="Member">
+		<result property="posNum" column="POS_NUM"/>
+		<result property="regNum" column="REG_NUM"/>
+		<result property="vanNum" column="VAN_NUM"/>
+		<result property="repreName" column="REPRE_NAME"/>
+		<result property="compaName" column="COMPA_NAME"/>
+		<result property="phoneNum" column="PHONE_NUM"/>
+	</resultMap> -->
+
+    <insert id="create">
+        insert into open(openDay, empId, posNum, cashAmnt)
+        values(#{openDay},#{empId},#{posNum},#{cashAmnt})
+    </insert>
+    
+    <select id="read" resultType="org.zerock.domain.MemberVO">
+        select openDay, empId, posNum, cashAmnt
+        from
+        open
+        Where openDay=#{openDay}
+    </select>
+    
+    <update id="update">
+        update open set openDay=#{openDay}, empId=#{empId}, posNum=#{posNum}, cashAmnt=#{cashAmnt}
+        where openDay= #{openDay} 
+    </update>
+    
+    <delete id="delete">
+        delete from open where openDay=#{openDay}
+    </delete>
+    
+    <select id="listAll" resultType ="org.zerock.domain.OpenVO">
+        <![CDATA[
+        select openDay, empId, posNum, cashAmnt
+        from
+        open
+        where openDay > 0
+        order by openDay desc
+         ]]>
+    </select>
+    
+</mapper>
