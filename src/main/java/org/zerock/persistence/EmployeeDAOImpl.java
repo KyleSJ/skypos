@@ -38,8 +38,8 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 	}
 
 	@Override
-	public List listAll() throws Exception {
-		return session.selectList(namespace+".listAll");
+	public List listAll(int posNum) throws Exception {
+		return session.selectList(namespace+".listAll",posNum);
 	}
 	
 }

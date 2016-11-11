@@ -78,7 +78,7 @@ body {
                <button type="submit" class="btn btn-warning">수정</button>
                <button type="submit" class="btn btn-danger">삭제</button>
                <button type="submit" class="btn btn-primary">사업자 목록 페이지</button>
-               <a href='/employee/register?posNum=${memberVO.posNum}'><input
+               <a href='/employee/listAll?posNum=${memberVO.posNum}'><input
                   type="button" class="btn btn-info" value="직원 관리"></a> 
                <a href="/member/shopp"><input type="button"
                   class="btn btn-success" value="매장 관리"></a>

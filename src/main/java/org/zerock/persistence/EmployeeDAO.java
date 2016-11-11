@@ -13,5 +13,5 @@ public interface EmployeeDAO {
 	
 	public void delete(String empId)throws Exception;
 	
-	public List<EmployeeVO> listAll()throws Exception;
+	public List<EmployeeVO> listAll(int posNum)throws Exception;
 }

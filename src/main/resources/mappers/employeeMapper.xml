@@ -40,7 +40,7 @@
         select empId, posNum, empName, pwd
         from
         emp
-        where posNum > 0
+        where posNum =#{posNum}
         order by posNum desc
          ]]>
     </select>
