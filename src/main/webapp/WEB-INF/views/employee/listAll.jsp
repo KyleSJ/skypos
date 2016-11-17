@@ -56,9 +56,9 @@ text-align : center;
    </c:forEach>
    
    </table>
-   <!--  <div align="right">
-   <a href="/employee/register"><input type="button" value="직원 등록" class="btn btn-primary"></a>
-   </div>-->
+   <div align="right">
+   <a href="/employee/register?posNum="+${Employee.posNum}><input type="button" value="직원 등록" class="btn btn-primary"></a>
+   </div>
    <script>
       var result = '${msg}';
       if(result =='success'){

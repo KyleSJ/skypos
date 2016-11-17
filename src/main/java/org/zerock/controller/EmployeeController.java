@@ -72,7 +72,7 @@ public class EmployeeController{
 	   service.modify(employee);
 	   rttr.addFlashAttribute("msg","SUCCESS");
 	   
-	   return "redirect:/employee/listAll";
+	   return "redirect:/employee/listAll?posNum="+employee.getPosNum();
    }
 
 }

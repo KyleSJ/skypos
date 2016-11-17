@@ -97,7 +97,7 @@ font-size : 100%;
 				});
 
 				$("#eployee_manage").on("click", function() {
-					$('#div_right').load("/shopmanage/employee_manage");
+					$('#div_right').load("/employee/listAll?posNum=${memberVO.posNum}");
 				});
 
 				$("#statistics").on("click", function() {
