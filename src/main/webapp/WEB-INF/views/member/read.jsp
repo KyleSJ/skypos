@@ -80,7 +80,7 @@ body {
                <button type="submit" class="btn btn-primary">사업자 목록 페이지</button>
                <a href='/employee/listAll?posNum=${memberVO.posNum}'><input
                   type="button" class="btn btn-info" value="직원 관리"></a> 
-               <a href="/member/shopp"><input type="button"
+               <a href="/shopmanage/shop_main"><input type="button"
                   class="btn btn-success" value="매장 관리"></a>
 
             </div>

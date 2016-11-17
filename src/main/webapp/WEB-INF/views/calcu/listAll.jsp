@@ -51,10 +51,10 @@ text-align : center;
 
    <c:forEach items="${list}" var="CalcuVO">
       <tr>
-       <td><a href='/calcu/read?posNum=${CalcuVO.calcuDay}'>${CalcuVO.calcuDay}</a></td>
-       <td>${calcuVO.calcuChngNum}</td>
-       <td>${calcuVO.printNum}</td>
-       <td>${calcuVO.openDay}</td>
+       <td><a href='/calcu/read?calcuDay=${CalcuVO.calcuDay}'>${CalcuVO.calcuDay}</a></td>
+       <td>${CalcuVO.calcuChngNum}</td>
+       <td>${CalcuVO.printNum}</td>
+       <td>${CalcuVO.openDay}</td>
       </tr>
    </c:forEach>
    

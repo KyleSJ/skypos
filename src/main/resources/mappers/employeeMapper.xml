@@ -26,6 +26,13 @@
         Where empId=#{empId}
     </select>
     
+    <select id="login" resultType="org.zerock.domain.EmployeeVO">
+        select empId, posNum, empName, pwd
+        from
+        emp
+        Where empId=#{empId} and posNum=#{posNum} and pwd=#{pwd}
+    </select>
+    
     <update id="update">
         update emp set empId=#{empId}, posNum=#{posNum}, empName=#{empName}, pwd=#{pwd}
         Where empId=#{empId}
@@ -45,4 +52,11 @@
          ]]>
     </select>
     
+    <select id="Alldata" resultType ="org.zerock.domain.EmployeeVO">
+        <![CDATA[
+        select empId, posNum, empName, pwd
+        from
+        emp
+         ]]>
+    </select>
 </mapper>

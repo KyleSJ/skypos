@@ -3,8 +3,7 @@ package org.zerock.domain;
 public class CardCompaVO {
 	private int cardCompaNum;
 	private String compaName;
-	private int phoneNum;
-	
+	private String phoneNum;
 	public int getCardCompaNum() {
 		return cardCompaNum;
 	}
@@ -17,10 +16,10 @@ public class CardCompaVO {
 	public void setCompaName(String compaName) {
 		this.compaName = compaName;
 	}
-	public int getPhoneNum() {
+	public String getPhoneNum() {
 		return phoneNum;
 	}
-	public void setPhoneNum(int phoneNum) {
+	public void setPhoneNum(String phoneNum) {
 		this.phoneNum = phoneNum;
 	}
 	@Override
@@ -28,6 +27,5 @@ public class CardCompaVO {
 		return "CardCompaVO [cardCompaNum=" + cardCompaNum + ", compaName="
 				+ compaName + ", phoneNum=" + phoneNum + "]";
 	}
-	
-	
+		
 }

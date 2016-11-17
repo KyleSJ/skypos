@@ -71,11 +71,11 @@ body {
                         console.log(formObj);
 
                         $(".btn-warning").on("click", function() {
-                           self.location = "/employee/listAll";
+                           self.location = "/employee/listAll=${EmployeeVO.posNum}";
                         });
 
                         $(".btn-primary").on("click", function() {
-                           formObj.submit();
+                           formObj.submit();	
                         });
                      });
                   </script>
