@@ -35,7 +35,7 @@ public class EmployeeController{
       
       //return "/member/success";
       rttr.addFlashAttribute("msg","success");
-      return "redirect:/employee/listAll";
+      return "redirect:/employee/listAll?posNum="+employee.getPosNum();
    }
    
    @RequestMapping(value="/listAll", method=RequestMethod.GET)
@@ -52,12 +52,12 @@ public class EmployeeController{
    }
    
    @RequestMapping(value="/remove", method= RequestMethod.POST)
-   public String remove(@RequestParam("empId") String empId, RedirectAttributes rttr)throws Exception{
+   public String remove(@RequestParam("empId") String empId, EmployeeVO employee, RedirectAttributes rttr)throws Exception{
 	   service.remove(empId);
 	   
 	   rttr.addFlashAttribute("msg","success");
 	   
-	   return "redirect:/employee/listAll";
+	   return "redirect:/employee/listAll?posNum="+employee.getPosNum();
    }
    
    @RequestMapping(value="/modify", method=RequestMethod.GET)
@@ -72,7 +72,7 @@ public class EmployeeController{
 	   service.modify(employee);
 	   rttr.addFlashAttribute("msg","SUCCESS");
 	   
-	   return "redirect:/employee/listAll?posNum="+employee.getPosNum();
+	   return "redirect:/employee/read?empId="+employee.getEmpId();
    }
 
 }

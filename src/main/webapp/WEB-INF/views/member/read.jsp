@@ -100,8 +100,6 @@ body {
 
                   $(".btn-primary").on("click", function() {
                      self.location = "/member/listAll";
-                     //formObj.attr("action", "/member/listAll");
-                     //formObj.attr("method", "get");
                   });
                });
             </script>

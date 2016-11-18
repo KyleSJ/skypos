@@ -82,11 +82,12 @@ body {
                         console.log(formObj);
 
                         $(".btn-warning").on("click", function() {
-                           self.location = "/member/listAll";
+                           self.location = '/member/read?posNum='+${memberVO.posNum};
                         });
 
                         $(".btn-primary").on("click", function() {
-                           formObj.submit();
+                		   formObj.submit();
+                		   formObj.attr("action", '/member/modify);
                         });
                      });
                   </script>

@@ -57,9 +57,18 @@ text-align : center;
    
    </table>
    <div align="right">
-   <a href="/employee/register?posNum="+${Employee.posNum}><input type="button" value="직원 등록" class="btn btn-primary"></a>
+   <button type="submit" class="btn btn-primary">직원등록</button>
+   <button type="submit" class="btn btn-warning">사업자목록</button>
    </div>
    <script>
+   $(document).ready(function(){
+	   $(".btn-primary").on("click",function(){
+		   self.location="/employee/register?posNum="+<%=request.getParameter("posNum")%>;
+	   });
+	   $(".btn-warning").on("click",function(){
+		   self.location="/member/listAll";
+	   });
+   });
       var result = '${msg}';
       if(result =='success'){
          alert("처리가 완료 되었습니다.");

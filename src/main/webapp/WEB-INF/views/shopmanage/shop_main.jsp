@@ -89,7 +89,7 @@ font-size : 100%;
 		<script>
 			$(document).ready(function() {
 				$("#table_manage").on("click", function() {
-					$('#div_right').load("/member/listAll");
+					$('#div_right').load("/seattable/listAll");
 				});
 
 				$("#good_manage").on("click", function() {
