@@ -60,9 +60,7 @@ body {
             <div class="box-footer" align="center">
                <button type="submit" class="btn btn-warning">수정</button>
                <button type="submit" class="btn btn-danger">삭제</button>
-               <a
-                  href='/tableCat/listAll?tableCatNum=${seattableCatVO.tableCatNum}'><input
-                  type="button" class="btn btn-primary" value="좌석 목록"></a>
+               <button type="submit" class="btn btn-primary">좌석 카테고리 목록</button>
             </div>
 
             <script>

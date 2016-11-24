@@ -63,6 +63,7 @@ body {
             <div class="box-footer" align="center">
                <button type="submit" class="btn btn-warning">수정</button>
                <button type="submit" class="btn btn-danger">삭제</button>
+               <button type="submit" class="btn btn-primary">출력물 목록</button>
             </div>
 
             <script>

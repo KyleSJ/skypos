@@ -68,6 +68,7 @@ body {
             <div class="box-footer" align="center">
                <button type="submit" class="btn btn-warning">수정</button>
                <button type="submit" class="btn btn-danger">삭제</button>
+               <button type="submit" class="btn btn-priamry">결제 목록</button>
             </div>
 
             <script>
@@ -88,7 +89,7 @@ body {
                   });
 
                   $(".btn-primary").on("click", function() {
-                     self.location = "/pay/listAll";
+                     self.location = "/ordergoods/listAll";
                   });
                });
             </script>
