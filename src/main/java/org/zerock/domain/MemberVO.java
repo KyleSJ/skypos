@@ -8,6 +8,7 @@ public class MemberVO {
 	private String compaName;
 	private String phoneNum;
 	private String addr;
+	private String IP;
 	
 	public int getPosNum() {
 		return posNum;
@@ -51,12 +52,17 @@ public class MemberVO {
 	public void setAddr(String addr) {
 		this.addr = addr;
 	}
+	public String getIP() {
+		return IP;
+	}
+	public void setIP(String iP) {
+		IP = iP;
+	}
 	@Override
 	public String toString() {
 		return "MemberVO [posNum=" + posNum + ", regNum=" + regNum
 				+ ", vanNum=" + vanNum + ", repreName=" + repreName
 				+ ", compaName=" + compaName + ", phoneNum=" + phoneNum
-				+ ", addr=" + addr + "]";
+				+ ", addr=" + addr + ", IP=" + IP + "]";
 	}
-		
 }

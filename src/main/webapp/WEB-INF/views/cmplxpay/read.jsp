@@ -32,37 +32,47 @@ body {
    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
       <div class="panel panel-success">
          <div class="panel-heading">
-            <div class="panel-title">외부장치 정보</div>
+            <div class="panel-title">상품 테이블 정보</div>
          </div>
          <div class="panel-body">
             <form role="form" method="post">
-               <div class="form-group" for="devName">
-                  devName <input id="devName" class="form-control"
-                     type="text" name='devName'
-                     value="${extdevVO.devName}" readonly="readonly">
+               <div class="control-label" for="cmplxPayNum">
+                  cmplxPayNum <input id="cmplxPayNum" class="form-control" type="text"
+                   name="cmplxPayNum"  value="${cmplxPayVO.cmplxPayNum}"readonly="readonly"/>
                </div>
             </form>
+            
+               <div class="form-group" for="printNum">
+                  printNum <input id="printNum" class="form-control"
+                     type="text" name='printNum'
+                     value="${cmplxPayVO.printNum}" readonly="readonly">
+               </div>
 
-            <div class="form-group" for="devType">
-               devType <input id="devType" class="form-control" type="text"
-                  name='devType' value="${extdevVO.devType}"
-                  readonly="readonly">
-            </div>
-
-            <div class="form-group" for="prtcl">
-               prtcl <input id="prtcl" class="form-control" type="text"
-                  name='prtcl' value="${extdevVO.prtcl}"
-                  readonly="readonly">
-            </div>
+               <div class="control-label" for="orderNum">
+                  orderNum <input id="orderNum" class="form-control" type="text"
+                     name='orderNum' value="${cmplxPayVO.orderNum}"readonly="readonly"/>
+               </div>
+               
+               <div class="control-label" for="payTime">
+                  payTime <input id="payTime" class="form-control" type="text"
+                     name='payTime' value="${cmplxPayVO.payTime}"readonly="readonly"/>
+               </div>
+               
+               <div class="control-label" for="openDay">
+                  openDay <input id="openDay" class="form-control" type="text"
+                     name='openDay' value="${cmplxPayVO.openDay}"readonly="readonly"/>
+               </div>
+               
+               <div class="control-label" for="totalPayAmnt">
+                  totalPayAmnt <input id="totalPayAmnt" class="form-control" type="text"
+                     name='totalPayAmnt' value="${cmplxPayVO.totalPayAmnt}"readonly="readonly"/>
+               </div>
             <!-- /.box-body -->
 
             <br>
             <div class="box-footer" align="center">
                <button type="submit" class="btn btn-warning">수정</button>
                <button type="submit" class="btn btn-danger">삭제</button>
-               <a
-                  href='/extdev/listAll?devName=${extdevVO.devName}'><input
-                  type="button" class="btn btn-primary" value="외부장치 목록"></a>
             </div>
 
             <script>
@@ -72,18 +82,18 @@ body {
                   console.log(formObj);
 
                   $(".btn-warning").on("click", function() {
-                     formObj.attr("action", "/extdev/modify");
+                     formObj.attr("action", "/cmplxpay/modify");
                      formObj.attr("method", "get");
                      formObj.submit();
                   });
 
                   $(".btn-danger").on("click", function() {
-                     formObj.attr("action", "/extdev/remove");
+                     formObj.attr("action", "/cmplxpay/remove");
                      formObj.submit();
                   });
 
                   $(".btn-primary").on("click", function() {
-                     self.location = "/extdev/listAll";
+                     self.location = "/cmplxpay/listAll";
                   });
                });
             </script>

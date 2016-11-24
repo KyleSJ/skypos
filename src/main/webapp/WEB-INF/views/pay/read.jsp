@@ -32,37 +32,47 @@ body {
    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
       <div class="panel panel-success">
          <div class="panel-heading">
-            <div class="panel-title">외부장치 정보</div>
+            <div class="panel-title">PAY 테이블 정보</div>
          </div>
          <div class="panel-body">
             <form role="form" method="post">
-               <div class="form-group" for="devName">
-                  devName <input id="devName" class="form-control"
-                     type="text" name='devName'
-                     value="${extdevVO.devName}" readonly="readonly">
+               <div class="form-group" for="payNum">
+                  payNum <input id="payNum" class="form-control"
+                     type="text" name='payNum'
+                     value="${payVO.payNum}" readonly="readonly">
                </div>
             </form>
 
-            <div class="form-group" for="devType">
-               devType <input id="devType" class="form-control" type="text"
-                  name='devType' value="${extdevVO.devType}"
-                  readonly="readonly">
-            </div>
+            <div class="control-label" for="cmplxPayNum">
+                  cmplxPayNum <input id="cmplxPayNum" class="form-control" type="text"
+                     name='cmplxPayNum' value="${payVO.cmplxPayNum}"readonly="readonly"/>
+               </div>
 
-            <div class="form-group" for="prtcl">
-               prtcl <input id="prtcl" class="form-control" type="text"
-                  name='prtcl' value="${extdevVO.prtcl}"
-                  readonly="readonly">
-            </div>
+               <div class="control-label" for="cardCompaNum">
+                  cardCompaNum <input id="cardCompaNum" class="form-control" type="text"
+                     name='cardCompaNum' value="${payVO.cardCompaNum}"readonly="readonly"/>
+               </div>
+               
+               <div class="control-label" for="payWay">
+                  payWay <input id="payWay" class="form-control" type="text"
+                     name='payWay' value="${payVO.payWay}"readonly="readonly"/>
+               </div>
+               
+               <div class="control-label" for="cardNum">
+                  cardNum <input id="cardNum" class="form-control" type="text"
+                     name='cardNum' value="${payVO.cardNum}"readonly="readonly"/>
+               </div>
+               
+               <div class="control-label" for="payAmnt">
+                  payAmnt <input id="payAmnt" class="form-control" type="text"
+                     name='payAmnt' value="${payVO.payAmnt}"readonly="readonly"/>
+               </div>
             <!-- /.box-body -->
 
             <br>
             <div class="box-footer" align="center">
                <button type="submit" class="btn btn-warning">수정</button>
                <button type="submit" class="btn btn-danger">삭제</button>
-               <a
-                  href='/extdev/listAll?devName=${extdevVO.devName}'><input
-                  type="button" class="btn btn-primary" value="외부장치 목록"></a>
             </div>
 
             <script>
@@ -72,18 +82,18 @@ body {
                   console.log(formObj);
 
                   $(".btn-warning").on("click", function() {
-                     formObj.attr("action", "/extdev/modify");
+                     formObj.attr("action", "/pay/modify");
                      formObj.attr("method", "get");
                      formObj.submit();
                   });
 
                   $(".btn-danger").on("click", function() {
-                     formObj.attr("action", "/extdev/remove");
+                     formObj.attr("action", "/pay/remove");
                      formObj.submit();
                   });
 
                   $(".btn-primary").on("click", function() {
-                     self.location = "/extdev/listAll";
+                     self.location = "/pay/listAll";
                   });
                });
             </script>

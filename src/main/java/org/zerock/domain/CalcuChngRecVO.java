@@ -3,7 +3,7 @@ package org.zerock.domain;
 import java.sql.Date;
 import java.sql.Timestamp;
 
-public class CalcuChngNumVO {
+public class CalcuChngRecVO {
 	private int calcuChngNum;
 	private Date calcuChngDay;
 	private Timestamp calcuChngTime;

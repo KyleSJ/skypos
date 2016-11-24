@@ -3,13 +3,13 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="org.zerock.mapper.CalcuchngnumMapper">
+<mapper namespace="org.zerock.mapper.CalcuChngRecMapper">
     <insert id="create">
         insert into calcu_chng_rec (calcuChngNum, calcuChngDay, calcuChngTime, bakDay, bakTime, moneySales, cardSales)
         values(#{calcuChngNum},#{calcuChngDay},#{calcuChngTime},#{bakDay},#{bakTime},#{moneySales},#{cardSales})
     </insert>
     
-    <select id="read" resultType="org.zerock.domain.CalcuChngNumVO">
+    <select id="read" resultType="org.zerock.domain.CalcuChngRecVO">
         select calcuChngNum, calcuChngDay, calcuChngTime, bakDay, bakTime, moneySales, cardSales
         from
         calcu_chng_rec
@@ -26,7 +26,7 @@
         delete from calcu_chng_rec where calcuChngNum=#{calcuChngNum}
     </delete>
     
-    <select id="listAll" resultType ="org.zerock.domain.CalcuChngNumVO">
+    <select id="listAll" resultType ="org.zerock.domain.CalcuChngRecVO">
         <![CDATA[
         select calcuChngNum, calcuChngDay, calcuChngTime, bakDay, bakTime, moneySales, cardSales
         from

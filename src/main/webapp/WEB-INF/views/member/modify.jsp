@@ -88,7 +88,7 @@ body {
                            self.location = "/member/listAll";
                         });
 
-                        $(".btn-primary").on("click", function() {
+                        $('.btn-primary').on("click", function() {
                            formObj.submit();
                         });
                      });

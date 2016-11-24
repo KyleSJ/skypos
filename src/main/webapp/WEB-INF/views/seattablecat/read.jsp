@@ -32,26 +32,26 @@ body {
    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
       <div class="panel panel-success">
          <div class="panel-heading">
-            <div class="panel-title">외부장치 정보</div>
+            <div class="panel-title">상품 테이블 정보</div>
          </div>
          <div class="panel-body">
             <form role="form" method="post">
-               <div class="form-group" for="devName">
-                  devName <input id="devName" class="form-control"
-                     type="text" name='devName'
-                     value="${extdevVO.devName}" readonly="readonly">
+               <div class="form-group" for="tableCatNum">
+                  tableCatNum <input id="tableCatNum" class="form-control"
+                     type="text" name='tableCatNum'
+                     value="${seattableCatVO.tableCatNum}" readonly="readonly">
                </div>
             </form>
 
-            <div class="form-group" for="devType">
-               devType <input id="devType" class="form-control" type="text"
-                  name='devType' value="${extdevVO.devType}"
+            <div class="form-group" for="tableCatName">
+               tableCatName <input id="tableCatName" class="form-control" type="text"
+                  name='tableCatName' value="${seattableCatVO.tableCatName}"
                   readonly="readonly">
             </div>
 
-            <div class="form-group" for="prtcl">
-               prtcl <input id="prtcl" class="form-control" type="text"
-                  name='prtcl' value="${extdevVO.prtcl}"
+            <div class="form-group" for="tableCatLoc">
+               tableCatLoc <input id="tableCatLoc" class="form-control" type="text"
+                  name='tableCatLoc' value="${seattableCatVO.tableCatLoc}"
                   readonly="readonly">
             </div>
             <!-- /.box-body -->
@@ -61,8 +61,8 @@ body {
                <button type="submit" class="btn btn-warning">수정</button>
                <button type="submit" class="btn btn-danger">삭제</button>
                <a
-                  href='/extdev/listAll?devName=${extdevVO.devName}'><input
-                  type="button" class="btn btn-primary" value="외부장치 목록"></a>
+                  href='/tableCat/listAll?tableCatNum=${seattableCatVO.tableCatNum}'><input
+                  type="button" class="btn btn-primary" value="좌석 목록"></a>
             </div>
 
             <script>
@@ -72,18 +72,18 @@ body {
                   console.log(formObj);
 
                   $(".btn-warning").on("click", function() {
-                     formObj.attr("action", "/extdev/modify");
+                     formObj.attr("action", "/seattablecat/modify");
                      formObj.attr("method", "get");
                      formObj.submit();
                   });
 
                   $(".btn-danger").on("click", function() {
-                     formObj.attr("action", "/extdev/remove");
+                     formObj.attr("action", "/seattablecat/remove");
                      formObj.submit();
                   });
 
                   $(".btn-primary").on("click", function() {
-                     self.location = "/extdev/listAll";
+                     self.location = "/seattablecat/listAll";
                   });
                });
             </script>

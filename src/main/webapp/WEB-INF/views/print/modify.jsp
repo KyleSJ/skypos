@@ -29,28 +29,33 @@ body {
 </style>
 
 <body>
-<form class="container" role="form" method="post">
-   <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-      <div class="panel panel-success">
-         <div class="panel-heading">
-            <div class="panel-title">외부장치 정보</div>
-         </div>
-         <div class="panel-body">
-               <div class="form-group" for="devName">
-                  devName <input id="devName" class="form-control"
-                     type="text"
-                     value="${extdevVO.devName}" readonly="readonly">
+   <form class="container" role="form" method="post">
+      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+         <div class="panel panel-success">
+            <div class="panel-heading">
+               <div class="panel-title">PRINT 수정</div>
+            </div>
+            <div class="panel-body">
+               <div class="control-Label" for="printNum">
+                  printNum <input id="printNum" class="form-control"
+                     type="text" name='printNum'
+                     value="${printVO.printNum}" readonly="readonly">
                </div>
 
-            <div class="form-group" for="devType">
-               devType <input id="devType" class="form-control" type="text"
-                   name='devType' value="${extdevVO.devType}">
-            </div>
+                 <div class="control-label" for="devName">
+                  devName <input id="devName" class="form-control" type="text"
+                     name='devName' value="${printVO.devName}" readonly="readonly"/>
+               </div>
 
-            <div class="form-group" for="prtcl">
-               prtcl <input id="prtcl" class="form-control" type="text"
-                   name='prtcl' value="${extdevVO.prtcl}">
-            </div>
+               <div class="control-label" for="printName">
+                  printName <input id="printName" class="form-control" type="text"
+                     name='printName' value="${printVO.printName}" readonly="readonly"/>
+               </div>
+               
+               <div class="control-label" for="printCntt">
+                  printCntt <input id="printCntt" class="form-control" type="text"
+                     name='printCntt' value="${printVO.printCntt}"placeholder="Enter payWay" />
+               </div>
 
                <!-- /.box-body -->
                <br>
@@ -66,7 +71,7 @@ body {
                      console.log(formObj);
 
                      $(".btn-warning").on("click", function() {
-                        self.location = "/extdev/listAll";
+                        self.location = "/print/listAll";
                      });
 
                      $(".btn-primary").on("click", function() {

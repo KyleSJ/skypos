@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.zerock.mapper.CmplxPayMapper">
+    
+<!--     <resultMap type="org.zerock.domain.MemberVO" id="Member">
+		<result property="posNum" column="POS_NUM"/>
+		<result property="regNum" column="REG_NUM"/>
+		<result property="vanNum" column="VAN_NUM"/>
+		<result property="repreName" column="REPRE_NAME"/>
+		<result property="compaName" column="COMPA_NAME"/>
+		<result property="phoneNum" column="PHONE_NUM"/>
+	</resultMap> -->
+	
+    <insert id="create">
+        insert into cmplx_pay (cmplxPayNum, printNum, orderNum, payTime, openDay, totalPayAmnt)
+        values(#{cmplxPayNum},#{printNum},#{orderNum},#{payTime},#{openDay},#{totalPayAmnt})
+    </insert>
+    
+    <select id="read" resultType="org.zerock.domain.CmplxPayVO">
+        select cmplxPayNum, printNum, orderNum, payTime, openDay, totalPayAmnt
+        from
+        cmplx_pay
+        Where cmplxPayNum=#{cmplxPayNum}
+    </select>
+    
+    <update id="update">
+        update cmplx_pay set cmplxPayNum=#{cmplxPayNum}, printNum=#{printNum}, orderNum=#{orderNum}, 
+        payTime=#{payTime}, openDay=#{openDay}, totalPayAmnt=#{totalPayAmnt}
+        where cmplxPayNum=#{cmplxPayNum}
+    </update>
+    
+    <delete id="delete">
+        delete from cmplx_pay where cmplxPayNum=#{cmplxPayNum}
+    </delete>
+    
+    <select id="listAll" resultType ="org.zerock.domain.CmplxPayVO">
+        <![CDATA[
+        select cmplxPayNum, printNum, orderNum, payTime, openDay, totalPayAmnt
+        from
+        cmplx_pay
+        where cmplxPayNum > 0
+        order by cmplxPayNum desc
+         ]]>
+    </select>
+    
+</mapper>

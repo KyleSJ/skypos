@@ -6,34 +6,35 @@ import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
-import org.zerock.domain.ExtdevVO;
+import org.zerock.domain.OrderMenuVO;
 
 @Repository
-public class ExtdevDAOImpl implements ExtdevDAO{
+public class OrderMenuDAOImpl implements OrderMenuDAO{
 	
 	@Inject
 	private SqlSession session;
 	
-	private static String namespace="org.zerock.mapper.ExtdevMapper";
+	private static String namespace="org.zerock.mapper.OrderMenuMapper";
 
 	@Override
-	public void create(ExtdevVO vo) throws Exception {
+	public void create(OrderMenuVO vo) throws Exception {
 		session.insert(namespace+".create",vo);
 	}
 
 	@Override
-	public ExtdevVO read(String devName) throws Exception {
-		return session.selectOne(namespace+".read",devName);
+	public OrderMenuVO read(int orderNum) throws Exception {
+		return session.selectOne(namespace+".read",orderNum);
 	}
 
 	@Override
-	public void update(ExtdevVO vo) throws Exception {
+	public void update(OrderMenuVO vo) throws Exception {
+
 		session.update(namespace+".update",vo);
 	}
 
 	@Override
-	public void delete(String devName) throws Exception {
-		session.delete(namespace+".delete",devName);
+	public void delete(int orderNum) throws Exception {
+		session.delete(namespace+".delete",orderNum);
 	}
 
 	@Override

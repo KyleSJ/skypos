@@ -32,37 +32,42 @@ body {
    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
       <div class="panel panel-success">
          <div class="panel-heading">
-            <div class="panel-title">외부장치 정보</div>
+            <div class="panel-title">order goods 테이블 정보</div>
          </div>
          <div class="panel-body">
             <form role="form" method="post">
-               <div class="form-group" for="devName">
-                  devName <input id="devName" class="form-control"
-                     type="text" name='devName'
-                     value="${extdevVO.devName}" readonly="readonly">
+               <div class="form-group" for="orderGoodsNum">
+                  orderGoodsNum <input id="orderGoodsNum" class="form-control"
+                     type="text" name='orderGoodsNum'
+                     value="${orderGoodsVO.orderGoodsNum}" readonly="readonly">
                </div>
             </form>
 
-            <div class="form-group" for="devType">
-               devType <input id="devType" class="form-control" type="text"
-                  name='devType' value="${extdevVO.devType}"
-                  readonly="readonly">
-            </div>
+            <div class="control-label" for="goodsNum">
+                  goodsNum <input id="goodsNum" class="form-control" type="text"
+                     name='goodsNum' value="${orderGoodsVO.goodsNum}"readonly="readonly"/>
+               </div>
 
-            <div class="form-group" for="prtcl">
-               prtcl <input id="prtcl" class="form-control" type="text"
-                  name='prtcl' value="${extdevVO.prtcl}"
-                  readonly="readonly">
-            </div>
+               <div class="control-label" for="orderNum">
+                  orderNum <input id="orderNum" class="form-control" type="text"
+                     name='orderNum' value="${orderGoodsVO.orderNum}"readonly="readonly"/>
+               </div>
+               
+               <div class="control-label" for="goodsQntt">
+                  goodsQntt <input id="goodsQntt" class="form-control" type="text"
+                     name='goodsQntt' value="${orderGoodsVO.goodsQntt}"readonly="readonly"/>
+               </div>
+               
+               <div class="control-label" for="openDay">
+                  openDay <input id="openDay" class="form-control" type="text"
+                     name='openDay' value="${orderGoodsVO.openDay}"readonly="readonly"/>
+               </div>
             <!-- /.box-body -->
 
             <br>
             <div class="box-footer" align="center">
                <button type="submit" class="btn btn-warning">수정</button>
                <button type="submit" class="btn btn-danger">삭제</button>
-               <a
-                  href='/extdev/listAll?devName=${extdevVO.devName}'><input
-                  type="button" class="btn btn-primary" value="외부장치 목록"></a>
             </div>
 
             <script>
@@ -72,18 +77,18 @@ body {
                   console.log(formObj);
 
                   $(".btn-warning").on("click", function() {
-                     formObj.attr("action", "/extdev/modify");
+                     formObj.attr("action", "/ordergoods/modify");
                      formObj.attr("method", "get");
                      formObj.submit();
                   });
 
                   $(".btn-danger").on("click", function() {
-                     formObj.attr("action", "/extdev/remove");
+                     formObj.attr("action", "/ordergoods/remove");
                      formObj.submit();
                   });
 
                   $(".btn-primary").on("click", function() {
-                     self.location = "/extdev/listAll";
+                     self.location = "/pay/listAll";
                   });
                });
             </script>

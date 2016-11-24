@@ -6,34 +6,35 @@ import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
-import org.zerock.domain.ExtdevVO;
+import org.zerock.domain.PayVO;
 
 @Repository
-public class ExtdevDAOImpl implements ExtdevDAO{
+public class PayDAOImpl implements PayDAO{
 	
 	@Inject
 	private SqlSession session;
 	
-	private static String namespace="org.zerock.mapper.ExtdevMapper";
+	private static String namespace="org.zerock.mapper.PayMapper";
 
 	@Override
-	public void create(ExtdevVO vo) throws Exception {
+	public void create(PayVO vo) throws Exception {
 		session.insert(namespace+".create",vo);
 	}
 
 	@Override
-	public ExtdevVO read(String devName) throws Exception {
-		return session.selectOne(namespace+".read",devName);
+	public PayVO read(int payNum) throws Exception {
+		return session.selectOne(namespace+".read",payNum);
 	}
 
 	@Override
-	public void update(ExtdevVO vo) throws Exception {
+	public void update(PayVO vo) throws Exception {
+
 		session.update(namespace+".update",vo);
 	}
 
 	@Override
-	public void delete(String devName) throws Exception {
-		session.delete(namespace+".delete",devName);
+	public void delete(int payNum) throws Exception {
+		session.delete(namespace+".delete",payNum);
 	}
 
 	@Override
