@@ -1,5 +1,6 @@
 package org.zerock.persistence;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -41,5 +42,21 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 	public List listAll(int posNum) throws Exception {
 		return session.selectList(namespace+".listAll",posNum);
 	}
+	
+	/*@Override
+	public List Alldata(EmployeeVO vo)throws Exception{
+		return session.selectList(namespace+".Alldata",vo);
+	}*/
+	
+	@Override
+	public EmployeeVO verify(EmployeeVO vo) {
+		return session.selectOne(namespace+".login",vo);
+	}
+
+	@Override
+	public ArrayList Alldata()throws Exception{
+		return (ArrayList) session.selectList(namespace+".Alldata");
+	}
+
 	
 }

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.zerock.mapper.OrderMenuMapper">
+    
+<!--     <resultMap type="org.zerock.domain.MemberVO" id="Member">
+		<result property="posNum" column="POS_NUM"/>
+		<result property="regNum" column="REG_NUM"/>
+		<result property="vanNum" column="VAN_NUM"/>
+		<result property="repreName" column="REPRE_NAME"/>
+		<result property="compaName" column="COMPA_NAME"/>
+		<result property="phoneNum" column="PHONE_NUM"/>
+	</resultMap> -->
+	
+    <insert id="create">
+        insert into ordermenu (orderNum, openDay, printNum, tableNum, orderTime, orderAmnt)
+        values(#{orderNum},#{openDay},#{printNum},#{tableNum},#{orderTime},#{orderAmnt})
+    </insert>
+    
+    <select id="read" resultType="org.zerock.domain.OrderMenuVO">
+        select orderNum, openDay, printNum, tableNum, orderTime, orderAmnt
+        from
+        ordermenu
+        Where orderNum=#{orderNum}
+    </select>
+    
+    <update id="update">
+        update ordermenu set orderNum=#{orderNum}, openDay=#{openDay}, printNum=#{printNum}, tableNum=#{tableNum},
+        orderTime=#{orderTime}, orderAmnt=#{orderAmnt}
+        where orderNum=#{orderNum}
+    </update>
+    
+    <delete id="delete">
+        delete from ordermenu where orderNum=#{orderNum}
+    </delete>
+    
+    <select id="listAll" resultType ="org.zerock.domain.OrderMenuVO">
+        <![CDATA[
+        select orderNum, openDay, printNum, tableNum, orderTime, orderAmnt
+        from
+        ordermenu
+        where orderNum > 0
+        order by orderNum desc
+         ]]>
+    </select>
+    
+</mapper>

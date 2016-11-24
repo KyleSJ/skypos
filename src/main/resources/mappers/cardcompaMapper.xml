@@ -15,19 +15,20 @@
 	</resultMap> -->
 	
     <insert id="create">
-        insert into card_compa (cardCompaNum, compaName, phoneNum)
-        values(#{cardCompaNum},#{compaName},#{phoneNum})
+        insert into card_compa (cardCompaNum, cardCompaName, cardCompaPhoneNum)
+        values(#{cardCompaNum},#{cardCompaName},#{cardCompaPhoneNum})
     </insert>
     
     <select id="read" resultType="org.zerock.domain.CardCompaVO">
-        select cardCompaNum, compaName, phoneNum
+        select cardCompaNum, cardCompaName, cardCompaPhoneNum
         from
         card_compa
         Where cardCompaNum=#{cardCompaNum}
     </select>
     
     <update id="update">
-        update card_compa set cardCompaNum=#{cardCompaNum}, compaName=#{compaName}, phoneNum=#{phoneNum}
+        update card_compa set cardCompaNum=#{cardCompaNum}, cardCompaName=#{cardCompaName},
+         cardCompaPhoneNum=#{cardCompaPhoneNum}
         where cardCompaNum=#{cardCompaNum}
     </update>
     
@@ -37,7 +38,7 @@
     
     <select id="listAll" resultType ="org.zerock.domain.CardCompaVO">
         <![CDATA[
-        select cardCompaNum, compaName, phoneNum
+        select cardCompaNum, cardCompaName, cardCompaPhoneNum
         from
         card_compa
         where cardCompaNum > 0

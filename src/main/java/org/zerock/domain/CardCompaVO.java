@@ -2,8 +2,8 @@ package org.zerock.domain;
 
 public class CardCompaVO {
 	private int cardCompaNum;
-	private String compaName;
-	private int phoneNum;
+	private String cardCompaName;
+	private String cardCompaPhoneNum;
 	
 	public int getCardCompaNum() {
 		return cardCompaNum;
@@ -11,23 +11,23 @@ public class CardCompaVO {
 	public void setCardCompaNum(int cardCompaNum) {
 		this.cardCompaNum = cardCompaNum;
 	}
-	public String getCompaName() {
-		return compaName;
+	public String getCardCompaName() {
+		return cardCompaName;
 	}
-	public void setCompaName(String compaName) {
-		this.compaName = compaName;
+	public void setCardCompaName(String cardCompaName) {
+		this.cardCompaName = cardCompaName;
 	}
-	public int getPhoneNum() {
-		return phoneNum;
+	public String getCardCompaPhoneNum() {
+		return cardCompaPhoneNum;
 	}
-	public void setPhoneNum(int phoneNum) {
-		this.phoneNum = phoneNum;
+	public void setCardCompaPhoneNum(String cardCompaPhoneNum) {
+		this.cardCompaPhoneNum = cardCompaPhoneNum;
 	}
 	@Override
 	public String toString() {
-		return "CardCompaVO [cardCompaNum=" + cardCompaNum + ", compaName="
-				+ compaName + ", phoneNum=" + phoneNum + "]";
+		return "CardCompaVO [cardCompaNum=" + cardCompaNum + ", cardCompaName="
+				+ cardCompaName + ", cardCompaPhoneNum=" + cardCompaPhoneNum
+				+ "]";
 	}
-	
-	
+		
 }

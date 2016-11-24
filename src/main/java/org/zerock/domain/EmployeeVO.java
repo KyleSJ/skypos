@@ -1,10 +1,13 @@
 package org.zerock.domain;
 
+import java.util.ArrayList;
+
 public class EmployeeVO {
 	private int posNum;
 	private String empId;
 	private String empName;
 	private String pwd;
+
 	public int getPosNum() {
 		return posNum;
 	}

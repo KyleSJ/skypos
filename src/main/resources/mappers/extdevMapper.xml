@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.zerock.mapper.ExtdevMapper">
+    
+<!--     <resultMap type="org.zerock.domain.MemberVO" id="Member">
+		<result property="posNum" column="POS_NUM"/>
+		<result property="regNum" column="REG_NUM"/>
+		<result property="vanNum" column="VAN_NUM"/>
+		<result property="repreName" column="REPRE_NAME"/>
+		<result property="compaName" column="COMPA_NAME"/>
+		<result property="phoneNum" column="PHONE_NUM"/>
+	</resultMap> -->
+	
+    <insert id="create">
+        insert into ext_dev (devName, devType, prtcl)
+        values(#{devName},#{devType},#{prtcl})
+    </insert>
+    
+    <select id="read" resultType="org.zerock.domain.ExtdevVO">
+        select devName, devType, prtcl
+        from
+        ext_dev
+        Where devName=#{devName}
+    </select>
+    
+    <update id="update">
+        update ext_dev set devName=#{devName}, devType=#{devType}, prtcl=#{prtcl}
+        where devName=#{devName}
+    </update>
+    
+    <delete id="delete">
+        delete from ext_dev where devName=#{devName}
+    </delete>
+    
+    <select id="listAll" resultType ="org.zerock.domain.ExtdevVO">
+        <![CDATA[
+        select devName, devType, prtcl
+        from
+        ext_dev
+        order by devName desc
+         ]]>
+    </select>
+    
+</mapper>

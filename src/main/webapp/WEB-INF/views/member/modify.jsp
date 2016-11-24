@@ -85,9 +85,14 @@ body {
                            self.location = '/member/read?posNum='+${memberVO.posNum};
                         });
 
+<<<<<<< HEAD
+                        $('.btn-primary').on("click", function() {
+                           formObj.submit();
+=======
                         $(".btn-primary").on("click", function() {
                 		   formObj.submit();
                 		   formObj.attr("action", '/member/modify);
+>>>>>>> 2bb179944909bab489e154b2c0a94c46351bdb7d
                         });
                      });
                   </script>

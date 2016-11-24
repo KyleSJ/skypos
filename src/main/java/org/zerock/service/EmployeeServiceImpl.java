@@ -1,5 +1,6 @@
 package org.zerock.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -39,4 +40,19 @@ public class EmployeeServiceImpl implements EmployeeService{
 		return dao.listAll(posNum);
 	}
 	
+	/*@Override
+	public List<EmployeeVO> Alldata(EmployeeVO employee)throws Exception{
+		return dao.Alldata(employee);
+	}*/
+
+	@Override
+	public EmployeeVO login(EmployeeVO employee)throws Exception {
+		return dao.verify(employee);
+	}
+
+	@Override
+	public ArrayList<EmployeeVO> Alldata() throws Exception {
+		return dao.Alldata();
+	}
+
 }
