@@ -35,7 +35,7 @@ body {
       <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
          <div class="panel panel-success">
             <div class="panel-heading">
-               <div class="panel-title">POS관리자 등록</div>
+               <div class="panel-title">개시 등록</div>
             </div>
             <div class="panel-body">
                   <div class="control-label" for="openDay">
@@ -65,7 +65,7 @@ body {
                   <div class="box-footer" align="center">
                      <button type="submit" class="btn btn-primary">등록</button>
                      <a href="/open/listAll"><button type="button"
-                           class="btn btn-primary" value="사업자 목록 페이지">개시 일정</button></a>
+                           class="btn btn-primary" value="개시 목록">개시 일정</button></a>
                   </div>
             </div>
          </div>

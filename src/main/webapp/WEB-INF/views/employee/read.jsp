@@ -50,7 +50,7 @@ body {
 
             <div class="control-Label" for="empName">
                empName <input id="empName" class="form-control" type="text"
-                  name='empName' value="${employeeVO.posNum}" readonly="readonly">
+                  name='empName' value="${employeeVO.empName}" readonly="readonly">
             </div>
 
             <div class="control-Label" for="pwd">
@@ -86,7 +86,7 @@ body {
                   });
 
                   $(".btn-primary").on("click", function() {
-                     self.location = "/employee/listAll";
+                     self.location = "/employee/listAll?posNum="+${employeeVO.posNum};
                   });
                });
             </script>

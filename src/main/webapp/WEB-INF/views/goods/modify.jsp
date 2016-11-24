@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,7 +7,10 @@
 <title>Insert title here</title>
 
 <!-- Bootstrap -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+	crossorigin="anonymous">
 
 <!-- Respond.js 으로 IE8 에서 반응형 기능을 활성화하세요 (https://github.com/scottjehl/Respond) -->
 <script src="/resources/bootstrap/js/respond.js"></script>
@@ -16,62 +19,75 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
 </head>
+<style>
+body {
+	background: #f8f8f8;
+	padding: 60px 0;
+}
+</style>
 <body>
-<form role="form" method="post">
-	<div class="box-body"> 
-		
-		<div class="form-group">
-		<label>goodsNum</label>
-		<input type ="text" name='goodsNum' class="form-control" value="${goodsVO.goodsNum}" readonly="readonly">
-		</div>
-		
-		<div class="form-group">
-		<label>goodsCatNum</label>
-		<input type="text" name='goodsCatNum' class="form-control" value="${goodsVO.goodsCatNum}" readonly="readonly">
-		</div>
-		
-		<div class="form-group">
-		<label>goodsColor</label>
-		<input type="text" name='goodsColor' class="form-control" value="${goodsVO.goodsColor}">
-		</div>
-		
-		<div class="form-group">
-		<label>goodsName</label>
-		<input type="text" name='goodsName' class="form-control" value="${goodsVO.goodsName}">
-		</div>
-		
-		<div class="form-group">
-		<label>goodsPrice</label>
-		<input type="text" name='goodsPrice' class="form-control" value="${goodsVO.goodsPrice}">
-		</div>
-		
-		<div class="form-group">
-		<label>goodsSeq</label>
-		<input type="text" name='goodsSeq' class="form-control" value="${goodsVO.goodsSeq}">
-		</div>
-		
-	</div>
-</form>
-		
-		<div class ="box-footer">
-		 <button type="submit" class="btn btn-primary">저장</button>
-		 <button type="submit" class="btn btn-warning">취소</button>
-		</div>
+	<form class="container" role="form" method="post">
+		<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+			<div class="panel panel-success">
+				<div class="panel-heading">
+					<div class="panel-title">상품 수정</div>
+				</div>
+				<div class="panel-body">
+					<div class="control-Label" for="goodsNum">
+						goodsNum <input id="goodsNum" class="form-control" type="text"
+							name='goodsNum' value="${goodsVO.goodsNum}" readonly="readonly">
+					</div>
 
-	<script>
-		$(document).ready(function(){
-			var formObj = $("form[role='form']");
+					<div class="control-Label" for="goodsCatNum">
+						goodsCatNum <input id="goodsCatNum" class="form-control"
+							type="text" name='goodsCatNum' value="${goodsVO.goodsCatNum}"
+							readonly="readonly">
+					</div>
 
-			console.log(formObj);
-			
-			$(".btn-warning").on("click",function(){
-				self.location ="/goods/listAll";
-			});
-			
-			$(".btn-primary").on("click",function(){
-				formObj.submit();
-			});
-		});
-	</script>
+					<div class="control-Label" for="goodsColor">
+						goodsColor <input id="goodsColor" class="form-control" type="text"
+							name='goodsColor' value="${goodsVO.goodsColor}">
+					</div>
+
+					<div class="control-Label" for="goodsName">
+						goodsName <input id="goodsName" class="form-control" type="text"
+							name='goodsName' value="${goodsVO.goodsName}">
+					</div>
+
+					<div class="control-Label" for="goodsPrice">
+						goodsPrice <input id="goodsPrice" class="form-control" type="text"
+							name='goodsPrice' value="${goodsVO.goodsPrice}">
+					</div>
+
+					<div class="control-Label" for="goodsSeq">
+						goodsSeq <input id="goodsSeq" class="form-control" type="text"
+							name='goodsSeq' value="${goodsVO.goodsSeq}">
+					</div>
+					<!-- /.box-body -->
+					<br>
+					<div class="box-footer">
+						<button type="submit" class="btn btn-primary">저장</button>
+						<button type="submit" class="btn btn-warning">취소</button>
+					</div>
+
+					<script>
+						$(document).ready(function() {
+							var formObj = $("form[role='form']");
+
+							console.log(formObj);
+
+							$(".btn-warning").on("click", function() {
+								self.location = "/goods/listAll";
+							});
+
+							$(".btn-primary").on("click", function() {
+								formObj.submit();
+							});
+						});
+					</script>
+				</div>
+			</div>
+		</div>
+	</form>
 </body>
 </html>

@@ -23,9 +23,6 @@ body {
    padding: 60px 0;
 }
 
-#login-form>div {
-   margin: 15px 0;
-}
 </style>
 
 <body>
@@ -85,11 +82,17 @@ body {
                         console.log(formObj);
 
                         $(".btn-warning").on("click", function() {
-                           self.location = "/member/listAll";
+                           self.location = '/member/read?posNum='+${memberVO.posNum};
                         });
 
+<<<<<<< HEAD
                         $('.btn-primary').on("click", function() {
                            formObj.submit();
+=======
+                        $(".btn-primary").on("click", function() {
+                		   formObj.submit();
+                		   formObj.attr("action", '/member/modify);
+>>>>>>> 2bb179944909bab489e154b2c0a94c46351bdb7d
                         });
                      });
                   </script>

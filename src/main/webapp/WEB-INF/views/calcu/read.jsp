@@ -38,7 +38,7 @@ body {
    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
       <div class="panel panel-success">
          <div class="panel-heading">
-            <div class="panel-title">POS관리자 정보</div>
+            <div class="panel-title">정산 정보</div>
          </div>
          <div class="panel-body">
             <form role="form" method="post">

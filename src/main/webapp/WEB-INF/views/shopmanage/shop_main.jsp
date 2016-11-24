@@ -89,15 +89,15 @@ font-size : 100%;
 		<script>
 			$(document).ready(function() {
 				$("#table_manage").on("click", function() {
-					$('#div_right').load("/member/listAll");
+					$('#div_right').load("/seattable/listAll");
 				});
 
 				$("#good_manage").on("click", function() {
 					$('#div_right').load("/goods/listAll");
 				});
 
-				$("#eployee_manage").on("click", function() {
-					$('#div_right').load("/shopmanage/employee_manage");
+				$("#employee_manage").on("click", function() {
+					self.location="/shopmanage/employee_manage?posNum="+<%=request.getParameter("posNum")%>;
 				});
 
 				$("#statistics").on("click", function() {

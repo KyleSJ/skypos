@@ -77,6 +77,6 @@ public class MemberController{
 	   service.modify(member);
 	   rttr.addFlashAttribute("msg","SUCCESS");
 	   
-	   return "redirect:/member/listAll";
+	   return "redirect:/member/read?posNum="+member.getPosNum();
    }
 }

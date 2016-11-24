@@ -26,9 +26,6 @@ body {
    padding: 60px 0;
 }
 
-#login-form>div {
-   margin: 15px 0;
-}
 </style>
 
 <body>
