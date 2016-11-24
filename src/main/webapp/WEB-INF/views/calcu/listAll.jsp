@@ -60,7 +60,7 @@ text-align : center;
    
    </table>
    <div align="right">
-   <a href="/calcu/register"><input type="button" class="btn btn-primary" value="사업자 등록"></a>
+   <a href="/calcu/register"><input type="button" class="btn btn-primary" value="정산 등록"></a>
    </div>
    
    <script>

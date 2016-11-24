@@ -96,8 +96,8 @@ font-size : 100%;
 					$('#div_right').load("/goods/listAll");
 				});
 
-				$("#eployee_manage").on("click", function() {
-					$('#div_right').load("/employee/listAll?posNum=${memberVO.posNum}");
+				$("#employee_manage").on("click", function() {
+					self.location="/shopmanage/employee_manage?posNum="+<%=request.getParameter("posNum")%>;
 				});
 
 				$("#statistics").on("click", function() {

@@ -21,7 +21,7 @@ public class ShopManageController{
    @Inject
    //private MemberService service;
    
-   @RequestMapping("/shop_main")
+   @RequestMapping(value="/shop_main",method=RequestMethod.GET)
    public String shop_main()throws Exception{
       return "/shopmanage/shop_main";
    }

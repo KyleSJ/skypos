@@ -30,7 +30,7 @@ body {
 		<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 			<div class="panel panel-success">
 				<div class="panel-heading">
-					<div class="panel-title">물건 수정</div>
+					<div class="panel-title">상품 수정</div>
 				</div>
 				<div class="panel-body">
 					<div class="control-Label" for="goodsNum">

@@ -61,7 +61,7 @@ td {
 	</table>
 	<div align="right">
 		<a href="/goods/register"><input type="button"
-			class="btn btn-primary" value="사업자 등록"></a>
+			class="btn btn-primary" value="상품 등록"></a>
 	</div>
 	<script>
 		var result = '${msg}';
