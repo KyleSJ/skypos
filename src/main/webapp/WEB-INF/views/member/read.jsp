@@ -75,14 +75,10 @@ body {
                <button type="submit" class="btn btn-warning">수정</button>
                <button type="submit" class="btn btn-danger">삭제</button>
                <button type="submit" class="btn btn-primary">사업자 목록 페이지</button>
-               <a href='/employee/listAll?posNum=${memberVO.posNum}'><input
-                  type="button" class="btn btn-info" value="직원 관리"></a> 
-<<<<<<< HEAD
-               <a href="/shopmanage/shop_main"><input type="button"
-=======
-               <a href="/shopmanage/shop_main?posNum=${memberVO.posNum}"><input type="button"
->>>>>>> 2bb179944909bab489e154b2c0a94c46351bdb7d
-                  class="btn btn-success" value="매장 관리"></a>
+               <a href='/employee/listAll?posNum=${memberVO.posNum}'>
+               <input type="button" class="btn btn-info" value="직원 관리"></a> 
+               <a href="/shopmanage/shop_main?posNum=${memberVO.posNum}">
+               <input type="button" class="btn btn-success" value="매장 관리"></a>
             </div>
 
             <script>
