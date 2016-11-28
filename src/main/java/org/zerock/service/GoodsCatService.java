@@ -2,6 +2,7 @@ package org.zerock.service;
 
 import java.util.List;
 
+import org.zerock.domain.CalcuChngRecVO;
 import org.zerock.domain.GoodsCatVO;
 
 public interface GoodsCatService {
@@ -14,4 +15,6 @@ public interface GoodsCatService {
 	public void remove(int goodsCatNum)throws Exception;
 	
 	public List<GoodsCatVO> listAll()throws Exception;
+	
+	public void UpdateInsert(GoodsCatVO goodscat)throws Exception;
 }

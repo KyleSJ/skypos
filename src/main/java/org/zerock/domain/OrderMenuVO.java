@@ -2,6 +2,7 @@ package org.zerock.domain;
 
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 
 public class OrderMenuVO {
 	private int orderNum;
@@ -10,6 +11,15 @@ public class OrderMenuVO {
 	private int tableNum;
 	private Timestamp orderTime;
 	private int orderAmnt;
+	private String CloneorderTime;
+	
+	public String getCloneorderTime() {
+		return CloneorderTime;
+	}
+	public void setCloneorderTime(String cloneorderTime) {
+		String s= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S").format(Long.parseLong(cloneorderTime));
+		this.orderTime = Timestamp.valueOf(s);
+	}
 	public int getOrderNum() {
 		return orderNum;
 	}

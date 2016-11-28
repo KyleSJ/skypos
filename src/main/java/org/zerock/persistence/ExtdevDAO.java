@@ -14,4 +14,6 @@ public interface ExtdevDAO {
 	public void delete(String devName)throws Exception;
 	
 	public List<ExtdevVO> listAll()throws Exception;
+	
+	public void updateORInsert(ExtdevVO vo)throws Exception;
 }

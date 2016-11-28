@@ -2,6 +2,7 @@ package org.zerock.service;
 
 import java.util.List;
 
+import org.zerock.domain.CalcuChngRecVO;
 import org.zerock.domain.VanVO;
 
 public interface VanService{
@@ -14,4 +15,6 @@ public interface VanService{
 	public void remove(int vanNum)throws Exception;
 	
 	public List<VanVO> listAll()throws Exception;
+	
+	public void UpdateInsert(VanVO van)throws Exception;
 }

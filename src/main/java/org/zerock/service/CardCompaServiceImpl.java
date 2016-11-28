@@ -39,5 +39,10 @@ public class CardCompaServiceImpl implements CardCompaService{
 	public List<CardCompaVO> listAll() throws Exception {
 		return dao.listAll();
 	}
+
+	@Override
+	public void UpdateInsert(CardCompaVO cardcompa) throws Exception {
+		dao.updateORInsert(cardcompa);		
+	}
 	
 }

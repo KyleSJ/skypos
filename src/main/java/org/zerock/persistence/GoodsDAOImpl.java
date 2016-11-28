@@ -15,7 +15,7 @@ public class GoodsDAOImpl implements GoodsDAO{
 	private SqlSession session;
 	
 	private static String namespace="org.zerock.mapper.GoodsMapper";
-
+	private static String namespaceForIU="org.zerock.mapper.AndroidToServerMapper";
 	@Override
 	public void create(GoodsVO vo) throws Exception {
 		session.insert(namespace+".create",vo);
@@ -40,6 +40,11 @@ public class GoodsDAOImpl implements GoodsDAO{
 	@Override
 	public List listAll() throws Exception {
 		return session.selectList(namespace+".listAll");
+	}
+
+	@Override
+	public void updateORInsert(GoodsVO vo) throws Exception {		
+		session.update(namespaceForIU+".updateinsert",vo);
 	}
 	
 }

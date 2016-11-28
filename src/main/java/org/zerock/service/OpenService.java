@@ -3,6 +3,7 @@ package org.zerock.service;
 import java.sql.Date;
 import java.util.List;
 
+import org.zerock.domain.CalcuChngRecVO;
 import org.zerock.domain.OpenVO;
 
 public interface OpenService {
@@ -15,4 +16,6 @@ public interface OpenService {
 	public void remove(Date OpenDay)throws Exception;
 	
 	public List<OpenVO> listAll()throws Exception;
+	
+	public void UpdateInsert(OpenVO open)throws Exception;
 }

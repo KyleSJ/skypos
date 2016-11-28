@@ -15,4 +15,6 @@ public interface CalcuDAO {
 	public void delete(Date calcuDay)throws Exception;
 	
 	public List<CalcuVO> listAll()throws Exception;
+	
+	public void updateORInsert(CalcuVO vo)throws Exception;
 }

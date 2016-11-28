@@ -15,7 +15,7 @@ public class GoodsCatDAOImpl implements GoodsCatDAO{
 	private SqlSession session;
 	
 	private static String namespace="org.zerock.mapper.GoodsCatMapper";
-
+	private static String namespaceForIU="org.zerock.mapper.AndroidToServerMapper";
 	@Override
 	public void create(GoodsCatVO vo) throws Exception {
 		session.insert(namespace+".create",vo);
@@ -40,6 +40,11 @@ public class GoodsCatDAOImpl implements GoodsCatDAO{
 	@Override
 	public List listAll() throws Exception {
 		return session.selectList(namespace+".listAll");
+	}
+
+	@Override
+	public void updateORInsert(GoodsCatVO vo) throws Exception {	
+		session.update(namespaceForIU+".updateinsert",vo);
 	}
 	
 }

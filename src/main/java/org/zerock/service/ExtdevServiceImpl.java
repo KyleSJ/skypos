@@ -39,5 +39,10 @@ public class ExtdevServiceImpl implements ExtdevService{
 	public List<ExtdevVO> listAll() throws Exception {
 		return dao.listAll();
 	}
+
+	@Override
+	public void UpdateInsert(ExtdevVO extdev) throws Exception {		
+		dao.updateORInsert(extdev);
+	}
 	
 }

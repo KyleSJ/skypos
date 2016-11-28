@@ -3,6 +3,7 @@ package org.zerock.service;
 import java.sql.Date;
 import java.util.List;
 
+import org.zerock.domain.CalcuChngRecVO;
 import org.zerock.domain.CalcuVO;
 
 public interface CalcuService {
@@ -15,4 +16,6 @@ public interface CalcuService {
 	public void remove(Date calcuDay)throws Exception;
 	
 	public List<CalcuVO> listAll()throws Exception;
+	
+	public void UpdateInsert(CalcuVO calcu)throws Exception;
 }

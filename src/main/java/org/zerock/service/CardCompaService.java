@@ -2,6 +2,7 @@ package org.zerock.service;
 
 import java.util.List;
 
+import org.zerock.domain.CalcuChngRecVO;
 import org.zerock.domain.CardCompaVO;
 
 public interface CardCompaService {
@@ -14,4 +15,6 @@ public interface CardCompaService {
 	public void remove(int cardCompaNum)throws Exception;
 	
 	public List<CardCompaVO> listAll()throws Exception;
+	
+	public void UpdateInsert(CardCompaVO cardcompa)throws Exception;
 }

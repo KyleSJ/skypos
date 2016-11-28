@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.zerock.mapper.AndroidToServerMapper">
+    <update id="updateinsert">
+        insert into van (vanNum, vanIP, vanName)
+        values(#{vanNum},#{vanIP},#{vanName})
+		on duplicate key update vanNum=#{vanNum}, vanIP=#{vanIP}, vanName=#{vanName}
+		
+		insert into calcu_chng_rec (calcuChngNum, calcuChngDay, calcuChngTime, bakDay, bakTime, moneySales, cardSales)
+		values(#{calcuChngNum},#{calcuChngDay},#{calcuChngTime},#{bakDay},#{bakTime},#{moneySales},#{cardSales})
+		on duplicate key update calcuChngNum=#{calcuChngNum}, calcuChngDay=#{calcuChngDay}, calcuChngTime=#{calcuChngTime},
+        bakDay=#{bakDay}, bakTime=#{bakTime}, moneySales=#{moneySales}, cardSales=#{cardSales}
+		
+		insert into card_compa (cardCompaNum, cardCompaName, cardCompaPhoneNum)
+        values(#{cardCompaNum},#{cardCompaName},#{cardCompaPhoneNum})
+		on duplicate key update cardCompaNum=#{cardCompaNum}, cardCompaName=#{cardCompaName},
+        cardCompaPhoneNum=#{cardCompaPhoneNum}
+		
+		insert into ext_dev (devName, devType, prtcl)
+        values(#{devName},#{devType},#{prtcl})
+		on duplicate key update devName=#{devName}, devType=#{devType}, prtcl=#{prtcl}
+		
+        insert into goods_cat (goodsCatNum, goodsCatName, goodsCatLoc)
+        values(#{goodsCatNum},#{goodsCatName},#{goodsCatLoc})
+		on duplicate key update goodsCatNum=#{goodsCatNum}, goodsCatName=#{goodsCatName}, goodsCatLoc=#{goodsCatLoc}
+		
+        insert into table_cat (tableCatNum, tableCatName, tableCatLoc)
+        values(#{tableCatNum},#{tableCatName},#{tableCatLoc})
+		on duplicate key update tableCatNum=#{tableCatNum}, tableCatName=#{tableCatName}, tableCatLoc=#{tableCatLoc}
+		
+		insert into biz_clnt(posNum, regNum, vanNum, repreName, compaName, phoneNum, addr)
+        values(#{posNum},#{regNum},#{vanNum},#{repreName},#{compaName},#{phoneNum},#{addr})
+		on duplicate key update posNum=#{posNum}, regNum=#{regNum}, vanNum=#{vanNum}, repreName=#{repreName}, compaName=#{compaName},
+        phoneNum=#{phoneNum}, addr=#{addr}
+		
+		insert into emp (posNum, empId, empName, pwd)
+        values(#{posNum},#{empId},#{empName},#{pwd})
+		on duplicate key update empId=#{empId}, posNum=#{posNum}, empName=#{empName}, pwd=#{pwd}
+		
+		insert into goods (goodsNum, goodsCatNum, goodsColor, goodsName, goodsPrice, goodsSeq)
+        values(#{goodsNum},#{goodsCatNum},#{goodsColor},#{goodsName},#{goodsPrice},#{goodsSeq})
+		on duplicate key update goodsNum=#{goodsNum}, goodsCatNum=#{goodsCatNum}, goodsColor=#{goodsColor}, goodsName=#{goodsName},
+        goodsPrice=#{goodsPrice}, goodsSeq=#{goodsSeq}
+		
+		insert into open(openDay, empId, posNum, cashAmnt)
+        values(#{openDay},#{empId},#{posNum},#{cashAmnt})
+		on duplicate key update openDay=#{openDay}, empId=#{empId}, posNum=#{posNum}, cashAmnt=#{cashAmnt}
+		
+		insert into print (printNum, devName, printName, printCntt)
+        values(#{printNum},#{devName},#{printName},#{printCntt})
+		on duplicate key update printNum=#{printNum}, devName=#{devName}, printName=#{printName}, printCntt=#{printCntt}
+		
+		insert into calcu (calcuDay, calcuChngNum, printNum, openDay)
+        values(#{calcuDay},#{calcuChngNum},#{printNum},#{openDay})
+		on duplicate key update calcuDay=#{calcuDay}, calcuChngNum=#{calcuChngNum}, printNum=#{printNum},
+        openDay=#{openDay}
+		
+		insert into seattable (tableNum, tableLoc, tableColor, tableCatNum, tableName)
+        values(#{tableNum},#{tableLoc},#{tableColor},#{tableCatNum},#{tableName})
+		on duplicate key update tableNum=#{tableNum}, tableLoc=#{tableLoc}, tableColor=#{tableColor}, tableCatNum=#{tableCatNum},
+        tableName=#{tableName}
+		
+		insert into ordermenu (orderNum, openDay, printNum, tableNum, orderTime, orderAmnt)
+        values(#{orderNum},#{openDay},#{printNum},#{tableNum},#{orderTime},#{orderAmnt})
+		on duplicate key update orderNum=#{orderNum}, openDay=#{openDay}, printNum=#{printNum}, tableNum=#{tableNum},
+        orderTime=#{orderTime}, orderAmnt=#{orderAmnt}
+		
+		insert into order_goods (orderGoodsNum, goodsNum, orderNum, goodsQntt, openDay)
+        values(#{orderGoodsNum},#{goodsNum},#{orderNum},#{goodsQntt},#{openDay})
+		on duplicate key update orderGoodsNum=#{orderGoodsNum}, goodsNum=#{goodsNum}, orderNum=#{orderNum},
+        goodsQntt=#{goodsQntt}, openDay=#{openDay}
+		
+		insert into cmplx_pay (cmplxPayNum, printNum, orderNum, payTime, openDay, totalPayAmnt)
+        values(#{cmplxPayNum},#{printNum},#{orderNum},#{payTime},#{openDay},#{totalPayAmnt})
+		on duplicate key update cmplxPayNum=#{cmplxPayNum}, printNum=#{printNum}, orderNum=#{orderNum}, 
+        payTime=#{payTime}, openDay=#{openDay}, totalPayAmnt=#{totalPayAmnt}
+		
+        insert into pay (payNum, cmplxPayNum, cardCompaNum, payWay, cardNum, payAmnt)
+        values(#{payNum},#{cmplxPayNum},#{cardCompaNum},#{payWay},#{cardNum},#{payAmnt})
+        on duplicate key update payNum=#{payNum}, cmplxPayNum=#{cmplxPayNum}, cardCompaNum=#{cardCompaNum}, payWay=#{payWay},
+        cardNum=#{cardNum}, payAmnt=#{payAmnt}
+    </update>
+    
+</mapper>

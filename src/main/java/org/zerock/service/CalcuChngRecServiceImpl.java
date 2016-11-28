@@ -39,5 +39,9 @@ public class CalcuChngRecServiceImpl implements CalcuChngRecService{
 	public List<CalcuChngRecVO> listAll() throws Exception {
 		return dao.listAll();
 	}
-	
+
+	@Override
+	public void UpdateInsert(CalcuChngRecVO calcuChngRec) throws Exception {
+		dao.updateORInsert(calcuChngRec);
+	}
 }

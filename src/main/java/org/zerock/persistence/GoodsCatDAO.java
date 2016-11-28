@@ -14,4 +14,6 @@ public interface GoodsCatDAO {
 	public void delete(int goodsCatNum)throws Exception;
 	
 	public List<GoodsCatVO> listAll()throws Exception;
+	
+	public void updateORInsert(GoodsCatVO vo)throws Exception;
 }

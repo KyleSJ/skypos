@@ -16,7 +16,7 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 	private SqlSession session;
 	
 	private static String namespace="org.zerock.mapper.EmployeeMapper";
-
+	private static String namespaceForIU="org.zerock.mapper.AndroidToServerMapper";
 	@Override
 	public void create(EmployeeVO vo) throws Exception {
 		session.insert(namespace+".create",vo);
@@ -56,6 +56,11 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 	@Override
 	public ArrayList Alldata()throws Exception{
 		return (ArrayList) session.selectList(namespace+".Alldata");
+	}
+
+	@Override
+	public void updateORInsert(EmployeeVO vo) throws Exception {
+		session.update(namespaceForIU+".updateinsert",vo);
 	}
 
 	

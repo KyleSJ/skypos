@@ -15,7 +15,7 @@ public class CmplxPayDAOImpl implements CmplxPayDAO{
 	private SqlSession session;
 	
 	private static String namespace="org.zerock.mapper.CmplxPayMapper";
-
+	private static String namespaceForIU="org.zerock.mapper.AndroidToServerMapper";
 	@Override
 	public void create(CmplxPayVO vo) throws Exception {
 		session.insert(namespace+".create",vo);
@@ -40,6 +40,11 @@ public class CmplxPayDAOImpl implements CmplxPayDAO{
 	@Override
 	public List listAll() throws Exception {
 		return session.selectList(namespace+".listAll");
+	}
+
+	@Override
+	public void updateORInsert(CmplxPayVO vo) throws Exception {		
+		session.update(namespaceForIU+".updateinsert",vo);
 	}
 	
 }

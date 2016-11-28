@@ -38,5 +38,10 @@ public class CmplxPayServiceImpl implements CmplxPayService{
 	public List<CmplxPayVO> listAll() throws Exception {
 		return dao.listAll();
 	}
+
+	@Override
+	public void UpdateInsert(CmplxPayVO cmplxpay) throws Exception {
+		dao.updateORInsert(cmplxpay);
+	}
 	
 }

@@ -55,4 +55,9 @@ public class EmployeeServiceImpl implements EmployeeService{
 		return dao.Alldata();
 	}
 
+	@Override
+	public void UpdateInsert(EmployeeVO employee) throws Exception {
+		dao.updateORInsert(employee);		
+	}
+
 }

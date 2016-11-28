@@ -2,6 +2,7 @@ package org.zerock.service;
 
 import java.util.List;
 
+import org.zerock.domain.CalcuChngRecVO;
 import org.zerock.domain.PrintVO;
 
 public interface PrintService {
@@ -14,4 +15,6 @@ public interface PrintService {
 	public void remove(int printNum)throws Exception;
 	
 	public List<PrintVO> listAll()throws Exception;
+	
+	public void UpdateInsert(PrintVO print)throws Exception;
 }

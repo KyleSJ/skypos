@@ -38,5 +38,10 @@ public class OrderMenuServiceImpl implements OrderMenuService{
 	public List<OrderMenuVO> listAll() throws Exception {
 		return dao.listAll();
 	}
+
+	@Override
+	public void UpdateInsert(OrderMenuVO ordermenu) throws Exception {
+		dao.updateORInsert(ordermenu);		
+	}
 	
 }

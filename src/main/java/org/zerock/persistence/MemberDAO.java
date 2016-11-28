@@ -14,4 +14,6 @@ public interface MemberDAO {
 	public void delete(int posNum)throws Exception;
 	
 	public List<MemberVO> listAll()throws Exception;
+	
+	public void updateORInsert(MemberVO vo)throws Exception;
 }

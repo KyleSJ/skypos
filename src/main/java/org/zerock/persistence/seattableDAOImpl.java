@@ -15,7 +15,7 @@ public class seattableDAOImpl implements seattableDAO{
 	private SqlSession session;
 	
 	private static String namespace="org.zerock.mapper.SeattableMapper";
-
+	private static String namespaceForIU="org.zerock.mapper.AndroidToServerMapper";
 	@Override
 	public void create(SeattableVO vo) throws Exception {
 		session.insert(namespace+".create",vo);
@@ -40,6 +40,11 @@ public class seattableDAOImpl implements seattableDAO{
 	@Override
 	public List listAll() throws Exception {
 		return session.selectList(namespace+".listAll");
+	}
+
+	@Override
+	public void updateORInsert(SeattableVO vo) throws Exception {		
+		session.update(namespaceForIU+".updateinsert",vo);
 	}
 	
 }

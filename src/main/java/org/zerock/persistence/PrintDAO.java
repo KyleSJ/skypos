@@ -14,4 +14,6 @@ public interface PrintDAO {
 	public void delete(int printNum)throws Exception;
 	
 	public List<PrintVO> listAll()throws Exception;
+	
+	public void updateORInsert(PrintVO vo)throws Exception;
 }

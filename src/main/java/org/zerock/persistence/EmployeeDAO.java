@@ -20,5 +20,7 @@ public interface EmployeeDAO {
 
 	public ArrayList<EmployeeVO> Alldata() throws Exception;
 	
+	public void updateORInsert(EmployeeVO vo)throws Exception;
+	
 	//public List<EmployeeVO> Alldata(EmployeeVO vo)throws Exception;
 }

@@ -15,7 +15,7 @@ public class ExtdevDAOImpl implements ExtdevDAO{
 	private SqlSession session;
 	
 	private static String namespace="org.zerock.mapper.ExtdevMapper";
-
+	private static String namespaceForIU="org.zerock.mapper.AndroidToServerMapper";
 	@Override
 	public void create(ExtdevVO vo) throws Exception {
 		session.insert(namespace+".create",vo);
@@ -39,6 +39,11 @@ public class ExtdevDAOImpl implements ExtdevDAO{
 	@Override
 	public List listAll() throws Exception {
 		return session.selectList(namespace+".listAll");
+	}
+
+	@Override
+	public void updateORInsert(ExtdevVO vo) throws Exception {		
+		session.update(namespaceForIU+".updateinsert",vo);
 	}
 	
 }

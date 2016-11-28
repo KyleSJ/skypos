@@ -15,6 +15,7 @@ public class CalcuChngRecDAOImpl implements CalcuChngRecDAO{
 	private SqlSession session;
 	
 	private static String namespace="org.zerock.mapper.CalcuChngRecMapper";
+	private static String namespaceForIU="org.zerock.mapper.AndroidToServerMapper";
 
 	@Override
 	public void create(CalcuChngRecVO vo) throws Exception {
@@ -40,6 +41,11 @@ public class CalcuChngRecDAOImpl implements CalcuChngRecDAO{
 	@Override
 	public List listAll() throws Exception {
 		return session.selectList(namespace+".listAll");
+	}
+
+	@Override
+	public void updateORInsert(CalcuChngRecVO vo) throws Exception {
+		session.update(namespaceForIU+".updateinsert",vo);
 	}
 	
 }
