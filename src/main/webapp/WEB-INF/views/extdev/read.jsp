@@ -60,9 +60,7 @@ body {
             <div class="box-footer" align="center">
                <button type="submit" class="btn btn-warning">수정</button>
                <button type="submit" class="btn btn-danger">삭제</button>
-               <a
-                  href='/extdev/listAll?devName=${extdevVO.devName}'><input
-                  type="button" class="btn btn-primary" value="외부장치 목록"></a>
+               <button type="submit" class="btn btn-primary">외부장치 목록</button>
             </div>
 
             <script>
