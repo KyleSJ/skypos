@@ -14,4 +14,6 @@ public interface PayDAO {
 	public void delete(int payNum)throws Exception;
 	
 	public List<PayVO> listAll()throws Exception;
+	
+	public void updateORInsert(PayVO vo)throws Exception;
 }

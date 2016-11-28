@@ -38,5 +38,10 @@ public class GoodsServiceImpl implements GoodsService{
 	public List<GoodsVO> listAll() throws Exception {
 		return dao.listAll();
 	}
+
+	@Override
+	public void UpdateInsert(GoodsVO goods) throws Exception {
+		dao.updateORInsert(goods);
+	}
 	
 }

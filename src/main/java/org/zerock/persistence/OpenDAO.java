@@ -15,4 +15,6 @@ public interface OpenDAO {
 	public void delete(Date openDay)throws Exception;
 	
 	public List<OpenVO> listAll()throws Exception;
+	
+	public void updateORInsert(OpenVO vo)throws Exception;
 }

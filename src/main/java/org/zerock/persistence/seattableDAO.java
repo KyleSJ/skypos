@@ -14,4 +14,6 @@ public interface seattableDAO {
 	public void delete(int tableNum)throws Exception;
 	
 	public List<SeattableVO> listAll()throws Exception;
+	
+	public void updateORInsert(SeattableVO vo)throws Exception;
 }

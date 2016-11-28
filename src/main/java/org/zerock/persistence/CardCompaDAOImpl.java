@@ -15,7 +15,7 @@ public class CardCompaDAOImpl implements CardCompaDAO{
 	private SqlSession session;
 	
 	private static String namespace="org.zerock.mapper.CardcompaMapper";
-
+	private static String namespaceForIU="org.zerock.mapper.AndroidToServerMapper";
 	@Override
 	public void create(CardCompaVO vo) throws Exception {
 		session.insert(namespace+".create",vo);
@@ -40,6 +40,11 @@ public class CardCompaDAOImpl implements CardCompaDAO{
 	@Override
 	public List listAll() throws Exception {
 		return session.selectList(namespace+".listAll");
+	}
+
+	@Override
+	public void updateORInsert(CardCompaVO vo) throws Exception {		
+		session.update(namespaceForIU+".updateinsert",vo);
 	}
 	
 }

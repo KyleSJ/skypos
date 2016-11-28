@@ -38,5 +38,10 @@ public class OrderGoodsServiceImpl implements OrderGoodsService{
 	public List<OrderGoodsVO> listAll() throws Exception {
 		return dao.listAll();
 	}
+
+	@Override
+	public void UpdateInsert(OrderGoodsVO orderGoods) throws Exception {
+		dao.updateORInsert(orderGoods);
+	}
 	
 }

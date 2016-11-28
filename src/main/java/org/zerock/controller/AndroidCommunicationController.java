@@ -44,10 +44,13 @@ import org.zerock.domain.SeattableVO;
 import org.zerock.domain.VanVO;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+
 
 @Controller
 @RequestMapping("/android/*")
-public class AndroidCommunicationController {
+public class AndroidCommunicationController{
 	@Inject
 	private EmployeeService empservice;
 	@Inject
@@ -86,10 +89,6 @@ public class AndroidCommunicationController {
 	@RequestMapping("/send")
 	@ResponseBody
 	public ArrayList[] androidToServerSend(HttpServletRequest request)throws Exception{
-		/*ArrayList<EmployeeVO> list=new ArrayList<EmployeeVO>();
-		list=service.Alldata();
-		return list;*/
-		
 		ArrayList<EmployeeVO> emplist=new ArrayList<EmployeeVO>();
 		ArrayList<VanVO> vanlist=new ArrayList<VanVO>();
 		ArrayList<MemberVO> memlist=new ArrayList<MemberVO>();
@@ -108,12 +107,12 @@ public class AndroidCommunicationController {
 		ArrayList<PrintVO> printlist = new ArrayList<PrintVO>();
 		ArrayList<SeattableCatVO> seattablecatlist = new ArrayList<SeattableCatVO>();
 		
-		
 		seatlist=(ArrayList<SeattableVO>)seatservice.listAll();
 		vanlist=(ArrayList<VanVO>) vanservice.listAll();
 		memlist=(ArrayList<MemberVO>) memservice.listAll();
 		emplist=empservice.Alldata();
 		calcuchngreclist = (ArrayList<CalcuChngRecVO>) calcuchngrecservice.listAll();
+		System.out.println(calcuchngreclist.toString());
 		cardcompalist = (ArrayList<CardCompaVO>) cardcompaservice.listAll();
 		extdevlist = (ArrayList<ExtdevVO>) extdevservice.listAll();
 		goodscatlist = (ArrayList<GoodsCatVO>) goodscatservice.listAll();
@@ -127,54 +126,150 @@ public class AndroidCommunicationController {
 		cmplxpaylist = (ArrayList<CmplxPayVO>) cmplxpayservice.listAll();
 		paylist = (ArrayList<PayVO>) payservice.listAll();
 		
+		
 		ArrayList[] strArray={vanlist,calcuchngreclist,cardcompalist,extdevlist,goodscatlist,
 				seattablecatlist,memlist,emplist,goodslist,openlist,printlist,calculist,seatlist,
 				ordermenulist,ordergoodslist,cmplxpaylist,paylist};
-
 		return strArray;
 	}
 	
 	@RequestMapping("/receive")
 	@ResponseBody
-	public void andoridToServerreceive(HttpServletRequest request,EmployeeVO vo) throws Exception{
-		//System.out.println(request.getParameter("title"));
-		// 각 DB의 테이블마다 String으로 받아오게끔 설계해보자
-		String a=request.getParameter("title");
+	public void andoridToServerreceive(HttpServletRequest request,EmployeeVO empvo, CalcuChngRecVO calcuchngrecvo, 
+			CalcuVO calcuvo, CardCompaVO cardcompavo, CmplxPayVO cmplxpayvo,ExtdevVO extdevvo, GoodsCatVO goodscatvo, 
+			GoodsVO goodsvo, MemberVO membervo, OpenVO openvo, OrderGoodsVO ordergoodsvo,OrderMenuVO ordermenuvo, 
+			PayVO payvo, PrintVO printvo, SeattableCatVO seattablecatvo,SeattableVO seattablevo, VanVO vanvo) throws Exception{	
+		String van=request.getParameter("van");
+		String calcuchngrec=request.getParameter("calcu_chng_rec");
+		String cardcompa=request.getParameter("card_compa");
+		String extdev=request.getParameter("ext_dev");
+		String goodscat=request.getParameter("goods_cat");
+		String tablecat=request.getParameter("table_cat");
+		String bizclnt=request.getParameter("biz_clnt");
+		String emp=request.getParameter("emp");
+		String goods=request.getParameter("goods");
+		String open=request.getParameter("open");
+		String print=request.getParameter("print");
+		String calcu=request.getParameter("calcu");
+		String seattable=request.getParameter("seattable");
+		String ordermenu=request.getParameter("ordermenu");
+		String ordergoods=request.getParameter("order_goods");
+		String cmplxpay=request.getParameter("cmplx_pay");
+		String pay=request.getParameter("pay");
+		System.out.println(cmplxpay.toString());
+		Gson gson=new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
+		VanVO[] Vobj=gson.fromJson(van, VanVO[].class);
+		CalcuChngRecVO[] CCRobj=gson.fromJson(calcuchngrec, CalcuChngRecVO[].class);		
+		CardCompaVO[] CCobj=gson.fromJson(cardcompa, CardCompaVO[].class);
+		ExtdevVO[] EDobj=gson.fromJson(extdev, ExtdevVO[].class);
+		GoodsCatVO[] GCobj=gson.fromJson(goodscat, GoodsCatVO[].class);
+		SeattableCatVO[] STCobj=gson.fromJson(tablecat, SeattableCatVO[].class);
+		MemberVO[] Mobj=gson.fromJson(bizclnt, MemberVO[].class);
+		EmployeeVO[] Eobj=gson.fromJson(emp, EmployeeVO[].class);
+		GoodsVO[] Gobj=gson.fromJson(goods, GoodsVO[].class);
+		OpenVO[] Oobj=gson.fromJson(open, OpenVO[].class);
+		PrintVO[] Printobj=gson.fromJson(print, PrintVO[].class);
+		CalcuVO[] Cobj=gson.fromJson(calcu, CalcuVO[].class);
+		SeattableVO[] STobj=gson.fromJson(seattable, SeattableVO[].class);
+		OrderMenuVO[] OMobj=gson.fromJson(ordermenu, OrderMenuVO[].class);
+		OrderGoodsVO[] OGobj=gson.fromJson(ordergoods, OrderGoodsVO[].class);
+		CmplxPayVO[] CPobj=gson.fromJson(cmplxpay, CmplxPayVO[].class);
+		PayVO[] Payobj=gson.fromJson(pay, PayVO[].class);
 		
-		Gson gson=new Gson();
-		Data[] test=gson.fromJson(a, Data[].class);
-		//Data[].class 가 아닌 VO를 바로 받아서 해보자
-		//for(int i=0; i<test.length; i++)
+		System.out.println(van.toString());
+		System.out.println(Vobj.toString());
 		
-		System.out.println(test[0].getData1());
-		System.out.println(test[0].getData2());
-		System.out.println(test[1].getData1());
-		System.out.println(test[1].getData2());
-		vo.setEmpId(test[0].getData1());
+		for(int i=0;i<Vobj.length; i++){
+			vanvo=Vobj[i];
+			vanservice.UpdateInsert(vanvo);
+		}
+		for(int i=0;i<CCRobj.length; i++){
+			calcuchngrecvo=CCRobj[i];
+			//String to Timestamp
+			calcuchngrecvo.setClonecalcuChngTime(CCRobj[i].getClonecalcuChngTime());
+			calcuchngrecvo.setClonebakTime(CCRobj[i].getClonebakTime());
+			
+			calcuchngrecservice.UpdateInsert(calcuchngrecvo);
+		}
+		for(int i=0;i<CCobj.length; i++){
+			cardcompavo=CCobj[i];
+			cardcompaservice.UpdateInsert(cardcompavo);
+		}
+		for(int i=0;i<EDobj.length ; i++){
+			extdevvo=EDobj[i];
+			extdevservice.UpdateInsert(extdevvo);
+		}
+		for(int i=0;i<GCobj.length; i++){
+			goodscatvo=GCobj[i];
+			goodscatservice.UpdateInsert(goodscatvo);
+		}
+		for(int i=0;i<STCobj.length; i++){
+			seattablecatvo=STCobj[i];
+			seattablecatservice.UpdateInsert(seattablecatvo);
+		}
+		for(int i=0;i<Mobj.length; i++){
+			membervo=Mobj[i];
+			memservice.UpdateInsert(membervo);
+		}
+		for(int i=0;i<Eobj.length; i++){
+			empvo=Eobj[i];
+			empservice.UpdateInsert(empvo);
+		}
+		for(int i=0;i<Gobj.length; i++){
+			goodsvo=Gobj[i];
+			goodsservice.UpdateInsert(goodsvo);
+		}
+		for(int i=0;i<Oobj.length; i++){
+			openvo=Oobj[i];
+			openservice.UpdateInsert(openvo);
+		}
+		for(int i=0;i<Printobj.length; i++){
+			printvo=Printobj[i];
+			printservice.UpdateInsert(printvo);
+		}
+		for(int i=0;i<Cobj.length; i++){
+			calcuvo=Cobj[i];
+			calcuservice.UpdateInsert(calcuvo);
+		}
+		for(int i=0;i<STobj.length; i++){
+			seattablevo=STobj[i];
+			seatservice.UpdateInsert(seattablevo);
+		}
+		for(int i=0;i<OMobj.length; i++){
+			ordermenuvo=OMobj[i];
+			//String to Timestamp
+			ordermenuvo.setCloneorderTime(OMobj[i].getCloneorderTime());
+			ordermenuservice.UpdateInsert(ordermenuvo);
+		}
+		for(int i=0;i<OGobj.length; i++){
+			ordergoodsvo=OGobj[i];
+			ordergoodsservice.UpdateInsert(ordergoodsvo);
+		}
+		for(int i=0;i<CPobj.length; i++){
+			cmplxpayvo=CPobj[i];
+			//String to Timestamp
+			cmplxpayvo.setClonepayTime(CPobj[i].getClonepayTime());
+			cmplxpayservice.UpdateInsert(cmplxpayvo);
+		}
+		for(int i=0; i<Payobj.length; i++){
+			payvo=Payobj[i];
+			payservice.UpdateInsert(payvo);
+		}
 	}
 	
 	@RequestMapping("/login")
 	@ResponseBody
-	public EmployeeVO andoridLogin(HttpServletRequest request,EmployeeVO vo) throws Exception{	
+	public EmployeeVO andoridLogin(HttpServletRequest request,EmployeeVO vo,MemberVO memvo) throws Exception{	
 		vo.setEmpId(request.getParameter("empId"));
 		vo.setPosNum(Integer.parseInt(request.getParameter("posNum")));
 		vo.setPwd(request.getParameter("pwd"));
-
+		
+		memvo.setIP(request.getParameter("IP"));
+		System.out.println(memvo.toString());
+		System.out.println(vo.toString());
 		vo=empservice.login(vo);
 		
-		return vo;
-	}
-	
-	public class Data{
-		private String test1;
-		private String test2;
-		
-		public String getData1() {
-			return test1;
-		}
-		public String getData2(){
-			return test2;
-		}
+		return vo;		
 	}
 }
 

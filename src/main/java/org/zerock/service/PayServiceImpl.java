@@ -38,5 +38,10 @@ public class PayServiceImpl implements PayService{
 	public List<PayVO> listAll() throws Exception {
 		return dao.listAll();
 	}
+
+	@Override
+	public void UpdateInsert(PayVO pay) throws Exception {
+		dao.updateORInsert(pay);
+	}
 	
 }

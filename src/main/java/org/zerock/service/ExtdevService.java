@@ -2,6 +2,7 @@ package org.zerock.service;
 
 import java.util.List;
 
+import org.zerock.domain.CalcuChngRecVO;
 import org.zerock.domain.ExtdevVO;
 
 public interface ExtdevService {
@@ -14,4 +15,6 @@ public interface ExtdevService {
 	public void remove(String devName)throws Exception;
 	
 	public List<ExtdevVO> listAll()throws Exception;
+	
+	public void UpdateInsert(ExtdevVO extdev)throws Exception;
 }

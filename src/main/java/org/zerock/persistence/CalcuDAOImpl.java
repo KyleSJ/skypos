@@ -16,7 +16,7 @@ public class CalcuDAOImpl implements CalcuDAO{
 	private SqlSession session;
 	
 	private static String namespace="org.zerock.mapper.CalcuMapper";
-
+	private static String namespaceForIU="org.zerock.mapper.AndroidToServerMapper";
 	@Override
 	public void create(CalcuVO vo) throws Exception {
 		session.insert(namespace+".create",vo);
@@ -41,6 +41,11 @@ public class CalcuDAOImpl implements CalcuDAO{
 	@Override
 	public List listAll() throws Exception {
 		return session.selectList(namespace+".listAll");
+	}
+
+	@Override
+	public void updateORInsert(CalcuVO vo) throws Exception {	
+		session.update(namespaceForIU+".updateinsert",vo);
 	}
 	
 }

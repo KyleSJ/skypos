@@ -15,7 +15,7 @@ public class VanDAOImpl implements VanDAO{
 	private SqlSession session;
 	
 	private static String namespace="org.zerock.mapper.VanMapper";
-
+	private static String namespaceForIU="org.zerock.mapper.AndroidToServerMapper";
 	@Override
 	public void create(VanVO vo) throws Exception {
 		session.insert(namespace+".create",vo);
@@ -40,6 +40,11 @@ public class VanDAOImpl implements VanDAO{
 	@Override
 	public List listAll() throws Exception {
 		return session.selectList(namespace+".listAll");
+	}
+
+	@Override
+	public void updateORInsert(VanVO vo) throws Exception {		
+		session.update(namespaceForIU+".updateinsert",vo);
 	}
 	
 }

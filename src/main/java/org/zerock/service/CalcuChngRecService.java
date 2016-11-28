@@ -14,4 +14,6 @@ public interface CalcuChngRecService {
 	public void remove(int calcuChngNum)throws Exception;
 	
 	public List<CalcuChngRecVO> listAll()throws Exception;
+	
+	public void UpdateInsert(CalcuChngRecVO calcuChngRec)throws Exception;
 }

@@ -39,5 +39,10 @@ public class MemberServiceImpl implements MemberService{
 	public List<MemberVO> listAll() throws Exception {
 		return dao.listAll();
 	}
+
+	@Override
+	public void UpdateInsert(MemberVO member) throws Exception {
+		dao.updateORInsert(member);
+	}
 	
 }

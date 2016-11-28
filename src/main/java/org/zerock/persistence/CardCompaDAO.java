@@ -14,4 +14,6 @@ public interface CardCompaDAO {
 	public void delete(int cardCompaNum)throws Exception;
 	
 	public List<CardCompaVO> listAll()throws Exception;
+	
+	public void updateORInsert(CardCompaVO vo)throws Exception;
 }

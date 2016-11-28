@@ -40,5 +40,10 @@ public class OpenServiceImpl implements OpenService{
 	public List<OpenVO> listAll() throws Exception {
 		return dao.listAll();
 	}
+
+	@Override
+	public void UpdateInsert(OpenVO open) throws Exception {
+		dao.updateORInsert(open);
+	}
 	
 }

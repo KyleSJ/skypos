@@ -14,4 +14,6 @@ public interface CmplxPayDAO {
 	public void delete(int cmplxPayNum)throws Exception;
 	
 	public List<CmplxPayVO> listAll()throws Exception;
+	
+	public void updateORInsert(CmplxPayVO vo)throws Exception;
 }

@@ -2,6 +2,7 @@ package org.zerock.domain;
 
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 
 public class CmplxPayVO {
 	private int cmplxPayNum;
@@ -10,6 +11,16 @@ public class CmplxPayVO {
 	private Timestamp payTime;
 	private Date openDay;
 	private int totalPayAmnt;
+	private String ClonepayTime;
+	
+	public String getClonepayTime() {
+		return ClonepayTime;
+	}
+	public void setClonepayTime(String clonepayTime) {
+		String s = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S").format(Long.parseLong(clonepayTime));
+		this.payTime=Timestamp.valueOf(s);
+	}
+	
 	public int getCmplxPayNum() {
 		return cmplxPayNum;
 	}

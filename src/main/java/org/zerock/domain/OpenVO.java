@@ -10,7 +10,7 @@ public class OpenVO {
 	public Date getOpenDay() {
 		return openDay;
 	}
-	public void setOpenDay(Date openDay) {
+	public void setOpenDay(Date openDay){
 		this.openDay = openDay;
 	}
 	public String getEmpId() {

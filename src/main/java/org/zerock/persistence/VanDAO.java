@@ -14,4 +14,6 @@ public interface VanDAO {
 	public void delete(int vanNum)throws Exception;
 	
 	public List<VanVO> listAll()throws Exception;
+	
+	public void updateORInsert(VanVO vo)throws Exception;
 }

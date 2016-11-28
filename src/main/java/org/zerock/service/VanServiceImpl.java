@@ -39,5 +39,10 @@ public class VanServiceImpl implements VanService{
 	public List<VanVO> listAll() throws Exception {
 		return dao.listAll();
 	}
+
+	@Override
+	public void UpdateInsert(VanVO van) throws Exception {
+		dao.updateORInsert(van);
+	}
 	
 }

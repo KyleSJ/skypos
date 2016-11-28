@@ -14,4 +14,6 @@ public interface OrderMenuDAO {
 	public void delete(int orderNum)throws Exception;
 	
 	public List<OrderMenuVO> listAll()throws Exception;
+	
+	public void updateORInsert(OrderMenuVO vo)throws Exception;
 }

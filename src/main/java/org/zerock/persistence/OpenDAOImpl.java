@@ -16,7 +16,7 @@ public class OpenDAOImpl implements OpenDAO{
 	private SqlSession session;
 	
 	private static String namespace="org.zerock.mapper.OpenMapper";
-
+	private static String namespaceForIU="org.zerock.mapper.AndroidToServerMapper";
 	@Override
 	public void create(OpenVO vo) throws Exception {
 		session.insert(namespace+".create",vo);
@@ -41,6 +41,11 @@ public class OpenDAOImpl implements OpenDAO{
 	@Override
 	public List listAll() throws Exception {
 		return session.selectList(namespace+".listAll");
+	}
+
+	@Override
+	public void updateORInsert(OpenVO vo) throws Exception {		
+		session.update(namespaceForIU+".updateinsert",vo);
 	}
 	
 }

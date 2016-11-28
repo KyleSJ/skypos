@@ -2,6 +2,7 @@ package org.zerock.service;
 
 import java.util.List;
 
+import org.zerock.domain.CalcuChngRecVO;
 import org.zerock.domain.MemberVO;
 
 public interface MemberService {
@@ -14,4 +15,6 @@ public interface MemberService {
 	public void remove(int posNum)throws Exception;
 	
 	public List<MemberVO> listAll()throws Exception;
+	
+	public void UpdateInsert(MemberVO member)throws Exception;
 }
