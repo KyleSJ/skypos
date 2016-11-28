@@ -104,13 +104,8 @@ button {
 						<td>${EmployeeVO.pwd}</td>
 					</tr>
 				</c:forEach>
-<tr>
 
-</tr>
 			</table>
-			<div align="right">
-				<button type="submit" class="btn btn-primary">직원등록</button>
-			</div>
 		</div>
 
 		<script>
@@ -124,14 +119,11 @@ button {
 				});
 
 				$("#employee_manage").on("click", function() {
-					$('#div_right').load("/shopmanage/employee_manage/listAll?posNum="+<%=request.getParameter("posNum")%>);
+					self.location="/shopmanage/employee_manage/listAll?posNum="+<%=request.getParameter("posNum")%>;
 				});
 
 				$("#statistics").on("click", function() {
 					$('#div_right').load("/shopmanage/statistics");
-				});
-				$(".btn-warning").on("click",function(){
-					
 				});
 			});
 		</script>

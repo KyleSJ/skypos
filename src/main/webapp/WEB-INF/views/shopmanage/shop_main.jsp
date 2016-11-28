@@ -97,7 +97,7 @@ font-size : 100%;
 				});
 
 				$("#employee_manage").on("click", function() {
-					self.location="/shopmanage/employee_manage?posNum="+<%=request.getParameter("posNum")%>;
+					self.location="/shopmanage/employee_manage/listAll?posNum="+<%=request.getParameter("posNum")%>;
 				});
 
 				$("#statistics").on("click", function() {
