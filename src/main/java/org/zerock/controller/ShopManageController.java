@@ -14,23 +14,12 @@ import org.zerock.service.EmployeeService;
 import org.zerock.domain.EmployeeVO;
 
 @Controller
-@RequestMapping("/shopmanage/shop_main")
+@RequestMapping("/shopmanage/")
 public class ShopManageController{
    private static final Logger logger = LoggerFactory.getLogger(ShopManageController.class);
    
-   EmployeeService service;
-   @Inject
-   //private MemberService service;
-   
    @RequestMapping(value="/shop_main",method=RequestMethod.GET)
-   public String shop_main(@RequestParam("posNum") int posNum)throws Exception{
-      return "shop_main";
+   public void shop_main( Model model)throws Exception{
    }
-   
-   @RequestMapping(value="/employee_manage",method=RequestMethod.GET)
-   public void employee_manage(@RequestParam("posNum") int posNum , Model model) throws Exception{
-	   model.addAttribute("list",service.listAll(posNum));
-   }
-   
    
 }
