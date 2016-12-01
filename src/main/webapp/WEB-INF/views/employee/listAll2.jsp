@@ -6,7 +6,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <!-- Bootstrap -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+	crossorigin="anonymous">
 
 <!-- Respond.js 으로 IE8 에서 반응형 기능을 활성화하세요 (https://github.com/scottjehl/Respond) -->
 <script src="/resources/bootstrap/js/respond.js"></script>
@@ -23,25 +26,23 @@ body {
 }
 
 div {
-	border : 1.5px solid white;
-	
+	border: 1.5px solid white;
 }
 
 #div_root {
 	width: 100%;
-	height : 100%;
+	height: 100%;
 }
 
 #div_top {
-	font-size:25px;
-	width : 100%;
-	height : 50px;
+	width: 100%;
+	height: 50px;
 	text-align: center;
 }
 
 #div_left {
 	width: 20%;
-	height : 394px;
+	height: 394px;
 	float: left;
 	text-align: left;
 }
@@ -57,10 +58,11 @@ div {
 	clear: both;
 	text-align: center;
 }
-button{
-width:100%;
-height : 95px;
-font-size : 100%;
+
+button {
+	width: 100%;
+	height: 95px;
+	font-size: 100%;
 }
 </style>
 
@@ -85,7 +87,26 @@ font-size : 100%;
 				<button id="statistics" type="submit" class="btn btn-danger">통계</button>
 			</div>
 		</div>
-		<div id="div_right"></div>
+		<div id="div_right">
+			<table class="table table-hover table-bordered">
+				<tr>
+					<th>empId</th>
+					<th>posNum</th>
+					<th>empName</th>
+					<th>pwd</th>
+				</tr>
+
+				<c:forEach items="${list}" var="EmployeeVO">
+					<tr>
+						<td><a href='/employee/read?empId=${EmployeeVO.empId}'>${EmployeeVO.empId}</a></td>
+						<td>${EmployeeVO.posNum}</td>
+						<td>${EmployeeVO.empName}</td>
+						<td>${EmployeeVO.pwd}</td>
+					</tr>
+				</c:forEach>
+
+			</table>
+		</div>
 
 		<script>
 			$(document).ready(function() {
@@ -95,16 +116,10 @@ font-size : 100%;
 
 				$("#good_manage").on("click", function() {
 					$('#div_right').load("/goods/listAll");
-					//$('#div_right').load("/shopmanage/goods_manage");
 				});
 
 				$("#employee_manage").on("click", function() {
-<<<<<<< HEAD
-					$('#div_right').load("/member/listAll");
-					///"employee/listAll?posNum"+ =request.getParameter("posNum")
-=======
-					self.location="/shopmanage/employee/listAll?posNum="+<%=request.getParameter("posNum")%>;
->>>>>>> 74b44861eb6a282c86f8d0a357ce5d7a7a44736b
+					self.location="/shopmanage/employee_manage/listAll?posNum="+<%=request.getParameter("posNum")%>;
 				});
 
 				$("#statistics").on("click", function() {

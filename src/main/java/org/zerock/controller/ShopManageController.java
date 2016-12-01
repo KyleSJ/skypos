@@ -10,19 +10,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import org.zerock.service.MemberService;
-import org.zerock.domain.MemberVO;
+import org.zerock.service.EmployeeService;
+import org.zerock.domain.EmployeeVO;
 
 @Controller
-@RequestMapping("/shopmanage/*")
+@RequestMapping("/shopmanage/")
 public class ShopManageController{
    private static final Logger logger = LoggerFactory.getLogger(ShopManageController.class);
    
-   @Inject
-   //private MemberService service;
-   
    @RequestMapping(value="/shop_main",method=RequestMethod.GET)
-   public String shop_main()throws Exception{
-      return "/shopmanage/shop_main";
+   public void shop_main( Model model)throws Exception{
    }
+   
 }
