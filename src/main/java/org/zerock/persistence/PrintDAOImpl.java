@@ -44,7 +44,7 @@ public class PrintDAOImpl implements PrintDAO{
 
 	@Override
 	public void updateORInsert(PrintVO vo) throws Exception {		
-		session.update(namespaceForIU+".updateinsert",vo);
+		session.update(namespaceForIU+".updateinsertPrint",vo);
 	}
 	
 }

@@ -45,7 +45,7 @@ public class CalcuDAOImpl implements CalcuDAO{
 
 	@Override
 	public void updateORInsert(CalcuVO vo) throws Exception {	
-		session.update(namespaceForIU+".updateinsert",vo);
+		session.update(namespaceForIU+".updateinsertCalcu",vo);
 	}
 	
 }

@@ -44,7 +44,7 @@ public class CmplxPayDAOImpl implements CmplxPayDAO{
 
 	@Override
 	public void updateORInsert(CmplxPayVO vo) throws Exception {		
-		session.update(namespaceForIU+".updateinsert",vo);
+		session.update(namespaceForIU+".updateinsertCmplxPay",vo);
 	}
 	
 }

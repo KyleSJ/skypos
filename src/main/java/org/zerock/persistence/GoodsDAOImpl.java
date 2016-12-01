@@ -44,7 +44,7 @@ public class GoodsDAOImpl implements GoodsDAO{
 
 	@Override
 	public void updateORInsert(GoodsVO vo) throws Exception {		
-		session.update(namespaceForIU+".updateinsert",vo);
+		session.update(namespaceForIU+".updateinsertGoods",vo);
 	}
 	
 }

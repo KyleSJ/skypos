@@ -43,7 +43,7 @@ public class ExtdevDAOImpl implements ExtdevDAO{
 
 	@Override
 	public void updateORInsert(ExtdevVO vo) throws Exception {		
-		session.update(namespaceForIU+".updateinsert",vo);
+		session.update(namespaceForIU+".updateinsertExtDev",vo);
 	}
 	
 }

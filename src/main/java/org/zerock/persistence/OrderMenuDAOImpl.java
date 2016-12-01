@@ -44,7 +44,7 @@ public class OrderMenuDAOImpl implements OrderMenuDAO{
 
 	@Override
 	public void updateORInsert(OrderMenuVO vo) throws Exception {		
-		session.update(namespaceForIU+".updateinsert",vo);
+		session.update(namespaceForIU+".updateinsertOrderMenu",vo);
 	}
 	
 }
