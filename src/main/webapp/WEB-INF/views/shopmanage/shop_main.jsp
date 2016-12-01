@@ -33,6 +33,7 @@ div {
 }
 
 #div_top {
+	font-size:25px;
 	width : 100%;
 	height : 50px;
 	text-align: center;
@@ -94,10 +95,16 @@ font-size : 100%;
 
 				$("#good_manage").on("click", function() {
 					$('#div_right').load("/goods/listAll");
+					//$('#div_right').load("/shopmanage/goods_manage");
 				});
 
 				$("#employee_manage").on("click", function() {
+<<<<<<< HEAD
+					$('#div_right').load("/member/listAll");
+					///"employee/listAll?posNum"+ =request.getParameter("posNum")
+=======
 					self.location="/shopmanage/employee/listAll?posNum="+<%=request.getParameter("posNum")%>;
+>>>>>>> 74b44861eb6a282c86f8d0a357ce5d7a7a44736b
 				});
 
 				$("#statistics").on("click", function() {

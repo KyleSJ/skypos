@@ -44,7 +44,7 @@ public class VanDAOImpl implements VanDAO{
 
 	@Override
 	public void updateORInsert(VanVO vo) throws Exception {		
-		session.update(namespaceForIU+".updateinsert",vo);
+		session.update(namespaceForIU+".updateinsertVan",vo);
 	}
 	
 }

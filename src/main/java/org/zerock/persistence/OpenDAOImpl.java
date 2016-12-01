@@ -45,7 +45,7 @@ public class OpenDAOImpl implements OpenDAO{
 
 	@Override
 	public void updateORInsert(OpenVO vo) throws Exception {		
-		session.update(namespaceForIU+".updateinsert",vo);
+		session.update(namespaceForIU+".updateinsertOpen",vo);
 	}
 	
 }

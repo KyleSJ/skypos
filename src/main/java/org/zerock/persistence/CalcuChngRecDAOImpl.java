@@ -45,7 +45,7 @@ public class CalcuChngRecDAOImpl implements CalcuChngRecDAO{
 
 	@Override
 	public void updateORInsert(CalcuChngRecVO vo) throws Exception {
-		session.update(namespaceForIU+".updateinsert",vo);
+		session.update(namespaceForIU+".updateinsertCalcuChngRec",vo);
 	}
 	
 }

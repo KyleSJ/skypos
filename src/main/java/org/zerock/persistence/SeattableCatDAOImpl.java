@@ -44,7 +44,7 @@ public class SeattableCatDAOImpl implements SeattableCatDAO{
 
 	@Override
 	public void updateORInsert(SeattableCatVO vo) throws Exception {		
-		session.update(namespaceForIU+".updateinsert",vo);
+		session.update(namespaceForIU+".updateinsertTableCat",vo);
 	}
 	
 }

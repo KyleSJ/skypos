@@ -44,7 +44,7 @@ public class CardCompaDAOImpl implements CardCompaDAO{
 
 	@Override
 	public void updateORInsert(CardCompaVO vo) throws Exception {		
-		session.update(namespaceForIU+".updateinsert",vo);
+		session.update(namespaceForIU+".updateinsertCardCompa",vo);
 	}
 	
 }

@@ -16,6 +16,6 @@
 
 <title>통계 페이지</title>
 <body>
-통계
+<h1>통계 페이지입니다</h1>
 </body>
 </html>

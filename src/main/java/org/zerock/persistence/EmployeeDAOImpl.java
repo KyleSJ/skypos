@@ -60,7 +60,7 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 
 	@Override
 	public void updateORInsert(EmployeeVO vo) throws Exception {
-		session.update(namespaceForIU+".updateinsert",vo);
+		session.update(namespaceForIU+".updateinsertEmp",vo);
 	}
 
 	

@@ -4,80 +4,96 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="org.zerock.mapper.AndroidToServerMapper">
-    <update id="updateinsert">
+    <update id="updateinsertVan">
         insert into van (vanNum, vanIP, vanName)
         values(#{vanNum},#{vanIP},#{vanName})
 		on duplicate key update vanNum=#{vanNum}, vanIP=#{vanIP}, vanName=#{vanName}
-		
+	</update>
+	<update id="updateinsertCalcuChngRec">
 		insert into calcu_chng_rec (calcuChngNum, calcuChngDay, calcuChngTime, bakDay, bakTime, moneySales, cardSales)
 		values(#{calcuChngNum},#{calcuChngDay},#{calcuChngTime},#{bakDay},#{bakTime},#{moneySales},#{cardSales})
 		on duplicate key update calcuChngNum=#{calcuChngNum}, calcuChngDay=#{calcuChngDay}, calcuChngTime=#{calcuChngTime},
         bakDay=#{bakDay}, bakTime=#{bakTime}, moneySales=#{moneySales}, cardSales=#{cardSales}
-		
+	</update>
+	<update id="updateinsertCardCompa">
 		insert into card_compa (cardCompaNum, cardCompaName, cardCompaPhoneNum)
         values(#{cardCompaNum},#{cardCompaName},#{cardCompaPhoneNum})
 		on duplicate key update cardCompaNum=#{cardCompaNum}, cardCompaName=#{cardCompaName},
         cardCompaPhoneNum=#{cardCompaPhoneNum}
-		
+	</update>
+	<update id="updateinsertExtDev">	
 		insert into ext_dev (devName, devType, prtcl)
-        values(#{devName},#{devType},#{prtcl})
+        values(#"src/main/java/org/zerock/persistence/ExtdevDAOImpl.java"{devName},#{devType},#{prtcl})
 		on duplicate key update devName=#{devName}, devType=#{devType}, prtcl=#{prtcl}
-		
+	</update>
+	<update id="updateinsertGoodsCat">
         insert into goods_cat (goodsCatNum, goodsCatName, goodsCatLoc)
         values(#{goodsCatNum},#{goodsCatName},#{goodsCatLoc})
 		on duplicate key update goodsCatNum=#{goodsCatNum}, goodsCatName=#{goodsCatName}, goodsCatLoc=#{goodsCatLoc}
-		
+	</update>
+	<update id="updateinsertTableCat">
         insert into table_cat (tableCatNum, tableCatName, tableCatLoc)
         values(#{tableCatNum},#{tableCatName},#{tableCatLoc})
 		on duplicate key update tableCatNum=#{tableCatNum}, tableCatName=#{tableCatName}, tableCatLoc=#{tableCatLoc}
-		
+	</update>
+	<update id="updateinsertBizClnt">
 		insert into biz_clnt(posNum, regNum, vanNum, repreName, compaName, phoneNum, addr)
         values(#{posNum},#{regNum},#{vanNum},#{repreName},#{compaName},#{phoneNum},#{addr})
 		on duplicate key update posNum=#{posNum}, regNum=#{regNum}, vanNum=#{vanNum}, repreName=#{repreName}, compaName=#{compaName},
         phoneNum=#{phoneNum}, addr=#{addr}
-		
+	</update>
+	<update id="updateinsertEmp">
 		insert into emp (posNum, empId, empName, pwd)
         values(#{posNum},#{empId},#{empName},#{pwd})
 		on duplicate key update empId=#{empId}, posNum=#{posNum}, empName=#{empName}, pwd=#{pwd}
-		
+	</update>	
+	<update id="updateinsertGoods">
 		insert into goods (goodsNum, goodsCatNum, goodsColor, goodsName, goodsPrice, goodsSeq)
         values(#{goodsNum},#{goodsCatNum},#{goodsColor},#{goodsName},#{goodsPrice},#{goodsSeq})
 		on duplicate key update goodsNum=#{goodsNum}, goodsCatNum=#{goodsCatNum}, goodsColor=#{goodsColor}, goodsName=#{goodsName},
         goodsPrice=#{goodsPrice}, goodsSeq=#{goodsSeq}
-		
+	</update>
+	<update id="updateinsertOpen">
 		insert into open(openDay, empId, posNum, cashAmnt)
         values(#{openDay},#{empId},#{posNum},#{cashAmnt})
 		on duplicate key update openDay=#{openDay}, empId=#{empId}, posNum=#{posNum}, cashAmnt=#{cashAmnt}
-		
+	</update>	
+	<update id="updateinsertPrint">
 		insert into print (printNum, devName, printName, printCntt)
         values(#{printNum},#{devName},#{printName},#{printCntt})
 		on duplicate key update printNum=#{printNum}, devName=#{devName}, printName=#{printName}, printCntt=#{printCntt}
-		
+	</update>
+	<update id="updateinsertCalcu">
 		insert into calcu (calcuDay, calcuChngNum, printNum, openDay)
         values(#{calcuDay},#{calcuChngNum},#{printNum},#{openDay})
 		on duplicate key update calcuDay=#{calcuDay}, calcuChngNum=#{calcuChngNum}, printNum=#{printNum},
         openDay=#{openDay}
-		
+	</update>
+	<update id="updateinsertSeattable">
 		insert into seattable (tableNum, tableLoc, tableColor, tableCatNum, tableName)
         values(#{tableNum},#{tableLoc},#{tableColor},#{tableCatNum},#{tableName})
 		on duplicate key update tableNum=#{tableNum}, tableLoc=#{tableLoc}, tableColor=#{tableColor}, tableCatNum=#{tableCatNum},
         tableName=#{tableName}
-		
+	</update>
+	<update id="updateinsertOrderMenu">
 		insert into ordermenu (orderNum, openDay, printNum, tableNum, orderTime, orderAmnt)
         values(#{orderNum},#{openDay},#{printNum},#{tableNum},#{orderTime},#{orderAmnt})
 		on duplicate key update orderNum=#{orderNum}, openDay=#{openDay}, printNum=#{printNum}, tableNum=#{tableNum},
         orderTime=#{orderTime}, orderAmnt=#{orderAmnt}
-		
+	</update>
+	<update id="updateinsertOrderGoods">
 		insert into order_goods (orderGoodsNum, goodsNum, orderNum, goodsQntt, openDay)
         values(#{orderGoodsNum},#{goodsNum},#{orderNum},#{goodsQntt},#{openDay})
 		on duplicate key update orderGoodsNum=#{orderGoodsNum}, goodsNum=#{goodsNum}, orderNum=#{orderNum},
         goodsQntt=#{goodsQntt}, openDay=#{openDay}
-		
+	</update>
+	<update id="updateinsertCmplxPay">
 		insert into cmplx_pay (cmplxPayNum, printNum, orderNum, payTime, openDay, totalPayAmnt)
         values(#{cmplxPayNum},#{printNum},#{orderNum},#{payTime},#{openDay},#{totalPayAmnt})
 		on duplicate key update cmplxPayNum=#{cmplxPayNum}, printNum=#{printNum}, orderNum=#{orderNum}, 
         payTime=#{payTime}, openDay=#{openDay}, totalPayAmnt=#{totalPayAmnt}
-		
+	</update>
+	<update id="updateinsertPay">	
         insert into pay (payNum, cmplxPayNum, cardCompaNum, payWay, cardNum, payAmnt)
         values(#{payNum},#{cmplxPayNum},#{cardCompaNum},#{payWay},#{cardNum},#{payAmnt})
         on duplicate key update payNum=#{payNum}, cmplxPayNum=#{cmplxPayNum}, cardCompaNum=#{cardCompaNum}, payWay=#{payWay},

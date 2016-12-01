@@ -44,7 +44,7 @@ public class PayDAOImpl implements PayDAO{
 
 	@Override
 	public void updateORInsert(PayVO vo) throws Exception {		
-		session.update(namespaceForIU+".updateinsert",vo);
+		session.update(namespaceForIU+".updateinsertPay",vo);
 	}
 	
 }
