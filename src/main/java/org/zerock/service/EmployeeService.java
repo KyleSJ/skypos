@@ -9,11 +9,11 @@ import org.zerock.domain.EmployeeVO;
 public interface EmployeeService {
 	public void regist(EmployeeVO employee)throws Exception;
 	
-	public EmployeeVO read(String empId)throws Exception;
+	public EmployeeVO read(String empId,int posNum)throws Exception;
 	
 	public void modify(EmployeeVO employee)throws Exception;
 	
-	public void remove(String empId)throws Exception;
+	public void remove(String empId,int posNum)throws Exception;
 	
 	public List<EmployeeVO> listAll(int posNum)throws Exception;
 

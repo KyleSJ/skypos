@@ -1,7 +1,9 @@
 package org.zerock.persistence;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -22,20 +24,39 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 		session.insert(namespace+".create",vo);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
-	public EmployeeVO read(String empId) throws Exception {
-		return session.selectOne(namespace+".read",empId);
+	public EmployeeVO read(String empId,int posNum) throws Exception {
+		Map<String, String> Stringvalue=new HashMap<String,String>();
+		Map<String, Integer>  Intvalue= new HashMap<String, Integer>();
+		Stringvalue.put("empId", empId);
+		Intvalue.put("posNum", posNum);
+		
+		Map<Object, Object> merge = new HashMap<Object, Object>();
+		merge.putAll(Stringvalue);
+		merge.putAll(Intvalue);
+		
+		return session.selectOne(namespace+".read",merge);
 	}
 
 	@Override
 	public void update(EmployeeVO vo) throws Exception {
-
+		System.out.println(vo.toString());
 		session.update(namespace+".update",vo);
 	}
 
 	@Override
-	public void delete(String empId) throws Exception {
-		session.delete(namespace+".delete",empId);
+	public void delete(String empId,int posNum) throws Exception {
+		Map<String, String> Stringvalue=new HashMap<String,String>();
+		Map<String, Integer> Intvalue=new HashMap<String, Integer>();
+		Stringvalue.put("empId",  empId);
+		Intvalue.put("posNum", posNum);
+		
+		Map<Object, Object> merge = new HashMap<Object, Object>();
+		merge.putAll(Stringvalue);
+		merge.putAll(Intvalue);
+		
+		session.delete(namespace+".delete",merge);
 	}
 
 	@Override

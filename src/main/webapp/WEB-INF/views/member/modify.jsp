@@ -45,7 +45,7 @@ body {
 
                   <div class="control-Label" for="vanNum">
                      vanNum <input id="vanNum" class="form-control" type="text"
-                        name='vanNum' value="${memberVO.vanNum}">
+                        name='vanNum' value="${memberVO.vanNum}" readonly="readonly">
                   </div>
 
                   <div class="control-Label" for="repreName">
@@ -85,14 +85,11 @@ body {
                            self.location = '/member/read?posNum='+${memberVO.posNum};
                         });
 
-<<<<<<< HEAD
                         $('.btn-primary').on("click", function() {
                            formObj.submit();
-=======
                         $(".btn-primary").on("click", function() {
                 		   formObj.submit();
                 		   formObj.attr("action", '/member/modify);
->>>>>>> 2bb179944909bab489e154b2c0a94c46351bdb7d
                         });
                      });
                   </script>

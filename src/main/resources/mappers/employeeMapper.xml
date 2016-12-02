@@ -23,7 +23,7 @@
         select empId, posNum, empName, pwd
         from
         emp
-        Where empId=#{empId}
+        Where empId=#{empId} and posNum=#{posNum}
     </select>
     
     <select id="login" resultType="org.zerock.domain.EmployeeVO">
@@ -35,11 +35,11 @@
     
     <update id="update">
         update emp set empId=#{empId}, posNum=#{posNum}, empName=#{empName}, pwd=#{pwd}
-        Where empId=#{empId}
+        Where empId=#{empId} and posNum=#{posNum}
     </update>
     
     <delete id="delete">
-        delete from emp where empId=#{empId}
+        delete from emp where empId=#{empId} and posNum=#{posNum}
     </delete>
     
     <select id="listAll" resultType ="org.zerock.domain.EmployeeVO">

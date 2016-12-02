@@ -23,7 +23,7 @@
 	</update>
 	<update id="updateinsertExtDev">	
 		insert into ext_dev (devName, devType, prtcl)
-        values(#"src/main/java/org/zerock/persistence/ExtdevDAOImpl.java"{devName},#{devType},#{prtcl})
+        values(#{devName},#{devType},#{prtcl})
 		on duplicate key update devName=#{devName}, devType=#{devType}, prtcl=#{prtcl}
 	</update>
 	<update id="updateinsertGoodsCat">
@@ -84,8 +84,7 @@
 	<update id="updateinsertOrderGoods">
 		insert into order_goods (orderGoodsNum, goodsNum, orderNum, goodsQntt, openDay)
         values(#{orderGoodsNum},#{goodsNum},#{orderNum},#{goodsQntt},#{openDay})
-		on duplicate key update orderGoodsNum=#{orderGoodsNum}, goodsNum=#{goodsNum}, orderNum=#{orderNum},
-        goodsQntt=#{goodsQntt}, openDay=#{openDay}
+		on duplicate key update orderGoodsNum=#{orderGoodsNum}, goodsNum=#{goodsNum}, orderNum=#{orderNum},goodsQntt=#{goodsQntt}, openDay=#{openDay}
 	</update>
 	<update id="updateinsertCmplxPay">
 		insert into cmplx_pay (cmplxPayNum, printNum, orderNum, payTime, openDay, totalPayAmnt)

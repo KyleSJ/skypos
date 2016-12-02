@@ -112,7 +112,6 @@ public class AndroidCommunicationController{
 		memlist=(ArrayList<MemberVO>) memservice.listAll();
 		emplist=empservice.Alldata();
 		calcuchngreclist = (ArrayList<CalcuChngRecVO>) calcuchngrecservice.listAll();
-		System.out.println(calcuchngreclist.toString());
 		cardcompalist = (ArrayList<CardCompaVO>) cardcompaservice.listAll();
 		extdevlist = (ArrayList<ExtdevVO>) extdevservice.listAll();
 		goodscatlist = (ArrayList<GoodsCatVO>) goodscatservice.listAll();
@@ -156,7 +155,7 @@ public class AndroidCommunicationController{
 		String ordergoods=request.getParameter("order_goods");
 		String cmplxpay=request.getParameter("cmplx_pay");
 		String pay=request.getParameter("pay");
-		System.out.println(cmplxpay.toString());
+		
 		Gson gson=new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
 		VanVO[] Vobj=gson.fromJson(van, VanVO[].class);
 		CalcuChngRecVO[] CCRobj=gson.fromJson(calcuchngrec, CalcuChngRecVO[].class);		
@@ -175,10 +174,7 @@ public class AndroidCommunicationController{
 		OrderGoodsVO[] OGobj=gson.fromJson(ordergoods, OrderGoodsVO[].class);
 		CmplxPayVO[] CPobj=gson.fromJson(cmplxpay, CmplxPayVO[].class);
 		PayVO[] Payobj=gson.fromJson(pay, PayVO[].class);
-		
-		System.out.println(van.toString());
-		System.out.println(Vobj.toString());
-		
+	
 		for(int i=0;i<Vobj.length; i++){
 			vanvo=Vobj[i];
 			vanservice.UpdateInsert(vanvo);
@@ -236,7 +232,7 @@ public class AndroidCommunicationController{
 			seatservice.UpdateInsert(seattablevo);
 		}
 		for(int i=0;i<OMobj.length; i++){
-			ordermenuvo=OMobj[i];
+			ordermenuvo=OMobj[i];;
 			//String to Timestamp
 			ordermenuvo.setCloneorderTime(OMobj[i].getCloneorderTime());
 			ordermenuservice.UpdateInsert(ordermenuvo);

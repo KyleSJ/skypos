@@ -33,24 +33,30 @@ body {
       <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
          <div class="panel panel-success">
             <div class="panel-heading">
-               <div class="panel-title">카드 회사 수정</div>
+               <div class="panel-title">직원 수정</div>
             </div>
             <div class="panel-body">
-               <div class="control-Label" for="cardCompaNum">
-                  cardCompaNum <input id="cardCompaNum" class="form-control"
-                     type="text" name='cardCompaNum'
-                     value="${cardCompaVO.cardCompaNum}" readonly="readonly">
+               <div class="control-Label" for="empId">
+                  empId <input id="empId" class="form-control"
+                     type="text"
+                     value="${employeeVO.empId}" readonly="readonly">
                </div>
 
-               <div class="control-Label" for="cardCompaName">
-                  cardCompaName <input id="cardCompaName" class="form-control" type="text"
-                     name='cardCompaName' value="${cardCompaVO.cardCompaName}">
+                 <div class="control-label" for="posNum">
+                  posNum <input id="posNum" class="form-control" type="text"
+                     name='posNum' value="${employeeVO.posNum}" readonly="readonly"/>
                </div>
 
-               <div class="control-Label" for="cardCompaPhoneNum">
-                  cardCompaPhoneNum <input id="cardCompaPhoneNum" class="form-control" type="text"
-                     name='cardCompaPhoneNum' value="${cardCompaVO.cardCompaPhoneNum}">
+               <div class="control-label" for="empName">
+                  empName <input id="empName" class="form-control" type="text"
+                     name='empName' value="${employeeVO.empName}"/>
                </div>
+               
+               <div class="control-label" for="pwd">
+                  pwd <input id="pwd" class="form-control" type="text"
+                     name='pwd' value="${employeeVO.pwd}"placeholder="Enter pwd" />
+               </div>
+               
 
                <!-- /.box-body -->
                <br>
@@ -66,7 +72,7 @@ body {
                      console.log(formObj);
 
                      $(".btn-warning").on("click", function() {
-                        self.location = "/cardcompa/listAll";
+                        self.location = "/pay/listAll";
                      });
 
                      $(".btn-primary").on("click", function() {

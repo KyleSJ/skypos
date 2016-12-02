@@ -47,8 +47,8 @@ text-align : center;
    <c:forEach items="${list}" var="CardCompaVO">
       <tr>
        <td><a href='/cardcompa/read?posNum=${CardCompaVO.cardCompaNum}'>${CardCompaVO.cardCompaNum}</a></td>
-       <td>${CardCompaVO.compaName}</td>
-       <td>${CardCompaVO.phoneNum}</td>
+       <td>${CardCompaVO.cardCompaName}</td>
+       <td>${CardCompaVO.cardCompaPhoneNum}</td>
       </tr>
    </c:forEach>
    

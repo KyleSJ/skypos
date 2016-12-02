@@ -21,8 +21,8 @@ public class EmployeeServiceImpl implements EmployeeService{
 	}
 
 	@Override
-	public EmployeeVO read(String empId) throws Exception{
-		return dao.read(empId);
+	public EmployeeVO read(String empId, int posNum) throws Exception{
+		return dao.read(empId,posNum);
 	}
 
 	@Override
@@ -31,8 +31,8 @@ public class EmployeeServiceImpl implements EmployeeService{
 	}
 
 	@Override
-	public void remove(String empId) throws Exception {
-		dao.delete(empId);
+	public void remove(String empId,int posNum) throws Exception {
+		dao.delete(empId,posNum);
 	}
 
 	@Override

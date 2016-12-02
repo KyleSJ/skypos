@@ -44,14 +44,14 @@ body {
                      autofocus />
                </div>
 
-               <div class="control-label" for="compaName">
-                  compaName <input id="compaName" class="form-control" type="text"
-                     name='compaName' placeholder="Enter compaName" />
+               <div class="control-label" for="cardCompaName">
+                  cardCompaName <input id="cardCompaName" class="form-control" type="text"
+                     name='cardCompaName' placeholder="Enter cardCompaName" />
                </div>
 
-               <div class="control-label" for="phoneNum">
-                  phoneNum <input id="phoneNum" class="form-control" type="text"
-                     name='phoneNum' placeholder="Enter phoneNum" />
+               <div class="control-label" for="cardCompaPhoneNum">
+                  cardCompaPhoneNum <input id="cardCompaPhoneNum" class="form-control" type="text"
+                     name='cardCompaPhoneNum' placeholder="Enter cardCompaPhoneNum" />
                </div>
 
                <!-- /.box-body -->
