@@ -43,15 +43,15 @@ body {
                </div>
             </form>
 
-            <div class="form-group" for="compaName">
-               compaName <input id="compaName" class="form-control" type="text"
-                  name='compaName' value="${cardCompaVO.compaName}"
+            <div class="form-group" for="cardCompaName">
+               cardCompaName <input id="cardCompaName" class="form-control" type="text"
+                  name='cardCompaName' value="${cardCompaVO.cardCompaName}"
                   readonly="readonly">
             </div>
 
-            <div class="form-group" for="phoneNum">
-               phoneNum <input id="phoneNum" class="form-control" type="text"
-                  name='phoneNum' value="${cardCompaVO.phoneNum}"
+            <div class="form-group" for="cardCompaPhoneNum">
+               cardCompaPhoneNum <input id="cardCompaPhoneNum" class="form-control" type="text"
+                  name='cardCompaPhoneNum' value="${cardCompaVO.cardCompaPhoneNum}"
                   readonly="readonly">
             </div>
             <!-- /.box-body -->

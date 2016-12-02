@@ -17,8 +17,13 @@ public class OrderMenuVO {
 		return CloneorderTime;
 	}
 	public void setCloneorderTime(String cloneorderTime) {
+		if(cloneorderTime == null){
+			this.orderTime = null;
+		}
+		else{
 		String s= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S").format(Long.parseLong(cloneorderTime));
 		this.orderTime = Timestamp.valueOf(s);
+		}
 	}
 	public int getOrderNum() {
 		return orderNum;

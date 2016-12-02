@@ -41,13 +41,14 @@ body {
                   empId <input id="empId" class="form-control" type="text"
                      name='empId' value="${employeeVO.empId}" readonly="readonly">
                </div>
-            </form>
+            
 
             <div class="control-Label" for="posNum">
                posNum <input id="posNum" class="form-control" type="text"
                   name='posNum' value="${employeeVO.posNum}" readonly="readonly">
             </div>
-
+			</form>
+			
             <div class="control-Label" for="empName">
                empName <input id="empName" class="form-control" type="text"
                   name='empName' value="${employeeVO.empName}" readonly="readonly">

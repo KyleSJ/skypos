@@ -48,7 +48,7 @@ text-align : center;
 
    <c:forEach items="${list}" var="EmployeeVO">
       <tr>
-       <td><a href='/employee/read?empId=${EmployeeVO.empId}'>${EmployeeVO.empId}</a></td>
+       <td><a href='/employee/read?empId=${EmployeeVO.empId}&&posNum=${EmployeeVO.posNum}'>${EmployeeVO.empId}</a></td>
        <td>${EmployeeVO.posNum}</td>
        <td>${EmployeeVO.empName}</td>
        <td>${EmployeeVO.pwd}</td>
@@ -57,8 +57,10 @@ text-align : center;
    
    </table>
    <div align="right">
-   <button type="submit" class="btn btn-primary">직원등록</button>
-   <button type="submit" class="btn btn-warning">사업자목록</button>
+   <input type="button" class="btn btn-primary" value="직원 등록">
+	
+   <!-- <button type="submit" class="btn btn-primary">직원등록</button>
+   <button type="submit" class="btn btn-warning">사업자목록</button> -->
    </div>
    <script>
    $(document).ready(function(){

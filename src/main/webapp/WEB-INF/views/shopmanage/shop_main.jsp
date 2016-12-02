@@ -99,12 +99,7 @@ font-size : 100%;
 				});
 
 				$("#employee_manage").on("click", function() {
-<<<<<<< HEAD
-					$('#div_right').load("/member/listAll");
-					///"employee/listAll?posNum"+ =request.getParameter("posNum")
-=======
-					self.location="/shopmanage/employee/listAll?posNum="+<%=request.getParameter("posNum")%>;
->>>>>>> 74b44861eb6a282c86f8d0a357ce5d7a7a44736b
+					$('#div_right').load("/employee/listAll?posNum="+<%=request.getParameter("posNum")%>);
 				});
 
 				$("#statistics").on("click", function() {

@@ -14,6 +14,15 @@
 <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요한 -->
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
+</head>
+
+<style>
+body {
+	background: #f8f8f8;
+	padding: 60px 60px;
+}
+</style>
+
 <title>통계 페이지</title>
 <body>
 <h1>통계 페이지입니다</h1>

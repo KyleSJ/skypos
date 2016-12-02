@@ -35,7 +35,7 @@ public class EmployeeController{
       
       //return "/member/success";
       rttr.addFlashAttribute("msg","success");
-      return "redirect:/employee/listAll?posNum="+employee.getPosNum();
+      return "redirect:/shopmanage/shop_main?posNum="+employee.getPosNum();
    }
    
    @RequestMapping(value="/listAll", method=RequestMethod.GET)
@@ -47,22 +47,21 @@ public class EmployeeController{
    }
    
    @RequestMapping(value="/read", method= RequestMethod.GET)
-   public void read(@RequestParam("empId") String empId, Model model) throws Exception{
-	   model.addAttribute(service.read(empId));
+   public void read(@RequestParam("empId") String empId,@RequestParam("posNum") int posNum, Model model) throws Exception{
+	   model.addAttribute(service.read(empId,posNum));
    }
    
    @RequestMapping(value="/remove", method= RequestMethod.POST)
-   public String remove(@RequestParam("empId") String empId, EmployeeVO employee, RedirectAttributes rttr)throws Exception{
-	   service.remove(empId);
+   public String remove(@RequestParam("empId") String empId,@RequestParam("posNum") int posNum, EmployeeVO employee, RedirectAttributes rttr)throws Exception{
+	   service.remove(empId,posNum);
 	   
 	   rttr.addFlashAttribute("msg","success");
-	   
-	   return "redirect:/employee/listAll?posNum="+employee.getPosNum();
+	   return "redirect:/shopmanage/shop_main?posNum="+employee.getPosNum();
    }
    
    @RequestMapping(value="/modify", method=RequestMethod.GET)
-   public void modifyGET(String empId,Model model)throws Exception{
-	   model.addAttribute(service.read(empId));
+   public void modifyGET(@RequestParam("empId")String empId,@RequestParam("posNum")int posNum,Model model)throws Exception{
+	   model.addAttribute(service.read(empId,posNum));
    }
    
    @RequestMapping(value="/modify", method=RequestMethod.POST)
@@ -72,7 +71,7 @@ public class EmployeeController{
 	   service.modify(employee);
 	   rttr.addFlashAttribute("msg","SUCCESS");
 	   
-	   return "redirect:/employee/read?empId="+employee.getEmpId();
+	   return "redirect:/shopmanage/shop_main?posNum="+employee.getPosNum();
    }
 
 }

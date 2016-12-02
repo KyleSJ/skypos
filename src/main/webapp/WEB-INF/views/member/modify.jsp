@@ -45,7 +45,7 @@ body {
 
                   <div class="control-Label" for="vanNum">
                      vanNum <input id="vanNum" class="form-control" type="text"
-                        name='vanNum' value="${memberVO.vanNum}">
+                        name='vanNum' value="${memberVO.vanNum}" readonly="readonly">
                   </div>
 
                   <div class="control-Label" for="repreName">
@@ -87,7 +87,6 @@ body {
 
                         $('.btn-primary').on("click", function() {
                            formObj.submit();
-
                         $(".btn-primary").on("click", function() {
                 		   formObj.submit();
                 		   formObj.attr("action", '/member/modify);

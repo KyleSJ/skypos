@@ -22,4 +22,9 @@ public class ShopManageController{
    public void shop_main( Model model)throws Exception{
    }
    
+   @RequestMapping("/statistics")
+   public String statistic()throws Exception{
+	   return "/shopmanage/statistics";
+   }
+   
 }
