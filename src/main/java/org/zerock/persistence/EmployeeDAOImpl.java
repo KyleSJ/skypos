@@ -41,7 +41,6 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 
 	@Override
 	public void update(EmployeeVO vo) throws Exception {
-		System.out.println(vo.toString());
 		session.update(namespace+".update",vo);
 	}
 
