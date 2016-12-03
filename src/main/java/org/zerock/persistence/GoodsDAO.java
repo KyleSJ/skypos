@@ -1,7 +1,9 @@
 package org.zerock.persistence;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.zerock.domain.EmployeeVO;
 import org.zerock.domain.GoodsVO;
 
 public interface GoodsDAO {
@@ -13,7 +15,9 @@ public interface GoodsDAO {
 	
 	public void delete(int goodsNum)throws Exception;
 	
-	public List<GoodsVO> listAll()throws Exception;
+	public List<GoodsVO> listAll(int posNum)throws Exception;
 	
+	public ArrayList<GoodsVO> Alldata()throws Exception;
+
 	public void updateORInsert(GoodsVO vo)throws Exception;
 }

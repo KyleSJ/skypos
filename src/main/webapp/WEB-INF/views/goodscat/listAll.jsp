@@ -9,7 +9,10 @@
 <title>Insert title here</title>
 
 <!-- Bootstrap -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+	crossorigin="anonymous">
 
 <!-- Respond.js 으로 IE8 에서 반응형 기능을 활성화하세요 (https://github.com/scottjehl/Respond) -->
 <script src="/resources/bootstrap/js/respond.js"></script>
@@ -20,41 +23,41 @@
 </head>
 
 <style>
-
 body {
-   background: #f8f8f8;
-   padding: 30px 50px;
+	background: #f8f8f8;
+	padding: 30px 50px;
 }
 
-th{
-   text-align : center;
-   background : #ffffff;
+th {
+	text-align: center;
+	background: #ffffff;
 }
 
-td{
-text-align : center;
+td {
+	text-align: center;
 }
-
 </style>
 
 <body>
-   <table class="table table-hover table-bordered">
-      <tr>
-       <th>goodsCatNum</th>
-       <th>goodsCatName</th>
-       <th>goodsCatLoc</th>
-      </tr>
+	<table class="table table-hover table-bordered">
+		<tr>
+			<th>goodsCatNum</th>
+			<th>posNum</th>
+			<th>goodsCatName</th>
+			<th>goodsCatLoc</th>
+		</tr>
 
-   <c:forEach items="${list}" var="GoodsCatVO">
-      <tr>
-       <td><a href='/goodscat/read?goodsCatNum=${GoodsCatVO.goodsCatNum}'>${GoodsCatVO.goodsCatNum}</a></td>
-       <td>${GoodsCatVO.goodsCatName}</td>
-       <td>${GoodsCatVO.goodsCatLoc}</td>
-      </tr>
-   </c:forEach>
-   
-   </table>
-   <script>
+		<c:forEach items="${list}" var="GoodsCatVO">
+			<tr>
+				<td><a href='/goodscat/read?goodsCatNum=${GoodsCatVO.goodsCatNum}'>${GoodsCatVO.goodsCatNum}</a></td>
+				<td>${GoodsCatVO.posNum}</td>
+				<td>${GoodsCatVO.goodsCatName}</td>
+				<td>${GoodsCatVO.goodsCatLoc}</td>
+			</tr>
+		</c:forEach>
+
+	</table>
+	<script>
       var result = '${msg}';
       if(result =='success'){
          alert("처리가 완료 되었습니다.");

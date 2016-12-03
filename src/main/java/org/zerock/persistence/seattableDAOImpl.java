@@ -1,11 +1,13 @@
 package org.zerock.persistence;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
+import org.zerock.domain.GoodsVO;
 import org.zerock.domain.SeattableVO;
 
 @Repository
@@ -38,8 +40,13 @@ public class seattableDAOImpl implements seattableDAO{
 	}
 
 	@Override
-	public List listAll() throws Exception {
-		return session.selectList(namespace+".listAll");
+	public List listAll(int posNum) throws Exception {
+		return session.selectList(namespace+".listAll",posNum);
+	}
+
+	@Override
+	public ArrayList<SeattableVO> Alldata() throws Exception{
+		return (ArrayList) session.selectList(namespace+".Alldata");
 	}
 
 	@Override

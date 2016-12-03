@@ -1,5 +1,6 @@
 package org.zerock.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -36,10 +37,15 @@ public class SeattableServiceImpl implements SeattableService{
 	}
 
 	@Override
-	public List<SeattableVO> listAll() throws Exception {
-		return dao.listAll();
+	public List<SeattableVO> listAll(int posNum) throws Exception {
+		return dao.listAll(posNum);
 	}
 
+	@Override
+	public ArrayList<SeattableVO> Alldata()throws Exception{
+		return dao.Alldata();
+	}
+	
 	@Override
 	public void UpdateInsert(SeattableVO table) throws Exception {
 		dao.updateORInsert(table);

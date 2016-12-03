@@ -38,11 +38,19 @@
     
     <select id="listAll" resultType ="org.zerock.domain.SeattableVO">
         <![CDATA[
+        select tableNum, tableLoc, tableColor, s.tableCatNum, tableName
+        from
+        seattable s , table_cat t
+        where t.posNum=#{posNum} and s.tableCatNum=t.tableCatNum
+        order by tableNum desc
+         ]]>
+    </select>
+        
+    <select id="Alldata" resultType ="org.zerock.domain.SeattalbeVO">
+        <![CDATA[
         select tableNum, tableLoc, tableColor, tableCatNum, tableName
         from
         seattable
-        where tableNum > 0
-        order by tableNum desc
          ]]>
     </select>
     

@@ -90,11 +90,11 @@ font-size : 100%;
 		<script>
 			$(document).ready(function() {
 				$("#table_manage").on("click", function() {
-					$('#div_right').load("/seattable/listAll");
+					$('#div_right').load("/seattable/listAll?posNum="+<%=request.getParameter("posNum")%>);
 				});
 
 				$("#good_manage").on("click", function() {
-					$('#div_right').load("/goods/listAll");
+					$('#div_right').load("/goods/listAll?posNum="+<%=request.getParameter("posNum")%>);
 					//$('#div_right').load("/shopmanage/goods_manage");
 				});
 
