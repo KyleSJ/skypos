@@ -1,5 +1,6 @@
 package org.zerock.persistence;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -38,8 +39,13 @@ public class GoodsDAOImpl implements GoodsDAO{
 	}
 
 	@Override
-	public List listAll() throws Exception {
-		return session.selectList(namespace+".listAll");
+	public List listAll(int posNum) throws Exception {
+		return session.selectList(namespace+".listAll",posNum);
+	}
+	
+	@Override
+	public ArrayList<GoodsVO> Alldata()throws Exception{
+		return(ArrayList) session.selectList(namespace+".Alldata");
 	}
 
 	@Override

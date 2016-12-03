@@ -38,12 +38,16 @@
     
     <select id="listAll" resultType ="org.zerock.domain.GoodsVO">
         <![CDATA[
-        select goodsNum, goodsCatNum, goodsColor, goodsName, goodsPrice, goodsSeq
-        from
-        goods
-        where goodsNum > 0
+        select goodsNum, g.goodsCatNum, goodsColor, goodsName, goodsPrice, goodsSeq
+        from goods g, goods_cat gc
+        where gc.posNum=#{posNum} and gc.goodsCatNum=g.goodsCatNum
         order by goodsNum desc
          ]]>
     </select>
     
+    <select id="Alldata" resultType="org.zerock.domain.GoodsVO">
+    	<![CDATA[
+    	select goodsNum, goodsCatNum, goodsColor, goodsName, goodsPrice, goodsSeq
+    	from goods
+    	]]>
 </mapper>

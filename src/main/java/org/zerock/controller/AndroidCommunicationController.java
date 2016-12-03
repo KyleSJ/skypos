@@ -107,7 +107,7 @@ public class AndroidCommunicationController{
 		ArrayList<PrintVO> printlist = new ArrayList<PrintVO>();
 		ArrayList<SeattableCatVO> seattablecatlist = new ArrayList<SeattableCatVO>();
 		
-		seatlist=(ArrayList<SeattableVO>)seatservice.listAll();
+		seatlist=seatservice.Alldata();
 		vanlist=(ArrayList<VanVO>) vanservice.listAll();
 		memlist=(ArrayList<MemberVO>) memservice.listAll();
 		emplist=empservice.Alldata();
@@ -116,7 +116,7 @@ public class AndroidCommunicationController{
 		extdevlist = (ArrayList<ExtdevVO>) extdevservice.listAll();
 		goodscatlist = (ArrayList<GoodsCatVO>) goodscatservice.listAll();
 		seattablecatlist = (ArrayList<SeattableCatVO>) seattablecatservice.listAll();
-		goodslist = (ArrayList<GoodsVO>) goodsservice.listAll();
+		goodslist =  goodsservice.Alldata();
 		openlist = (ArrayList<OpenVO>) openservice.listAll();
 		printlist = (ArrayList<PrintVO>) printservice.listAll();
 		calculist = (ArrayList<CalcuVO>) calcuservice.listAll();

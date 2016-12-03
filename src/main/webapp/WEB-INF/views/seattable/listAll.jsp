@@ -56,6 +56,9 @@ td {
 		</c:forEach>
 
 	</table>
+	<div align="right">
+		<a href="/seattable/register"><input type="button" class="btn btn-primary" value="테이블 등록"></a>
+	</div>
 	<script>
 		var result = '${msg}';
 		if (result == 'success') {

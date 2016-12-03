@@ -1,8 +1,10 @@
 package org.zerock.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.zerock.domain.CalcuChngRecVO;
+import org.zerock.domain.GoodsVO;
 import org.zerock.domain.SeattableVO;
 
 public interface SeattableService{
@@ -14,7 +16,9 @@ public interface SeattableService{
 	
 	public void remove(int tableNum)throws Exception;
 	
-	public List<SeattableVO> listAll()throws Exception;
+	public List<SeattableVO> listAll(int posNum)throws Exception;
 	
+	public ArrayList<SeattableVO> Alldata()throws Exception;
+
 	public void UpdateInsert(SeattableVO table)throws Exception;
 }

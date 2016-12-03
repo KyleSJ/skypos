@@ -1,5 +1,6 @@
 package org.zerock.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -35,9 +36,15 @@ public class GoodsServiceImpl implements GoodsService{
 	}
 
 	@Override
-	public List<GoodsVO> listAll() throws Exception {
-		return dao.listAll();
+	public List<GoodsVO> listAll(int posNum) throws Exception {
+		return dao.listAll(posNum);
 	}
+	
+	@Override
+	public ArrayList<GoodsVO> Alldata()throws Exception{
+			return dao.Alldata();
+	}
+
 
 	@Override
 	public void UpdateInsert(GoodsVO goods) throws Exception {
