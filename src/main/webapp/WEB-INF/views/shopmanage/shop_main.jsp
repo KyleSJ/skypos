@@ -95,7 +95,6 @@ font-size : 100%;
 
 				$("#good_manage").on("click", function() {
 					$('#div_right').load("/goods/listAll?posNum="+<%=request.getParameter("posNum")%>);
-					//$('#div_right').load("/shopmanage/goods_manage");
 				});
 
 				$("#employee_manage").on("click", function() {

@@ -46,7 +46,7 @@
          ]]>
     </select>
         
-    <select id="Alldata" resultType ="org.zerock.domain.SeattalbeVO">
+    <select id="Alldata" resultType ="org.zerock.domain.SeattableVO">
         <![CDATA[
         select tableNum, tableLoc, tableColor, tableCatNum, tableName
         from

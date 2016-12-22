@@ -50,4 +50,5 @@
     	select goodsNum, goodsCatNum, goodsColor, goodsName, goodsPrice, goodsSeq
     	from goods
     	]]>
+    </select>
 </mapper>
