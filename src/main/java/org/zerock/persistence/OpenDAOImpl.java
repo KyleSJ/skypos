@@ -47,5 +47,11 @@ public class OpenDAOImpl implements OpenDAO{
 	public void updateORInsert(OpenVO vo) throws Exception {		
 		session.update(namespaceForIU+".updateinsertOpen",vo);
 	}
+
+	@Override
+	public List<OpenVO> selectlistAll(String posnum, String empid, String pwd) {
+		
+		return session.selectList(namespace+".selectlistAll");
+	}
 	
 }

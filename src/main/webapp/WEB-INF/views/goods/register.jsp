@@ -34,7 +34,7 @@ body {
 				<div class="panel-heading">
 					<div class="panel-title">상품 등록</div>
 				</div>
-				<div class="panel-body">
+				<div class="panel-body">					
 					<div class="control-label" for="goodsCatNum">
 						goodsCatNum <input id="goodsCatNum" class="form-control"
 							type="text" name='goodsCatNum' placeholder="Enter goodsCatNum"

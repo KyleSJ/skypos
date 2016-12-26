@@ -6,6 +6,7 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 import org.zerock.domain.CalcuChngRecVO;
+import org.zerock.domain.CalendarVO;
 import org.zerock.persistence.CalcuChngRecDAO;
 
 @Service
@@ -43,5 +44,10 @@ public class CalcuChngRecServiceImpl implements CalcuChngRecService{
 	@Override
 	public void UpdateInsert(CalcuChngRecVO calcuChngRec) throws Exception {
 		dao.updateORInsert(calcuChngRec);
+	}
+
+	@Override
+	public List<CalendarVO> CalendarlistAll(int posNum) throws Exception {
+		return dao.CalendarlistAll(posNum);
 	}
 }

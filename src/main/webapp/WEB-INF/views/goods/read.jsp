@@ -34,12 +34,17 @@ body {
 				<div class="panel-title">상품 정보</div>
 			</div>
 			<div class="panel-body">
-				<form role="form" method="post">
+				<form role="form" method="post">				
 					<div class="form-group" for="goodsNum">
 						goodsNum <input id="goodsNum" class="form-control" type="text"
 							name='goodsNum' value="${goodsVO.goodsNum}" readonly="readonly">
 					</div>
+					<div class="form-group" for="posNum">
+						posNum <input id="posNum" class="form-control" type="hidden"
+							name='posNum' value=<%=request.getParameter("posNum") %> readonly="readonly">
+					</div>
 				</form>
+				
 				<div class="control-Label" for="goodsCatNum">
 					goodsCatNum <input id="goodsCatNum" class="form-control"
 						type="text" name='goodsCatNum' value="${goodsVO.goodsCatNum}"

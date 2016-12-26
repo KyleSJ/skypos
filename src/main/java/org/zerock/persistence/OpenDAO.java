@@ -17,4 +17,8 @@ public interface OpenDAO {
 	public List<OpenVO> listAll()throws Exception;
 	
 	public void updateORInsert(OpenVO vo)throws Exception;
+
+	public List<OpenVO> selectlistAll(String posnum, String empid, String pwd);
+
+
 }

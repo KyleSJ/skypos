@@ -15,8 +15,8 @@
 	</resultMap> -->
 	
     <insert id="create">
-        insert into goods (goodsNum, goodsCatNum, goodsColor, goodsName, goodsPrice, goodsSeq)
-        values(#{goodsNum},#{goodsCatNum},#{goodsColor},#{goodsName},#{goodsPrice},#{goodsSeq})
+        insert into goods (goodsCatNum, goodsColor, goodsName, goodsPrice, goodsSeq)
+        values(#{goodsCatNum},#{goodsColor},#{goodsName},#{goodsPrice},#{goodsSeq})
     </insert>
     
     <select id="read" resultType="org.zerock.domain.GoodsVO">
@@ -50,4 +50,5 @@
     	select goodsNum, goodsCatNum, goodsColor, goodsName, goodsPrice, goodsSeq
     	from goods
     	]]>
+    </select>
 </mapper>

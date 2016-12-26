@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 import org.zerock.domain.CalcuChngRecVO;
+import org.zerock.domain.CalendarVO;
 
 @Repository
 public class CalcuChngRecDAOImpl implements CalcuChngRecDAO{
@@ -46,6 +47,11 @@ public class CalcuChngRecDAOImpl implements CalcuChngRecDAO{
 	@Override
 	public void updateORInsert(CalcuChngRecVO vo) throws Exception {
 		session.update(namespaceForIU+".updateinsertCalcuChngRec",vo);
+	}
+
+	@Override
+	public List CalendarlistAll(int posNum) throws Exception {
+		return session.selectList(namespace+".calendarvalue",posNum);
 	}
 	
 }

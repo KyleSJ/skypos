@@ -27,15 +27,16 @@ public class GoodsController{
    }
    
    @RequestMapping(value="/register",method=RequestMethod.POST)
-   public String registPOST(GoodsVO goods, RedirectAttributes rttr)throws Exception{
+   public String registPOST(@RequestParam("posNum") int posNum,GoodsVO goods, RedirectAttributes rttr)throws Exception{
       logger.info("regist post...............");
       logger.info(goods.toString());
-      
+      System.out.println("goods의 토스트링은? : "+ goods.toString());
       service.regist(goods);
       
       //return "/member/success";
       rttr.addFlashAttribute("msg","success");
-      return "redirect:/goods/listAll";
+      return "redirect:/shopmanage/shop_main?posNum="+posNum;
+      //return "redirect:/shopmanage/shop_main?posNum="+employee.getPosNum();
    }
    
    @RequestMapping(value="/listAll", method=RequestMethod.GET)
@@ -45,7 +46,7 @@ public class GoodsController{
    }
    
    @RequestMapping(value="/read", method= RequestMethod.GET)
-   public void read(@RequestParam("goodsNum") int goodsNum, Model model) throws Exception{
+   public void read(@RequestParam("goodsNum") int goodsNum,@RequestParam("posNum") int posNum,Model model) throws Exception{
 	   model.addAttribute(service.read(goodsNum));
    }
    

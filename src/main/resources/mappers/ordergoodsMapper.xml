@@ -15,8 +15,8 @@
 	</resultMap> -->
 	
     <insert id="create">
-        insert into order_goods (orderGoodsNum, goodsNum, orderNum, goodsQntt, openDay)
-        values(#{orderGoodsNum},#{goodsNum},#{orderNum},#{goodsQntt},#{openDay})
+        insert into order_goods (goodsNum, orderNum, goodsQntt, openDay)
+        values(#{goodsNum},#{orderNum},#{goodsQntt},#{openDay})
     </insert>
     
     <select id="read" resultType="org.zerock.domain.OrderGoodsVO">

@@ -103,7 +103,7 @@ font-size : 100%;
 				});
 
 				$("#statistics").on("click", function() {
-					$('#div_right').load("/shopmanage/statistics");
+					$('#div_right').load("/shopmanage/statistics?posNum="+<%=request.getParameter("posNum")%>);
 				});
 			});
 		</script>

@@ -85,11 +85,10 @@ body {
                            self.location = '/member/read?posNum='+${memberVO.posNum};
                         });
 
-                        $('.btn-primary').on("click", function() {
-                           formObj.submit();
+                 
                         $(".btn-primary").on("click", function() {
                 		   formObj.submit();
-                		   formObj.attr("action", '/member/modify);
+                		   formObj.attr("action", '/member/modify');
                         });
                      });
                   </script>

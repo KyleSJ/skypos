@@ -15,8 +15,8 @@
 	</resultMap> -->
 	
     <insert id="create">
-        insert into print (printNum, devName, printName, printCntt)
-        values(#{printNum},#{devName},#{printName},#{printCntt})
+        insert into print (devName, printName, printCntt)
+        values(#{devName},#{printName},#{printCntt})
     </insert>
     
     <select id="read" resultType="org.zerock.domain.PrintVO">

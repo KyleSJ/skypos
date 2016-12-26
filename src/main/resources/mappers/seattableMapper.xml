@@ -15,8 +15,8 @@
 	</resultMap> -->
 	
     <insert id="create">
-        insert into seattable (tableNum, tableLoc, tableColor, tableCatNum, tableName)
-        values(#{tableNum},#{tableLoc},#{tableColor},#{tableCatNum},#{tableName})
+        insert into seattable (tableLoc, tableColor, tableCatNum, tableName)
+        values(#{tableLoc},#{tableColor},#{tableCatNum},#{tableName})
     </insert>
     
     <select id="read" resultType="org.zerock.domain.SeattableVO">
@@ -46,7 +46,7 @@
          ]]>
     </select>
         
-    <select id="Alldata" resultType ="org.zerock.domain.SeattalbeVO">
+    <select id="Alldata" resultType ="org.zerock.domain.SeattableVO">
         <![CDATA[
         select tableNum, tableLoc, tableColor, tableCatNum, tableName
         from

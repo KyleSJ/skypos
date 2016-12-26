@@ -5,8 +5,8 @@
 
 <mapper namespace="org.zerock.mapper.CalcuChngRecMapper">
     <insert id="create">
-        insert into calcu_chng_rec (calcuChngNum, calcuChngDay, calcuChngTime, bakDay, bakTime, moneySales, cardSales)
-        values(#{calcuChngNum},#{calcuChngDay},#{calcuChngTime},#{bakDay},#{bakTime},#{moneySales},#{cardSales})
+        insert into calcu_chng_rec (calcuChngDay, calcuChngTime, bakDay, bakTime, moneySales, cardSales)
+        values(#{calcuChngDay},#{calcuChngTime},#{bakDay},#{bakTime},#{moneySales},#{cardSales})
     </insert>
     
     <select id="read" resultType="org.zerock.domain.CalcuChngRecVO">
@@ -34,6 +34,18 @@
         where calcuChngNum> 0
         order by calcuChngNum desc
          ]]>
+    </select>
+    <resultMap type="org.zerock.domain.CalendarVO" id="calendarvalue">
+		<result property="title" column="moneySales+cardSales"/>
+		<result property="start" column="calcuDay"/>
+	</resultMap>
+    <select id="calendarvalue" resultType ="org.zerock.domain.CalendarVO" resultMap="calendarvalue">
+        <![CDATA[
+        	select moneySales+cardSales, calcuDay
+        	from calcu_chng_rec r, calcu c 
+        	where c.posNum = #{posNum} and r.calcuChngNum = c.calcuChngNum
+        ]]>
+        
     </select>
     
 </mapper>

@@ -45,4 +45,9 @@
          ]]>
     </select>
     
+    <select id="selectlistAll" resultType = "org.zerock.domain.OpenVO">
+        select openDay, empId, posNum, cashAmnt
+        from open o, emp e
+        where e.empId = o.empId and e.posNum = o.posNum         
+    </select>
 </mapper>

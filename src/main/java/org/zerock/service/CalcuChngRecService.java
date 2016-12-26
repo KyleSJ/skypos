@@ -3,6 +3,7 @@ package org.zerock.service;
 import java.util.List;
 
 import org.zerock.domain.CalcuChngRecVO;
+import org.zerock.domain.CalendarVO;
 
 public interface CalcuChngRecService {
 	public void regist(CalcuChngRecVO calcuChngRec)throws Exception;
@@ -16,4 +17,6 @@ public interface CalcuChngRecService {
 	public List<CalcuChngRecVO> listAll()throws Exception;
 	
 	public void UpdateInsert(CalcuChngRecVO calcuChngRec)throws Exception;
+	
+	public List<CalendarVO> CalendarlistAll(int posNum)throws Exception;
 }

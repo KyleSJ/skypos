@@ -15,8 +15,8 @@
 	</resultMap> -->
 	
     <insert id="create">
-        insert into ordermenu (orderNum, openDay, printNum, tableNum, orderTime, orderAmnt)
-        values(#{orderNum},#{openDay},#{printNum},#{tableNum},#{orderTime},#{orderAmnt})
+        insert into ordermenu (openDay, printNum, tableNum, orderTime, orderAmnt)
+        values(#{openDay},#{printNum},#{tableNum},#{orderTime},#{orderAmnt})
     </insert>
     
     <select id="read" resultType="org.zerock.domain.OrderMenuVO">
@@ -38,7 +38,7 @@
     
     <select id="listAll" resultType ="org.zerock.domain.OrderMenuVO">
         <![CDATA[
-        select orderNum, openDay, printNum, tableNum, orderTime, orderAmnt
+        select orderNum, openDay, printNum, tableNum, orderTime, orderAmnt, orderComplete
         from
         ordermenu
         where orderNum > 0

@@ -12,7 +12,14 @@ public class OrderMenuVO {
 	private Timestamp orderTime;
 	private int orderAmnt;
 	private String CloneorderTime;
-	
+	private int orderComplete;
+		
+	public int getOrderComplete() {
+		return orderComplete;
+	}
+	public void setOrderComplete(int orderComplete) {
+		this.orderComplete = orderComplete;
+	}
 	public String getCloneorderTime() {
 		return CloneorderTime;
 	}
@@ -65,6 +72,8 @@ public class OrderMenuVO {
 	public String toString() {
 		return "OrderMenuVO [orderNum=" + orderNum + ", openDay=" + openDay
 				+ ", printNum=" + printNum + ", tableNum=" + tableNum
-				+ ", orderTime=" + orderTime + ", orderAmnt=" + orderAmnt + "]";
-	}
+				+ ", orderTime=" + orderTime + ", orderAmnt=" + orderAmnt
+				+ ", CloneorderTime=" + CloneorderTime + ", orderComplete="
+				+ orderComplete + "]";
+	}	
 }

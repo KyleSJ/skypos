@@ -89,6 +89,15 @@ public class AndroidCommunicationController{
 	@RequestMapping("/send")
 	@ResponseBody
 	public ArrayList[] androidToServerSend(HttpServletRequest request)throws Exception{
+		
+		System.out.println("send 부분  "+ request.getParameter("empId"));
+		System.out.println("send 부분  "+ request.getParameter("pwd"));
+		System.out.println("send 부분  "+ request.getParameter("posNum"));
+		
+		String posnum = request.getParameter("posNum");
+		String empid = request.getParameter("empId");
+		String pwd = request.getParameter("pwd");
+		
 		ArrayList<EmployeeVO> emplist=new ArrayList<EmployeeVO>();
 		ArrayList<VanVO> vanlist=new ArrayList<VanVO>();
 		ArrayList<MemberVO> memlist=new ArrayList<MemberVO>();
@@ -174,7 +183,7 @@ public class AndroidCommunicationController{
 		OrderGoodsVO[] OGobj=gson.fromJson(ordergoods, OrderGoodsVO[].class);
 		CmplxPayVO[] CPobj=gson.fromJson(cmplxpay, CmplxPayVO[].class);
 		PayVO[] Payobj=gson.fromJson(pay, PayVO[].class);
-	
+		
 		for(int i=0;i<Vobj.length; i++){
 			vanvo=Vobj[i];
 			vanservice.UpdateInsert(vanvo);
@@ -260,9 +269,11 @@ public class AndroidCommunicationController{
 		vo.setPosNum(Integer.parseInt(request.getParameter("posNum")));
 		vo.setPwd(request.getParameter("pwd"));
 		
+		System.out.println(request.getParameter("empId"));
+		System.out.println(request.getParameter("pwd"));
+		System.out.println(request.getParameter("posNum"));
+		
 		memvo.setIP(request.getParameter("IP"));
-		System.out.println(memvo.toString());
-		System.out.println(vo.toString());
 		vo=empservice.login(vo);
 		
 		return vo;		

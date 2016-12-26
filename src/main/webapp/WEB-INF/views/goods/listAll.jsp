@@ -50,7 +50,7 @@ td {
 
 		<c:forEach items="${list}" var="GoodsVO">
 			<tr>
-				<td><a href='/goods/read?goodsNum=${GoodsVO.goodsNum}'>${GoodsVO.goodsNum}</a></td>
+				<td><a href='/goods/read?goodsNum=${GoodsVO.goodsNum}&posNum=<%=request.getParameter("posNum")%>'>${GoodsVO.goodsNum}</a></td>
 				<td>${GoodsVO.goodsCatNum}</td>
 				<td>${GoodsVO.goodsColor}</td>
 				<td>${GoodsVO.goodsName}</td>
@@ -60,7 +60,7 @@ td {
 		</c:forEach>
 	</table>
 	<div align="right">
-		<a href="/goods/register"><input type="button" class="btn btn-primary" value="상품 등록"></a>
+		<a href="/goods/register?posNum=<%=request.getParameter("posNum")%>"><input type="button" class="btn btn-primary" value="상품 등록"></a>
 	</div>
 	<script>
 		var result = '${msg}';
