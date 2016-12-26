@@ -38,13 +38,18 @@ public class GoodsCatDAOImpl implements GoodsCatDAO{
 	}
 
 	@Override
-	public List listAll() throws Exception {
-		return session.selectList(namespace+".listAll");
+	public List listAll(int posNum) throws Exception {
+		return session.selectList(namespace+".listAll",posNum);
 	}
 
 	@Override
 	public void updateORInsert(GoodsCatVO vo) throws Exception {	
 		session.update(namespaceForIU+".updateinsertGoodsCat",vo);
+	}
+
+	@Override
+	public List<GoodsCatVO> Alldata() {
+		return session.selectList(namespace+".Alldata");
 	}
 	
 }

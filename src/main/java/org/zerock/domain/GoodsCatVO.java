@@ -4,6 +4,14 @@ public class GoodsCatVO {
 	private int goodsCatNum;
 	private String goodsCatName;
 	private int goodsCatLoc;
+	private int posNum;
+		
+	public int getPosNum() {
+		return posNum;
+	}
+	public void setPosNum(int posNum) {
+		this.posNum = posNum;
+	}
 	public int getGoodsCatNum() {
 		return goodsCatNum;
 	}
@@ -25,7 +33,7 @@ public class GoodsCatVO {
 	@Override
 	public String toString() {
 		return "GoodsCatVO [goodsCatNum=" + goodsCatNum + ", goodsCatName="
-				+ goodsCatName + ", goodsCatLoc=" + goodsCatLoc + "]";
-	}
-	
+				+ goodsCatName + ", goodsCatLoc=" + goodsCatLoc + ", posNum="
+				+ posNum + "]";
+	}	
 }

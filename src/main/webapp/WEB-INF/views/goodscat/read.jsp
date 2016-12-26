@@ -41,6 +41,10 @@ body {
                      type="text" name='goodsCatNum'
                      value="${goodsCatVO.goodsCatNum}" readonly="readonly">
                </div>
+               <div class="form-group" for="posNum">
+						posNum <input id="posNum" class="form-control" type="hidden"
+						name='posNum' value=<%=request.getParameter("posNum") %> readonly="readonly">
+			   </div>
             </form>
 
             <div class="form-group" for="goodsCatName">

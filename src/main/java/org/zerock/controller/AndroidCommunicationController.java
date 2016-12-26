@@ -123,7 +123,7 @@ public class AndroidCommunicationController{
 		calcuchngreclist = (ArrayList<CalcuChngRecVO>) calcuchngrecservice.listAll();
 		cardcompalist = (ArrayList<CardCompaVO>) cardcompaservice.listAll();
 		extdevlist = (ArrayList<ExtdevVO>) extdevservice.listAll();
-		goodscatlist = (ArrayList<GoodsCatVO>) goodscatservice.listAll();
+		goodscatlist = (ArrayList<GoodsCatVO>) goodscatservice.Alldata();
 		seattablecatlist = (ArrayList<SeattableCatVO>) seattablecatservice.listAll();
 		goodslist =  goodsservice.Alldata();
 		openlist = (ArrayList<OpenVO>) openservice.listAll();

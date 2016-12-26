@@ -15,8 +15,8 @@
 	</resultMap> -->
 	
     <insert id="create">
-        insert into goods_cat (goodsCatNum, goodsCatName, goodsCatLoc)
-        values(#{goodsCatNum},#{goodsCatName},#{goodsCatLoc})
+        insert into goods_cat (goodsCatNum, goodsCatName, goodsCatLoc,posNum)
+        values(#{goodsCatNum},#{goodsCatName},#{goodsCatLoc},#{posNum})
     </insert>
     
     <select id="read" resultType="org.zerock.domain.GoodsCatVO">
@@ -37,12 +37,21 @@
     
     <select id="listAll" resultType ="org.zerock.domain.GoodsCatVO">
         <![CDATA[
-        select goodsCatNum, goodsCatName, goodsCatLoc
+        select goodsCatNum, goodsCatName, goodsCatLoc, posNum
+        from
+        goods_cat
+        where goodsCatNum > 0 and posNum=#{posNum}
+        order by goodsCatNum desc
+         ]]>
+    </select>
+    
+     <select id="Alldata" resultType ="org.zerock.domain.GoodsCatVO">
+        <![CDATA[
+        select goodsCatNum, goodsCatName, goodsCatLoc, posNum
         from
         goods_cat
         where goodsCatNum > 0
         order by goodsCatNum desc
          ]]>
     </select>
-    
 </mapper>

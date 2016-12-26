@@ -35,13 +35,18 @@ public class GoodsCatServiceImpl implements GoodsCatService{
 	}
 
 	@Override
-	public List<GoodsCatVO> listAll() throws Exception {
-		return dao.listAll();
+	public List<GoodsCatVO> listAll(int posNum) throws Exception {
+		return dao.listAll(posNum);
 	}
 
 	@Override
 	public void UpdateInsert(GoodsCatVO goodscat) throws Exception {
 		dao.updateORInsert(goodscat);
+	}
+
+	@Override
+	public List<GoodsCatVO> Alldata() {
+		return dao.Alldata();
 	}
 	
 }

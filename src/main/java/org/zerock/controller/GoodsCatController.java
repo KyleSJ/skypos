@@ -27,7 +27,7 @@ public class GoodsCatController{
    }
    
    @RequestMapping(value="/register",method=RequestMethod.POST)
-   public String registPOST(GoodsCatVO goodscat, RedirectAttributes rttr)throws Exception{
+   public String registPOST(@RequestParam("posNum") int posNum,GoodsCatVO goodscat, RedirectAttributes rttr)throws Exception{
       logger.info("regist post...............");
       logger.info(goodscat.toString());
       
@@ -35,13 +35,13 @@ public class GoodsCatController{
       
       //return "/member/success";
       rttr.addFlashAttribute("msg","success");
-      return "redirect:/goodscat/listAll";
+      return "redirect:/shopmanage/shop_main?posNum="+posNum;
    }
    
    @RequestMapping(value="/listAll", method=RequestMethod.GET)
-   public void listAll(Model model)throws Exception{
+   public void listAll(@RequestParam("posNum") int posNum, Model model)throws Exception{
 	   logger.info("show all list...............");
-	   model.addAttribute("list",service.listAll());
+	   model.addAttribute("list",service.listAll(posNum));
    }
    
    @RequestMapping(value="/read", method= RequestMethod.GET)
@@ -64,13 +64,13 @@ public class GoodsCatController{
    }
    
    @RequestMapping(value="/modify", method=RequestMethod.POST)
-   public String modifyPOST(GoodsCatVO goodscat, RedirectAttributes rttr) throws Exception{
+   public String modifyPOST(@RequestParam("posNum")int posNum,GoodsCatVO goodscat, RedirectAttributes rttr) throws Exception{
 	   logger.info("mod post................");
 	   
 	   service.modify(goodscat);
 	   rttr.addFlashAttribute("msg","SUCCESS");
 	   
-	   return "redirect:/goodscat/listAll";
+	   return "redirect:/shopmanage/shop_main?posNum="+posNum;
    }
 
 }

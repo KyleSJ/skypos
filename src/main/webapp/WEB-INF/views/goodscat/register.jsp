@@ -54,6 +54,11 @@ body {
                      name='goodsCatLoc' placeholder="Enter goodsCatLoc" />
                </div>
 
+				<div class="control-label" for="posNum">
+                	   <input id="posNum" class="form-control"
+                     type="hidden" name='posNum' value=<%=request.getParameter("posNum")%>placeholder="Enter goodsCatNum"
+                     autofocus />
+                </div>
                <!-- /.box-body -->
                <br>
                <div class="box-footer" align="center">

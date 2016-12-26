@@ -51,12 +51,12 @@ public class GoodsController{
    }
    
    @RequestMapping(value="/remove", method= RequestMethod.POST)
-   public String remove(@RequestParam("goodsNum") int goodsNum, RedirectAttributes rttr)throws Exception{
+   public String remove(@RequestParam("goodsNum") int goodsNum, @RequestParam("posNum") int posNum,RedirectAttributes rttr)throws Exception{
 	   service.remove(goodsNum);
 	   
 	   rttr.addFlashAttribute("msg","success");
-	   
-	   return "redirect:/goods/listAll";
+	   System.out.println("삭제 할시 posNum"+posNum);
+	   return "redirect:/shopmanage/shop_main?posNum="+posNum;
    }
    
    @RequestMapping(value="/modify", method=RequestMethod.GET)
@@ -65,13 +65,14 @@ public class GoodsController{
    }
    
    @RequestMapping(value="/modify", method=RequestMethod.POST)
-   public String modifyPOST(GoodsVO goods, RedirectAttributes rttr) throws Exception{
+   public String modifyPOST(@RequestParam("posNum") int posNum,GoodsVO goods, RedirectAttributes rttr) throws Exception{
 	   logger.info("mod post................");
 	   
 	   service.modify(goods);
 	   rttr.addFlashAttribute("msg","SUCCESS");
 	   
-	   return "redirect:/goods/listAll";
+	   //return "redirect:/goods/listAll";
+	   return "redirect:/shopmanage/shop_main?posNum="+posNum;
    }
 
 }

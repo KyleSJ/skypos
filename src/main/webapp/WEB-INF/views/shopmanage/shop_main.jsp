@@ -92,27 +92,35 @@ button {
 				<button id="go_back" type="submit" class="btn btn-danger">매장정보</button>
 			</div>
 		</div>
-		<div id="div_right"></div>
+		<div id="div_right">
+			<div id="div_right_up"></div>
+			<div id="div_right_down"></div>
+		</div>
 
 
 		<script>
 			$(document).ready(function() {
 				$("#table_manage").on("click", function() {
-					$('#div_right').load("/seattable/listAll?posNum="+<%=request.getParameter("posNum")%>);
+					$('#div_right_down').empty();
+					$('#div_right_up').load("/seattable/listAll?posNum="+<%=request.getParameter("posNum")%>);
 				});
 
-				$("#good_manage").on("click", function() {
-					$('#div_right').load("/goods/listAll?posNum="+<%=request.getParameter("posNum")%>);
+				$("#good_manage").on("click", function() {					
+					$('#div_right_up').load("/goods/listAll?posNum="+<%=request.getParameter("posNum")%>);
+					$('#div_right_down').load("/goodscat/listAll?posNum="+<%=request.getParameter("posNum")%>);
 					//$('#div_right').load("/shopmanage/goods_manage");
 				});
 
 				$("#employee_manage").on("click", function() {
-					$('#div_right').load("/employee/listAll?posNum="+<%=request.getParameter("posNum")%>);
+					$('#div_right_down').empty();
+					$('#div_right_up').load("/employee/listAll?posNum="+<%=request.getParameter("posNum")%>);
 				});
 
 				$("#statistics").on("click", function() {
-					$('#div_right').load("/shopmanage/statistics?posNum="+<%=request.getParameter("posNum")%>);
+					$('#div_right_down').empty();
+					$('#div_right_up').load("/shopmanage/statistics?posNum="+<%=request.getParameter("posNum")%>);
 				});
+			});
 		</script>
 	</div>
 </body>
