@@ -10,7 +10,7 @@
 
  <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> 
 
- <script src="/resources/bootstrap/js/respond.js"></script> 
+  
 
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>-->
 
@@ -37,5 +37,35 @@ body {
 <title>통계 페이지</title>
 <body>
 <div id='calendar'></div>
+
+<script>
+
+
+$('#calendar').fullCalendar({
+   //var salesObj = ${object};
+   //console.log(salesObj);
+    header: {
+        center: 'month,agendaFourDay' // buttons for switching between views
+    },
+    views: {
+        agendaFourDay: {
+            type: 'agenda',
+            duration: { days: 4 },
+            buttonText: '4 day'
+        }
+    },
+    events:${object}
+    /*events:[{
+       "title" : "안녕하신가",
+       "start" : "2016-12-03"
+    }]
+    events:[
+            for(var i=0;i<event.length;i++)
+            {
+                 title : event[i].getMoneySales() //+ salesObj[i].getCardSales(),
+                 start : event[i].getCalcuChngDay()
+           }]*/
+});
+</script>
 </body>
 </html>

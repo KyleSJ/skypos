@@ -10,8 +10,8 @@
 <!-- Bootstrap -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-<!-- Respond.js 으로 IE8 에서 반응형 기능을 활성화하세요 (https://github.com/scottjehl/Respond) -->
-<script src="/resources/bootstrap/js/respond.js"></script>
+
+
 
 <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요한 -->
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -64,7 +64,7 @@ body {
             <div class="box-footer" align="center">
                <button type="submit" class="btn btn-warning">수정</button>
                <button type="submit" class="btn btn-danger">삭제</button>
-               <button type="submit" class="btn btn-primary">직원 목록 페이지</button>
+               <button type="submit" class="btn btn-primary">매장 관리 페이지</button>
             </div>
 
 
@@ -87,7 +87,7 @@ body {
                   });
 
                   $(".btn-primary").on("click", function() {
-                     self.location = "/employee/listAll?posNum="+${employeeVO.posNum};
+                     self.location = "/shopmanage/shop_main?posNum="+${employeeVO.posNum};
                   });
                });
             </script>
