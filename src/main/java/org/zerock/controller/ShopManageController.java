@@ -39,13 +39,12 @@ public class ShopManageController{
 	
 
 	@RequestMapping(value="/statistics",method=RequestMethod.GET)
-	public String statistic(@RequestParam("posNum") int posNum,Model model)throws Exception{
-		System.out.println("통계페이지로 넘어오는 포스 값 : "+posNum);
+	public String statistic(@RequestParam("posNum") int posNum,Model model)throws Exception{	
 		
 		ArrayList<CalendarVO> calendar = new ArrayList<CalendarVO>();
 		calendar=(ArrayList<CalendarVO>)calcuchngrecservice.CalendarlistAll(posNum);
 		
-		System.out.println("calendar 사이즈는 : " + calendar.size());
+		System.out.println("calendar 사이즈는: " + calendar.size());
 		
 		for(int i=0; i<calendar.size(); i++){
 			calendar.get(i).setTitle("총 매출 "+ calendar.get(i).getTitle() + " 원 ");  
