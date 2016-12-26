@@ -113,6 +113,10 @@ button {
 				$("#statistics").on("click", function() {
 					$('#div_right').load("/shopmanage/statistics?posNum="+<%=request.getParameter("posNum")%>);
 				});
+                $('#go_back').on("click",function() {
+                    self.location = '/member/read?posNum='+<%=request.getParameter("posNum")%>;
+                    });
+			});
 		</script>
 	</div>
 </body>

@@ -42,10 +42,6 @@ body {
 
 
 $('#calendar').fullCalendar({
-
-	var salesObj = ${object};
-	console.log(salesObj);
-
     header: {
         center: 'month,agendaFourDay' // buttons for switching between views
     },
