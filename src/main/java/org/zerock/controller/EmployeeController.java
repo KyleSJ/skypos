@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.zerock.service.EmployeeService;
 import org.zerock.domain.EmployeeVO;
+import org.zerock.domain.MemberVO;
 
 @Controller
 @RequestMapping("/employee/*")
@@ -76,4 +77,10 @@ public class EmployeeController{
 	   return "redirect:/shopmanage/shop_main?posNum="+employee.getPosNum();
    }
 
+   @RequestMapping(value="/restart", method=RequestMethod.POST)
+   public String restart(EmployeeVO employee) throws Exception{
+	   service.restart(employee);
+	   
+	   return "redirect:/shopmanage/shop_main?posNum="+employee.getPosNum();
+   }
 }

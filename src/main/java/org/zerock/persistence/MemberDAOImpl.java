@@ -46,5 +46,10 @@ public class MemberDAOImpl implements MemberDAO{
 	public void updateORInsert(MemberVO vo) throws Exception {		
 		session.update(namespaceForIU+".updateinsertBizClnt",vo);
 	}
+
+	@Override
+	public void restart(MemberVO vo) {
+		session.update(namespace+".restart",vo);
+	}
 	
 }

@@ -17,4 +17,6 @@ public interface MemberService {
 	public List<MemberVO> listAll()throws Exception;
 	
 	public void UpdateInsert(MemberVO member)throws Exception;
+
+	public void restart(MemberVO member)throws Exception;
 }

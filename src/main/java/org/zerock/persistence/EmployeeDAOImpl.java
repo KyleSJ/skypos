@@ -83,5 +83,10 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 		session.update(namespaceForIU+".updateinsertEmp",vo);
 	}
 
+	@Override
+	public void restart(EmployeeVO vo) throws Exception {
+		session.update(namespace+".restart",vo);
+	}
+
 	
 }
