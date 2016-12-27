@@ -7,6 +7,7 @@ public class EmployeeVO {
 	private String empId;
 	private String empName;
 	private String pwd;
+	private int retire;
 
 	public int getPosNum() {
 		return posNum;
@@ -32,10 +33,16 @@ public class EmployeeVO {
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
 	}
+	public void setRetire(int retire){
+		this.retire = retire;
+	}
+	public int getRetire(){
+		return retire;
+	}
 	@Override
 	public String toString() {
 		return "EmployeeVO [posNum=" + posNum + ", empId=" + empId
-				+ ", empName=" + empName + ", pwd=" + pwd + "]";
+				+ ", empName=" + empName + ", pwd=" + pwd + ", retire=" + retire + "]";
 	}
 	
 }

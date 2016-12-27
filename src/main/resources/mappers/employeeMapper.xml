@@ -45,7 +45,7 @@
     
     <select id="listAll" resultType ="org.zerock.domain.EmployeeVO">
         <![CDATA[
-        select empId, posNum, empName, pwd
+        select empId, posNum, empName, pwd, retire
         from
         emp
         where posNum =#{posNum}

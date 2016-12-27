@@ -41,23 +41,27 @@ td {
 	<table class="table table-bordered table-hover">
 		<tr>
 			<th style="width: 10px">posNum</th>
+			<th>IP</th>
 			<th>regNum</th>
 			<th>vanNum</th>
 			<th>repreName</th>
 			<th>compaName</th>
 			<th>phoneNum</th>
 			<th>addr</th>
+			<th>shutdown</th>
 		</tr>
 
 		<c:forEach items="${list}" var="MemberVO">
 			<tr>
 				<td><a href='/member/read?posNum=${MemberVO.posNum}'>${MemberVO.posNum}</a></td>
+				<td>${MemberVO.IP}</td>
 				<td>${MemberVO.regNum}</td>
 				<td>${MemberVO.vanNum}</td>
 				<td>${MemberVO.repreName}</td>
 				<td>${MemberVO.compaName}</td>
 				<td>${MemberVO.phoneNum}</td>
 				<td>${MemberVO.addr}</td>
+				<td>${MemberVO.shutdown}</td>
 			</tr>
 		</c:forEach>
 

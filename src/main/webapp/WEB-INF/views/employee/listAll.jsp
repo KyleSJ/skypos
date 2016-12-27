@@ -44,6 +44,7 @@ text-align : center;
        <th>posNum</th>
        <th>empName</th>
        <th>pwd</th>
+       <th>retire</th>
       </tr>
 
    <c:forEach items="${list}" var="EmployeeVO">
@@ -52,6 +53,7 @@ text-align : center;
        <td>${EmployeeVO.posNum}</td>
        <td>${EmployeeVO.empName}</td>
        <td>${EmployeeVO.pwd}</td>
+       <td>${EmployeeVO.retire}</td>
       </tr>
    </c:forEach>
    

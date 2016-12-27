@@ -120,6 +120,7 @@ button {
 					$('#div_right_down').empty();
 					$('#div_right_up').load("/shopmanage/statistics?posNum="+<%=request.getParameter("posNum")%>);
 				});
+				
                 $('#go_back').on("click",function() {
                     self.location = '/member/read?posNum='+<%=request.getParameter("posNum")%>;
                     });
