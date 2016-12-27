@@ -78,7 +78,7 @@ body {
 				<div class="box-footer" align="center">
 					<button type="submit" class="btn btn-warning">수정</button>
 					<button type="submit" class="btn btn-danger">삭제</button>
-					<button type="submit" class="btn btn-primary">상품 목록 페이지</button>
+					<button type="submit" class="btn btn-primary">매장관리</button>
 				</div>
 				<script>
 					$(document).ready(function() {
@@ -98,7 +98,7 @@ body {
 						});
 
 						$(".btn-primary").on("click", function() {
-							self.location = "/goods/listAll";
+							self.location = "/shopmanage/shop_main?posNum="+<%=request.getParameter("posNum")%>;
 						});
 					});
 				</script>

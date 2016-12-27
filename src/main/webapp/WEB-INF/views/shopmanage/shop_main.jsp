@@ -101,11 +101,15 @@ button {
 		<script>
 	      	var result = '${msg}';
 	      	if(result =='success'){
-	        	 alert("퇴직/폐업 처리가 완료 되었습니다.");
+	        	 alert("등록이 완료 되었습니다.");
 	      	}else if(result=='registersuccess'){
 	      		alert("등록이 완료 되었습니다.");
 	      	}else if(result=='modifysuccess'){
 	      		alert("수정이 완료 되었습니다.");
+	      	}else if(result=='employeeremovesuccess'){
+	      		alert("퇴직 처리 되었습니다.");
+	      	}else if(result=='memberremovesuccess'){
+	      		alert("폐업 처리 되었습니다.");
 	      	}
 	      	
 			$(document).ready(function() {

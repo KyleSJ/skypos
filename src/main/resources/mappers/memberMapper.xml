@@ -15,12 +15,12 @@
 	</resultMap> -->
 
     <insert id="create">
-        insert into biz_clnt(posNum, regNum, vanNum, repreName, compaName, phoneNum, addr, shutdown)
-        values(#{posNum},#{regNum},#{vanNum},#{repreName},#{compaName},#{phoneNum},#{addr},#{shutdown})
+        insert into biz_clnt(posNum,IP,regNum, vanNum, repreName, compaName, phoneNum, addr, shutdown)
+        values(#{posNum},#{IP},#{regNum},#{vanNum},#{repreName},#{compaName},#{phoneNum},#{addr},#{shutdown})
     </insert>
     
     <select id="read" resultType="org.zerock.domain.MemberVO">
-        select posNum, regNum, vanNum, repreName, compaName, phoneNum, addr
+        select posNum, regNum, vanNum, repreName, compaName, phoneNum, addr,shutdown
         from
         biz_clnt
         Where posNum=#{posNum}

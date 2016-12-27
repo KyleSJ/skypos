@@ -5,8 +5,8 @@
 
 <mapper namespace="org.zerock.mapper.CalcuMapper">
     <insert id="create">
-        insert into calcu (calcuDay, calcuChngNum, printNum, openDay)
-        values(#{calcuDay},#{calcuChngNum},#{printNum},#{openDay})
+        insert into calcu (calcuDay, calcuChngNum, printNum, openDay,posNum)
+        values(#{calcuDay},#{calcuChngNum},#{printNum},#{openDay},#{posNum})
     </insert>
     
     <select id="read" resultType="org.zerock.domain.CalcuVO">

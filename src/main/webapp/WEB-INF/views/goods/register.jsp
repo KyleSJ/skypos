@@ -65,7 +65,8 @@ body {
 					<br>
 					<div class="box-footer" align="center">
 						<button type="submit" class="btn btn-primary">등록</button>
-						<a href="/goods/listAll"><input type="button" value="상품목록"></a>
+						<a href="/shopmanage/shop_main?posNum=<%=request.getParameter("posNum")%>">
+						<input type="button" class="btn btn-primary" value="매장관리"></a>
 					</div>
 				</div>
 			</div>

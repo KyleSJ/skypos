@@ -50,12 +50,12 @@ public class GoodsCatController{
    }
    
    @RequestMapping(value="/remove", method= RequestMethod.POST)
-   public String remove(@RequestParam("goodsCatNum") int goodsCatNum, RedirectAttributes rttr)throws Exception{
+   public String remove(@RequestParam("goodsCatNum") int goodsCatNum,@RequestParam("posNum") int posNum, RedirectAttributes rttr)throws Exception{
 	   service.remove(goodsCatNum);
 	   
-	   rttr.addFlashAttribute("msg","success");
+	   rttr.addFlashAttribute("msg","removesuccess");
 	   
-	   return "redirect:/goodscat/listAll";
+	   return "redirect:/shopmanage/shop_main?posNum="+posNum;
    }
    
    @RequestMapping(value="/modify", method=RequestMethod.GET)
@@ -68,7 +68,7 @@ public class GoodsCatController{
 	   logger.info("mod post................");
 	   
 	   service.modify(goodscat);
-	   rttr.addFlashAttribute("msg","SUCCESS");
+	   rttr.addFlashAttribute("msg","modifysuccess");
 	   
 	   return "redirect:/shopmanage/shop_main?posNum="+posNum;
    }

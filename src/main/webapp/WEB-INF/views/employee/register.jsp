@@ -59,15 +59,15 @@ body {
                         placeholder="Enter pwd" />
                   </div>
                   
-				  <div class="control-label" for="retire">
+				  <!-- <div class="control-label" for="retire">
                      retire <input id="retire" class="form-control" type="text" name='retire'
                         placeholder="Enter retire" />
-                  </div>
+                  </div> -->
                   <!-- /.box-body -->
                   <br>
                   <div class="box-footer" align="center">
-                     <button type="submit" class="btn btn-primary">등록</button>
-                     <a href="/employee/listAll"><input type="button" class="btn btn-primary" value="직원목록"></a>
+                     <button type="submit" class="btn btn-primary">등록</button>                     
+                     <a href="/shopmanage/shop_main?posNum=<%=request.getParameter("posNum")%>"><input type="button" class="btn btn-primary" value="매장관리"></a>
                   </div>
             </div>
          </div>

@@ -49,7 +49,7 @@ td {
 
 		<c:forEach items="${list}" var="GoodsCatVO">
 			<tr>
-				<td><a href='/goodscat/read?goodsCatNum=${GoodsCatVO.goodsCatNum}&posNum=<%=request.getParameter("posNum")%>'>${GoodsCatVO.goodsCatNum}</a></td>
+				<td><a href='/goodscat/read?goodsCatNum=${GoodsCatVO.goodsCatNum}&&posNum=<%=request.getParameter("posNum")%>'>${GoodsCatVO.goodsCatNum}</a></td>
 				<td>${GoodsCatVO.posNum}</td>
 				<td>${GoodsCatVO.goodsCatName}</td>
 				<td>${GoodsCatVO.goodsCatLoc}</td>

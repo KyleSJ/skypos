@@ -54,8 +54,7 @@ public class GoodsController{
    public String remove(@RequestParam("goodsNum") int goodsNum, @RequestParam("posNum") int posNum,RedirectAttributes rttr)throws Exception{
 	   service.remove(goodsNum);
 	   
-	   rttr.addFlashAttribute("msg","success");
-	   System.out.println("삭제 할시 posNum"+posNum);
+	   rttr.addFlashAttribute("msg","removesuccess");
 	   return "redirect:/shopmanage/shop_main?posNum="+posNum;
    }
    
@@ -69,7 +68,7 @@ public class GoodsController{
 	   logger.info("mod post................");
 	   
 	   service.modify(goods);
-	   rttr.addFlashAttribute("msg","SUCCESS");
+	   rttr.addFlashAttribute("msg","modifysuccess");
 	   
 	   //return "redirect:/goods/listAll";
 	   return "redirect:/shopmanage/shop_main?posNum="+posNum;

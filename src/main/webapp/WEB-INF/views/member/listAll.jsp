@@ -69,12 +69,13 @@ td {
 	<div align="right">
 		<a href="/member/register"><input type="button"
 			class="btn btn-primary" value="사업자 등록"></a>
+		<a href="/member/"><input type="button" class="btn btn-primary" value="메인 화면"></a>		
 	</div>
 
 	<script>
       var result = '${msg}';
-      if(result =='success'){
-         alert("처리가 완료 되었습니다.");
+      if(result =='memberremovesuccess'){
+         alert("폐업 처리 되었습니다.");
       }
    </script>
 </body>

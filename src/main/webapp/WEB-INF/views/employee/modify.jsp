@@ -72,7 +72,7 @@ body {
                      console.log(formObj);
 
                      $(".btn-warning").on("click", function() {
-                        self.location = "/pay/listAll";
+                        self.location = "/shopmanage/shop_main?posNum="+<%=request.getParameter("posNum")%>;
                      });
 
                      $(".btn-primary").on("click", function() {

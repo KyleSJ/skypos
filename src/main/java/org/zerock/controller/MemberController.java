@@ -60,7 +60,7 @@ public class MemberController{
    public String remove(@RequestParam("posNum") int posNum, RedirectAttributes rttr)throws Exception{
 	   service.remove(posNum);
 	   
-	   rttr.addFlashAttribute("msg","success");
+	   rttr.addFlashAttribute("msg","memberremovesuccess");
 	   
 	   return "redirect:/member/listAll";
    }

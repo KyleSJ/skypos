@@ -31,6 +31,8 @@ public class EmployeeController{
       logger.info("regist post...............");
       logger.info(employee.toString());
       
+      //직원 활성화
+      employee.setRetire(1);
       service.regist(employee);
       
       //return "/member/success";
@@ -55,7 +57,7 @@ public class EmployeeController{
    public String remove(@RequestParam("empId") String empId,@RequestParam("posNum") int posNum, EmployeeVO employee, RedirectAttributes rttr)throws Exception{
 	   service.remove(empId,posNum);
 	   
-	   rttr.addFlashAttribute("msg","success");
+	   rttr.addFlashAttribute("msg","employeeremovesuccess");
 	   return "redirect:/shopmanage/shop_main?posNum="+employee.getPosNum();
    }
    

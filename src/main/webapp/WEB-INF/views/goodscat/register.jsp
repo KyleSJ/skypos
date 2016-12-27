@@ -63,8 +63,8 @@ body {
                <br>
                <div class="box-footer" align="center">
                   <button type="submit" class="btn btn-primary">등록</button>
-                  <a href="/goodscat/listAll"><input type="button"
-                     class="btn btn-primary" value="상품 카테고리"></a>
+                  <a href="/shopmanage/shop_main?posNum=<%=request.getParameter("posNum")%>">
+                  <input type="button" class="btn btn-primary" value="매장관리"></a>
                </div>
             </div>
          </div>

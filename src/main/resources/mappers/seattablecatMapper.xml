@@ -15,8 +15,8 @@
 	</resultMap> -->
 	
     <insert id="create">
-        insert into table_cat (tableCatNum, tableCatName, tableCatLoc)
-        values(#{tableCatNum},#{tableCatName},#{tableCatLoc})
+        insert into table_cat (tableCatNum, tableCatName, tableCatLoc,posNum)
+        values(#{tableCatNum},#{tableCatName},#{tableCatLoc},#{posNum})
     </insert>
     
     <select id="read" resultType="org.zerock.domain.SeattableCatVO">
