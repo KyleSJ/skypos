@@ -47,4 +47,9 @@
          ]]>
     </select>
     
+    <update id="restart">
+    	update biz_clnt set shutdown = 1
+    	where posNum=#{posNum}
+    </update>
+    
 </mapper>

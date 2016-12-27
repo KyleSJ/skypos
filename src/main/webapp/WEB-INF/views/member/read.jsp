@@ -81,6 +81,7 @@ body {
                 --> 
                <a href="/shopmanage/shop_main?posNum=${memberVO.posNum}">
                <input type="button" class="btn btn-success" value="매장 관리"></a>
+               <button type="submit" class="btn btn-info">재등록하기</button>
             </div>
 
             <script>
@@ -101,6 +102,11 @@ body {
                   $(".btn-primary").on("click", function() {
                      self.location = "/member/listAll";
                   });
+                  
+                  $(".btn-info").on("click", function(){
+                	  formObj.attr("action","/member/restart");
+                	  formObj.submit();
+                  })
                });
             </script>
          </div>

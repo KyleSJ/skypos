@@ -79,4 +79,12 @@ public class MemberController{
 	   
 	   return "redirect:/member/read?posNum="+member.getPosNum();
    }
+   
+   @RequestMapping(value="/restart", method=RequestMethod.POST)
+   public String restart(MemberVO member) throws Exception{
+	   service.restart(member);
+	   
+	   return "redirect:/member/listAll";
+   }
+   
 }

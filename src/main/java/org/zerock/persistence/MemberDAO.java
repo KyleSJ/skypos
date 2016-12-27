@@ -16,4 +16,6 @@ public interface MemberDAO {
 	public List<MemberVO> listAll()throws Exception;
 	
 	public void updateORInsert(MemberVO vo)throws Exception;
+
+	public void restart(MemberVO member);
 }
