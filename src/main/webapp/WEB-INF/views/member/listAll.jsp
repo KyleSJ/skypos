@@ -41,6 +41,7 @@ td {
 	<table class="table table-bordered table-hover">
 		<tr>
 			<th style="width: 10px">posNum</th>
+			<th>IP</th>
 			<th>regNum</th>
 			<th>vanNum</th>
 			<th>repreName</th>
@@ -53,6 +54,7 @@ td {
 		<c:forEach items="${list}" var="MemberVO">
 			<tr>
 				<td><a href='/member/read?posNum=${MemberVO.posNum}'>${MemberVO.posNum}</a></td>
+				<td>${MemberVO.IP}</td>
 				<td>${MemberVO.regNum}</td>
 				<td>${MemberVO.vanNum}</td>
 				<td>${MemberVO.repreName}</td>

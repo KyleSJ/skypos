@@ -7,14 +7,7 @@ public class EmployeeVO {
 	private String empId;
 	private String empName;
 	private String pwd;
-	private int retire;	
-	
-	public int getRetire() {
-		return retire;
-	}
-	public void setRetire(int retire) {
-		this.retire = retire;
-	}
+	private int retire;
 	public int getPosNum() {
 		return posNum;
 	}
@@ -38,6 +31,12 @@ public class EmployeeVO {
 	}
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
+	}
+	public int getRetire() {
+		return retire;
+	}
+	public void setRetire(int retire) {
+		this.retire = retire;
 	}
 	@Override
 	public String toString() {

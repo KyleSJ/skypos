@@ -9,9 +9,6 @@
 <!-- Bootstrap -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-
-
-
 <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요한 -->
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
@@ -84,7 +81,6 @@ body {
                         $(".btn-warning").on("click", function() {
                            self.location = '/member/read?posNum='+${memberVO.posNum};
                         });
-
                  
                         $(".btn-primary").on("click", function() {
                 		   formObj.submit();

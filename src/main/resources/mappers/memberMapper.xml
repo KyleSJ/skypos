@@ -33,16 +33,17 @@
     </update>
     
     <delete id="delete">
-        delete from biz_clnt where posNum=#{posNum}
+        update biz_clnt set shutdown = 0 
+		where posNum=#{posNum}
     </delete>
     
     <select id="listAll" resultType ="org.zerock.domain.MemberVO">
         <![CDATA[
-        select posNum, regNum, vanNum, repreName, compaName, phoneNum, addr, shutdown
+        select posNum, IP, regNum, vanNum, repreName, compaName, phoneNum, addr, shutdown
         from
         biz_clnt
         where posNum > 0
-        order by posNum desc
+        order by shutdown desc
          ]]>
     </select>
     

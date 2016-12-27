@@ -47,7 +47,7 @@ public class MemberController{
    public void listAll(Model model)throws Exception{
 	   logger.info("show all list...............");
 	  // List<MemberVO> test = service.listAll();
-	  //model.addAttribute("list",test);
+	  //model.addAttribute("list",test);	   
 	   model.addAttribute("list",service.listAll());
    }
    
