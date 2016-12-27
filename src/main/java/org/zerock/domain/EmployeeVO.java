@@ -7,7 +7,14 @@ public class EmployeeVO {
 	private String empId;
 	private String empName;
 	private String pwd;
-
+	private int retire;	
+	
+	public int getRetire() {
+		return retire;
+	}
+	public void setRetire(int retire) {
+		this.retire = retire;
+	}
 	public int getPosNum() {
 		return posNum;
 	}
@@ -35,7 +42,7 @@ public class EmployeeVO {
 	@Override
 	public String toString() {
 		return "EmployeeVO [posNum=" + posNum + ", empId=" + empId
-				+ ", empName=" + empName + ", pwd=" + pwd + "]";
-	}
-	
+				+ ", empName=" + empName + ", pwd=" + pwd + ", retire="
+				+ retire + "]";
+	}		
 }

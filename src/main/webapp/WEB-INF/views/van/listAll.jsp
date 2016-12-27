@@ -55,6 +55,7 @@ text-align : center;
    </table>
    <div align="right">
    		<a href="/van/register"><input type="button" value="van 등록" class="btn btn-primary"></a>
+   		<a href="/member/"><input type="button" class="btn btn-primary" value="메인화면"></a>
    </div>
    <script>
       var result = '${msg}';

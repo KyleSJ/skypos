@@ -73,7 +73,12 @@ body {
                      <textarea id="addr" class="form-control" name="addr" rows="1"
                         placeholder="Enter address."></textarea>
                   </div>
-
+                  
+				  <div class="control-group" for="shutdown">
+                     shutdown
+                     <textarea id="shutdown" class="form-control" name="shutdown" rows="1"
+                        placeholder="Enter shutdown"></textarea>
+                  </div>
 
                   <!-- /.box-body -->
                   <br>

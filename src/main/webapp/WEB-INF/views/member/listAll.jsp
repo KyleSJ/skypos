@@ -47,6 +47,7 @@ td {
 			<th>compaName</th>
 			<th>phoneNum</th>
 			<th>addr</th>
+			<th>shutdown</th>
 		</tr>
 
 		<c:forEach items="${list}" var="MemberVO">
@@ -58,6 +59,7 @@ td {
 				<td>${MemberVO.compaName}</td>
 				<td>${MemberVO.phoneNum}</td>
 				<td>${MemberVO.addr}</td>
+				<td>${MemberVO.shutdown}</td>
 			</tr>
 		</c:forEach>
 

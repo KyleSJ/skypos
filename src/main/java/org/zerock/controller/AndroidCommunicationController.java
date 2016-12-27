@@ -90,13 +90,13 @@ public class AndroidCommunicationController{
 	@ResponseBody
 	public ArrayList[] androidToServerSend(HttpServletRequest request)throws Exception{
 		
-		System.out.println("send 부분  "+ request.getParameter("empId"));
+		/*System.out.println("send 부분  "+ request.getParameter("empId"));
 		System.out.println("send 부분  "+ request.getParameter("pwd"));
 		System.out.println("send 부분  "+ request.getParameter("posNum"));
 		
 		String posnum = request.getParameter("posNum");
 		String empid = request.getParameter("empId");
-		String pwd = request.getParameter("pwd");
+		String pwd = request.getParameter("pwd");*/
 		
 		ArrayList<EmployeeVO> emplist=new ArrayList<EmployeeVO>();
 		ArrayList<VanVO> vanlist=new ArrayList<VanVO>();

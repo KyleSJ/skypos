@@ -9,7 +9,15 @@ public class MemberVO {
 	private String phoneNum;
 	private String addr;
 	private String IP;
+	private int shutdown;
 	
+	
+	public int getShutdown() {
+		return shutdown;
+	}
+	public void setShutdown(int shutdown) {
+		this.shutdown = shutdown;
+	}
 	public int getPosNum() {
 		return posNum;
 	}
@@ -63,6 +71,7 @@ public class MemberVO {
 		return "MemberVO [posNum=" + posNum + ", regNum=" + regNum
 				+ ", vanNum=" + vanNum + ", repreName=" + repreName
 				+ ", compaName=" + compaName + ", phoneNum=" + phoneNum
-				+ ", addr=" + addr + ", IP=" + IP + "]";
+				+ ", addr=" + addr + ", IP=" + IP + ", shutdown=" + shutdown
+				+ "]";
 	}
 }

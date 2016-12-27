@@ -37,15 +37,15 @@
 		on duplicate key update tableCatNum=#{tableCatNum}, tableCatName=#{tableCatName}, tableCatLoc=#{tableCatLoc},posNum=#{posNum}
 	</update>
 	<update id="updateinsertBizClnt">
-		insert into biz_clnt(posNum, IP, regNum, vanNum, repreName, compaName, phoneNum, addr)
-        values(#{posNum},#{IP},#{regNum},#{vanNum},#{repreName},#{compaName},#{phoneNum},#{addr})
-		on duplicate key update posNum=#{posNum}, regNum=#{regNum}, vanNum=#{vanNum}, repreName=#{repreName}, compaName=#{compaName},
-        phoneNum=#{phoneNum}, addr=#{addr}, IP=#{IP}
+		insert into biz_clnt(posNum, IP, regNum, vanNum, repreName, compaName, phoneNum, addr, shutdown)
+        values(#{posNum},#{IP},#{regNum},#{vanNum},#{repreName},#{compaName},#{phoneNum},#{addr},#{shutdown})
+		on duplicate key update posNum=#{posNum},IP=#{IP}, regNum=#{regNum}, vanNum=#{vanNum}, repreName=#{repreName}, 
+		compaName=#{compaName}, phoneNum=#{phoneNum}, addr=#{addr}, shutdown=#{shutdown} 
 	</update>
 	<update id="updateinsertEmp">
-		insert into emp (posNum, empId, empName, pwd)
-        values(#{posNum},#{empId},#{empName},#{pwd})
-		on duplicate key update empId=#{empId}, posNum=#{posNum}, empName=#{empName}, pwd=#{pwd}
+		insert into emp (posNum, empId, empName, pwd, retire)
+        values(#{posNum},#{empId},#{empName},#{pwd},#{retire})
+		on duplicate key update empId=#{empId}, posNum=#{posNum}, empName=#{empName}, pwd=#{pwd},retire=#{retire}
 	</update>	
 	<update id="updateinsertGoods">
 		insert into goods (goodsNum, goodsCatNum, goodsColor, goodsName, goodsPrice, goodsSeq)

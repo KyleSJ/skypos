@@ -60,6 +60,7 @@ body {
                   <button type="submit" class="btn btn-primary">등록</button>
                   <a href="/cardcompa/listAll"><input type="button"
                      class="btn btn-primary" value="카드회사 목록"></a>
+                  <a href="/member/"><input type="button" class="btn btn-primary" value="메인화면"></a>
                </div>
             </div>
          </div>

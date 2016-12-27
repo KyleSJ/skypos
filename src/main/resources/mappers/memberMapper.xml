@@ -15,8 +15,8 @@
 	</resultMap> -->
 
     <insert id="create">
-        insert into biz_clnt(posNum, regNum, vanNum, repreName, compaName, phoneNum, addr)
-        values(#{posNum},#{regNum},#{vanNum},#{repreName},#{compaName},#{phoneNum},#{addr})
+        insert into biz_clnt(posNum, regNum, vanNum, repreName, compaName, phoneNum, addr, shutdown)
+        values(#{posNum},#{regNum},#{vanNum},#{repreName},#{compaName},#{phoneNum},#{addr},#{shutdown})
     </insert>
     
     <select id="read" resultType="org.zerock.domain.MemberVO">
@@ -38,7 +38,7 @@
     
     <select id="listAll" resultType ="org.zerock.domain.MemberVO">
         <![CDATA[
-        select posNum, regNum, vanNum, repreName, compaName, phoneNum, addr
+        select posNum, regNum, vanNum, repreName, compaName, phoneNum, addr, shutdown
         from
         biz_clnt
         where posNum > 0

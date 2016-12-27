@@ -15,8 +15,8 @@
 	</resultMap> -->
 	
     <insert id="create">
-        insert into emp (posNum, empId, empName, pwd)
-        values(#{posNum},#{empId},#{empName},#{pwd})
+        insert into emp (posNum, empId, empName, pwd, retire)
+        values(#{posNum},#{empId},#{empName},#{pwd},#{retire})
     </insert>
     
     <select id="read" resultType="org.zerock.domain.EmployeeVO">

@@ -58,7 +58,11 @@ body {
                      pwd <input id="pwd" class="form-control" type="text" name='pwd'
                         placeholder="Enter pwd" />
                   </div>
-
+                  
+				  <div class="control-label" for="retire">
+                     retire <input id="retire" class="form-control" type="text" name='retire'
+                        placeholder="Enter retire" />
+                  </div>
                   <!-- /.box-body -->
                   <br>
                   <div class="box-footer" align="center">

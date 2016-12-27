@@ -34,7 +34,7 @@ public class EmployeeController{
       service.regist(employee);
       
       //return "/member/success";
-      rttr.addFlashAttribute("msg","success");
+      rttr.addFlashAttribute("msg","registersuccess");
       return "redirect:/shopmanage/shop_main?posNum="+employee.getPosNum();
    }
    
@@ -69,7 +69,7 @@ public class EmployeeController{
 	   logger.info("mod post................");
 	   
 	   service.modify(employee);
-	   rttr.addFlashAttribute("msg","SUCCESS");
+	   rttr.addFlashAttribute("msg","modifysuccess");
 	   
 	   return "redirect:/shopmanage/shop_main?posNum="+employee.getPosNum();
    }

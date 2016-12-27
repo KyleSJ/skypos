@@ -55,6 +55,7 @@ text-align : center;
    </table>
    <div align="right">
    		<a href="/cardcompa/register"><input type="button" value="카드 회사 등록" class="btn btn-primary"></a>
+   	    <a href="/member/"><input type="button" class="btn btn-primary" value="메인화면"></a>   		
    </div>
    <script>
       var result = '${msg}';
