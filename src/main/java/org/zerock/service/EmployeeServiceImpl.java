@@ -7,6 +7,7 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 import org.zerock.domain.EmployeeVO;
+import org.zerock.domain.MemberVO;
 import org.zerock.persistence.EmployeeDAO;
 
 @Service
@@ -58,6 +59,11 @@ public class EmployeeServiceImpl implements EmployeeService{
 	@Override
 	public void UpdateInsert(EmployeeVO employee) throws Exception {
 		dao.updateORInsert(employee);		
+	}
+
+	@Override
+	public void restart(EmployeeVO employee) throws Exception {
+		dao.restart(employee);
 	}
 
 }

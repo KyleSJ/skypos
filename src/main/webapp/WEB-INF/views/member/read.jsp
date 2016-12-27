@@ -106,7 +106,7 @@ body {
                   $(".btn-info").on("click", function(){
                 	  formObj.attr("action","/member/restart");
                 	  formObj.submit();
-                  })
+                  });
                });
             </script>
          </div>

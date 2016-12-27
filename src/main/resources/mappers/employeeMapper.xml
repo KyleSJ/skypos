@@ -60,4 +60,8 @@
         emp
          ]]>
     </select>
+    <delete id="restart">
+        update emp set retire=1 
+		where empId=#{empId} and posNum=#{posNum}
+    </delete>
 </mapper>

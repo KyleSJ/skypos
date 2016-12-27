@@ -64,6 +64,7 @@ body {
             <div class="box-footer" align="center">
                <button type="submit" class="btn btn-warning">수정</button>
                <button type="submit" class="btn btn-danger">삭제</button>
+               <button type="submit" class="btn btn-info">재등록하기</button>
                <button type="submit" class="btn btn-primary">매장 관리 페이지</button>
             </div>
 
@@ -89,6 +90,10 @@ body {
                   $(".btn-primary").on("click", function() {
                      self.location = "/shopmanage/shop_main?posNum="+${employeeVO.posNum};
                   });
+                  $(".btn-info").on("click", function(){
+                	  formObj.attr("action","/employee/restart");
+                	  formObj.submit();
+                  })
                });
             </script>
          </div>
