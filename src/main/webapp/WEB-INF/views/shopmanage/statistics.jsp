@@ -16,7 +16,6 @@
     <script src="<c:url value="/resources/fullcalendar/fullcalendar.js"/>"></script>
     <!-- Google Calendar API-->
     <script type='text/javascript' src="<c:url value="/resources/fullcalendar/gcal.js"/>"></script>
-    <!-- <script src="<c:url value="/resources/js/test.js"/>"></script> -->
 
 <style>
 body {
