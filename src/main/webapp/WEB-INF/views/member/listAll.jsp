@@ -76,7 +76,9 @@ td {
       var result = '${msg}';
       if(result =='memberremovesuccess'){
          alert("폐업 처리 되었습니다.");
-      }
+      }else if(result=='ReRegister'){
+    	  alert("재등록 되었습니다.");
+      }      
    </script>
 </body>
 </html>

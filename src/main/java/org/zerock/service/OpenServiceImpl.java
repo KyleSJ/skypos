@@ -21,8 +21,7 @@ public class OpenServiceImpl implements OpenService{
 	}
 
 	@Override
-	public OpenVO read(Date OpenDay) throws Exception{
-		//System.out.println(test.toString());
+	public OpenVO read(Date OpenDay) throws Exception{		
 		return dao.read(OpenDay);
 	}
 

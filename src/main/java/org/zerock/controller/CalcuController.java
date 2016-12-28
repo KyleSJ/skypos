@@ -27,7 +27,7 @@ public class CalcuController{
    public void registerGET(CalcuVO calcu, Model model)throws Exception{
       logger.info("register get .............");
    }
-   
+   //DB 등록
    @RequestMapping(value="/register",method=RequestMethod.POST)
    public String registPOST(CalcuVO calcu, RedirectAttributes rttr)throws Exception{
       logger.info("regist post...............");
@@ -38,20 +38,18 @@ public class CalcuController{
       rttr.addFlashAttribute("msg","success");
       return "redirect:/calcu/listAll";
    }
-   
+   //DB 정보를 list형식으로 보여주기
    @RequestMapping(value="/listAll", method=RequestMethod.GET)
    public void listAll(Model model)throws Exception{
 	   logger.info("show all list...............");
-	  // List<CalcuVO> test = service.listAll();
-	  //model.addAttribute("list",test);
 	   model.addAttribute("list",service.listAll());
    }
-   
+   //DB 정보 불러오기
    @RequestMapping(value="/read", method= RequestMethod.GET)
    public void read(@RequestParam("calcuDay") Date calcuDay, Model model) throws Exception{
 	   model.addAttribute(service.read(calcuDay));
    }
-   
+   //DB 삭제
    @RequestMapping(value="/remove", method= RequestMethod.POST)
    public String remove(@RequestParam("calcuDay") Date calcuDay, RedirectAttributes rttr)throws Exception{
 	   service.remove(calcuDay);
@@ -65,7 +63,7 @@ public class CalcuController{
    public void modifyGET(Date calcuDay,Model model)throws Exception{
 	   model.addAttribute(service.read(calcuDay));
    }
-   
+   //DB 수정
    @RequestMapping(value="/modify", method=RequestMethod.POST)
    public String modifyPOST(CalcuVO calcu, RedirectAttributes rttr) throws Exception{
 	   logger.info("mod post................");

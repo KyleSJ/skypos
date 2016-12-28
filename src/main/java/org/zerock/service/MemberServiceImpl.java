@@ -20,8 +20,7 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public MemberVO read(int posNum) throws Exception{
-		//System.out.println(test.toString());
+	public MemberVO read(int posNum) throws Exception{		
 		return dao.read(posNum);
 	}
 

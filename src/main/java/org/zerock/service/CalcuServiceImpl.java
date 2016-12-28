@@ -22,7 +22,6 @@ public class CalcuServiceImpl implements CalcuService{
 
 	@Override
 	public CalcuVO read(Date calcuDay) throws Exception{
-		//System.out.println(test.toString());
 		return dao.read(calcuDay);
 	}
 

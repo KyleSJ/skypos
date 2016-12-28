@@ -46,8 +46,6 @@ public class CardCompaController{
    @RequestMapping(value="/listAll", method=RequestMethod.GET)
    public void listAll(Model model)throws Exception{
 	   logger.info("show all list...............");
-	  // List<CardCompaVO> test = service.listAll();
-	  //model.addAttribute("list",test);
 	   model.addAttribute("list",service.listAll());
    }
    

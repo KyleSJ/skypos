@@ -33,11 +33,12 @@ public class ShopManageController{
 	
 	private static final Logger logger = LoggerFactory.getLogger(ShopManageController.class);
    
+	//shop_main.jsp 불러오기
 	@RequestMapping(value="/shop_main",method=RequestMethod.GET)
-	public void shop_main( Model model)throws Exception{
+		public void shop_main( Model model)throws Exception{
 	}
 	
-
+	//통계버튼 누를 시 statistics.jsp에 json 전달
 	@RequestMapping(value="/statistics",method=RequestMethod.GET)
 	public String statistic(@RequestParam("posNum") int posNum,Model model)throws Exception{	
 		
@@ -54,25 +55,6 @@ public class ShopManageController{
 		System.out.println(test.toString());
 		
 		model.addAttribute("object",test);
-		/*ArrayList<CalcuChngRecVO> CCRlist = new ArrayList<CalcuChngRecVO>();
-
-		CCRlist=(ArrayList<CalcuChngRecVO>)calcuchngrecservice.listAll();
-		System.out.println(CCRlist.toString());
-		
-		Gson gson=new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
-		String test=gson.toJson(CCRlist);
-		
-		CalcuChngRecVO[] CCRobj=gson.fromJson(test, CalcuChngRecVO[].class);
-		
-		model.addAttribute("object",test);
-		
-		for(int i=0; i<CCRobj.length; i++){
-		model.addAttribute("title", CCRobj);
-		model.addAttribute("start", CCRobj[i].getCalcuChngDay());
-		System.out.println(CCRobj[i].getMoneySales());
-		System.out.println(CCRobj[i].getCalcuChngDay());
-		}*/
-	   
 		return "/shopmanage/statistics";
 	}
    

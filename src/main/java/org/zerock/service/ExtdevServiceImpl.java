@@ -21,7 +21,6 @@ public class ExtdevServiceImpl implements ExtdevService{
 
 	@Override
 	public ExtdevVO read(String devName) throws Exception{
-		//System.out.println(test.toString());
 		return dao.read(devName);
 	}
 

@@ -25,30 +25,29 @@ public class OrderMenuController{
    public void registerGET(OrderMenuVO ordermenu, Model model)throws Exception{
       logger.info("register get .............");
    }
-   
+   //DB 등록
    @RequestMapping(value="/register",method=RequestMethod.POST)
    public String registPOST(OrderMenuVO ordermenu, RedirectAttributes rttr)throws Exception{
       logger.info("regist post...............");
       logger.info(ordermenu.toString());
       
       service.regist(ordermenu);
-      
-      //return "/member/success";
+
       rttr.addFlashAttribute("msg","success");
       return "redirect:/ordermenu/listAll";
    }
-   
+   //DB 정보 list형식으로 불러오기
    @RequestMapping(value="/listAll", method=RequestMethod.GET)
    public void listAll(Model model)throws Exception{
 	   logger.info("show all list...............");
 	   model.addAttribute("list",service.listAll());
    }
-   
+   //DB 읽어오기
    @RequestMapping(value="/read", method= RequestMethod.GET)
    public void read(@RequestParam("orderNum") int orderNum, Model model) throws Exception{
 	   model.addAttribute(service.read(orderNum));
    }
-   
+   //DB 삭제
    @RequestMapping(value="/remove", method= RequestMethod.POST)
    public String remove(@RequestParam("orderNum") int orderNum, RedirectAttributes rttr)throws Exception{
 	   service.remove(orderNum);
@@ -62,7 +61,7 @@ public class OrderMenuController{
    public void modifyGET(int orderNum,Model model)throws Exception{
 	   model.addAttribute(service.read(orderNum));
    }
-   
+   //DB 수정
    @RequestMapping(value="/modify", method=RequestMethod.POST)
    public String modifyPOST(OrderMenuVO ordermenu, RedirectAttributes rttr) throws Exception{
 	   logger.info("mod post................");

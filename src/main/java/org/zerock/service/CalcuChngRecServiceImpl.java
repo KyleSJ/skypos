@@ -22,7 +22,6 @@ public class CalcuChngRecServiceImpl implements CalcuChngRecService{
 
 	@Override
 	public CalcuChngRecVO read(int calcuChngNum) throws Exception{
-		//System.out.println(test.toString());
 		return dao.read(calcuChngNum);
 	}
 

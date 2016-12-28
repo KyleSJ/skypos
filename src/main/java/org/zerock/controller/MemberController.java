@@ -30,32 +30,29 @@ public class MemberController{
    public void registerGET(MemberVO member, Model model)throws Exception{
       logger.info("register get .............");
    }
-   
+   //DB 등록
    @RequestMapping(value="/register",method=RequestMethod.POST)
    public String registPOST(MemberVO member, RedirectAttributes rttr)throws Exception{
       logger.info("regist post...............");
       logger.info(member.toString());
       
       service.regist(member);
-      
-      //return "/member/success";
+
       rttr.addFlashAttribute("msg","success");
       return "redirect:/member/listAll";
    }
-   
+   //DB 정보 list형식으로 불러오기
    @RequestMapping(value="/listAll", method=RequestMethod.GET)
    public void listAll(Model model)throws Exception{
-	   logger.info("show all list...............");
-	  // List<MemberVO> test = service.listAll();
-	  //model.addAttribute("list",test);	   
+	   logger.info("show all list..............."); 
 	   model.addAttribute("list",service.listAll());
    }
-   
+   //DB 읽어오기
    @RequestMapping(value="/read", method= RequestMethod.GET)
    public void read(@RequestParam("posNum") int posNum, Model model) throws Exception{
 	   model.addAttribute(service.read(posNum));
    }
-   
+   //DB 삭제
    @RequestMapping(value="/remove", method= RequestMethod.POST)
    public String remove(@RequestParam("posNum") int posNum, RedirectAttributes rttr)throws Exception{
 	   service.remove(posNum);
@@ -69,7 +66,7 @@ public class MemberController{
    public void modifyGET(int posNum,Model model)throws Exception{
 	   model.addAttribute(service.read(posNum));
    }
-   
+   //DB 수정
    @RequestMapping(value="/modify", method=RequestMethod.POST)
    public String modifyPOST(MemberVO member, RedirectAttributes rttr) throws Exception{
 	   logger.info("mod post................");
@@ -79,11 +76,11 @@ public class MemberController{
 	   
 	   return "redirect:/member/read?posNum="+member.getPosNum();
    }
-   
+   // 사업자 활성화
    @RequestMapping(value="/restart", method=RequestMethod.POST)
-   public String restart(MemberVO member) throws Exception{
+   public String restart(MemberVO member,RedirectAttributes rttr) throws Exception{
 	   service.restart(member);
-	   
+	   rttr.addFlashAttribute("msg", "ReRegister");
 	   return "redirect:/member/listAll";
    }
    

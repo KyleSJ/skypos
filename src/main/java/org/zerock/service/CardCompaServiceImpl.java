@@ -21,7 +21,6 @@ public class CardCompaServiceImpl implements CardCompaService{
 
 	@Override
 	public CardCompaVO read(int cardCompaNum) throws Exception{
-		//System.out.println(test.toString());
 		return dao.read(cardCompaNum);
 	}
 

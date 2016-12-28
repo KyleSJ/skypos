@@ -25,32 +25,29 @@ public class CalcuChngRecController{
    public void registerGET(CalcuChngRecVO calcuChngNum, Model model)throws Exception{
       logger.info("register get .............");
    }
-   
+   //DB Register
    @RequestMapping(value="/register",method=RequestMethod.POST)
    public String registPOST(CalcuChngRecVO calcuChngRec, RedirectAttributes rttr)throws Exception{
       logger.info("regist post...............");
       logger.info(calcuChngRec.toString());
       
       service.regist(calcuChngRec);
-      
-      //return "/member/success";
+           
       rttr.addFlashAttribute("msg","success");
       return "redirect:/calcuchngrec/listAll";
    }
-   
+   //DB의 정보를 List 형식으로 보여주기
    @RequestMapping(value="/listAll", method=RequestMethod.GET)
    public void listAll(Model model)throws Exception{
 	   logger.info("show all list...............");
-	  // List<CalcuChngNumVO> test = service.listAll();
-	  //model.addAttribute("list",test);
 	   model.addAttribute("list",service.listAll());
    }
-   
+   //DB 읽어오기
    @RequestMapping(value="/read", method= RequestMethod.GET)
    public void read(@RequestParam("calcuChngNum") int calcuChngNum, Model model) throws Exception{
 	   model.addAttribute(service.read(calcuChngNum));
    }
-   
+   //DB의 정보 삭제
    @RequestMapping(value="/remove", method= RequestMethod.POST)
    public String remove(@RequestParam("calcuChngNum") int calcuChngNum, RedirectAttributes rttr)throws Exception{
 	   service.remove(calcuChngNum);
@@ -64,7 +61,7 @@ public class CalcuChngRecController{
    public void modifyGET(int calcuChngNum,Model model)throws Exception{
 	   model.addAttribute(service.read(calcuChngNum));
    }
-   
+   //DB 수정
    @RequestMapping(value="/modify", method=RequestMethod.POST)
    public String modifyPOST(CalcuChngRecVO calcuChngRec, RedirectAttributes rttr) throws Exception{
 	   logger.info("mod post................");

@@ -25,30 +25,29 @@ public class SeattableController{
    public void registerGET(SeattableVO table, Model model)throws Exception{
       logger.info("register get .............");
    }
-   
+   //DB 등록
    @RequestMapping(value="/register",method=RequestMethod.POST)
    public String registPOST(SeattableVO table, RedirectAttributes rttr)throws Exception{
       logger.info("regist post...............");
       logger.info(table.toString());
       
       service.regist(table);
-      
-      //return "/member/success";
+
       rttr.addFlashAttribute("msg","success");
       return "/shopmanage/shop_main";
    }
-   
+   //DB 정보 list형식으로 불러오기
    @RequestMapping(value="/listAll", method=RequestMethod.GET)
    public void listAll(@RequestParam("posNum") int posNum, Model model)throws Exception{
 	   logger.info("show all list...............");
 	   model.addAttribute("list",service.listAll(posNum));
    }
-   
+   //DB 읽어오기
    @RequestMapping(value="/read", method= RequestMethod.GET)
    public void read(@RequestParam("tableNum") int tableNum, Model model) throws Exception{
 	   model.addAttribute(service.read(tableNum));
    }
-   
+   //DB 삭제
    @RequestMapping(value="/remove", method= RequestMethod.POST)
    public String remove(@RequestParam("tableNum") int tableNum, RedirectAttributes rttr)throws Exception{
 	   service.remove(tableNum);
@@ -62,7 +61,7 @@ public class SeattableController{
    public void modifyGET(int tableNum,Model model)throws Exception{
 	   model.addAttribute(service.read(tableNum));
    }
-   
+   //DB 수정
    @RequestMapping(value="/modify", method=RequestMethod.POST)
    public String modifyPOST(SeattableVO table, RedirectAttributes rttr) throws Exception{
 	   logger.info("mod post................");

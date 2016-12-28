@@ -40,11 +40,6 @@ public class EmployeeServiceImpl implements EmployeeService{
 	public List<EmployeeVO> listAll(int posNum) throws Exception {
 		return dao.listAll(posNum);
 	}
-	
-	/*@Override
-	public List<EmployeeVO> Alldata(EmployeeVO employee)throws Exception{
-		return dao.Alldata(employee);
-	}*/
 
 	@Override
 	public EmployeeVO login(EmployeeVO employee)throws Exception {

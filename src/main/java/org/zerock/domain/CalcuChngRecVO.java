@@ -20,6 +20,7 @@ public class CalcuChngRecVO {
 	public String getClonecalcuChngTime() {
 		return ClonecalcuChngTime;
 	}
+	//String -> DateFormat
 	public void setClonecalcuChngTime(String clonecalcuChngTime) {
 		String s= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S").format(Long.parseLong(clonecalcuChngTime));
 		this.calcuChngTime = Timestamp.valueOf(s);
@@ -28,6 +29,7 @@ public class CalcuChngRecVO {
 	public String getClonebakTime() {
 		return ClonebakTime;
 	}
+	//String -> DateFormat
 	public void setClonebakTime(String clonebakTime) {
 		String s= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S").format(Long.parseLong(clonebakTime));
 		this.bakTime=Timestamp.valueOf(s);

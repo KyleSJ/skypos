@@ -26,7 +26,7 @@ public class EmployeeController{
    public void registerGET(EmployeeVO employee, Model model)throws Exception{
       logger.info("register get .............");
    }
-   
+   //DB 등록
    @RequestMapping(value="/register",method=RequestMethod.POST)
    public String registPOST(EmployeeVO employee, RedirectAttributes rttr)throws Exception{
       logger.info("regist post...............");
@@ -36,24 +36,21 @@ public class EmployeeController{
       employee.setRetire(1);
       service.regist(employee);
       
-      //return "/member/success";
       rttr.addFlashAttribute("msg","registersuccess");
       return "redirect:/shopmanage/shop_main?posNum="+employee.getPosNum();
    }
-   
+   //DB 정보 list형식으로 불러오기
    @RequestMapping(value="/listAll", method=RequestMethod.GET)
    public void listAll(@RequestParam("posNum") int posNum , Model model)throws Exception{
 	   logger.info("show all list...............");
-	  // List<MemberVO> test = service.listAll();
-	  //model.addAttribute("list",test);
 	   model.addAttribute("list",service.listAll(posNum));
    }
-   
+   //DB 읽어오기
    @RequestMapping(value="/read", method= RequestMethod.GET)
    public void read(@RequestParam("empId") String empId,@RequestParam("posNum") int posNum, Model model) throws Exception{
 	   model.addAttribute(service.read(empId,posNum));
    }
-   
+   //DB 삭제
    @RequestMapping(value="/remove", method= RequestMethod.POST)
    public String remove(@RequestParam("empId") String empId,@RequestParam("posNum") int posNum, EmployeeVO employee, RedirectAttributes rttr)throws Exception{
 	   service.remove(empId,posNum);
@@ -66,7 +63,7 @@ public class EmployeeController{
    public void modifyGET(@RequestParam("empId")String empId,@RequestParam("posNum")int posNum,Model model)throws Exception{
 	   model.addAttribute(service.read(empId,posNum));
    }
-   
+   //DB 수정
    @RequestMapping(value="/modify", method=RequestMethod.POST)
    public String modifyPOST(EmployeeVO employee, RedirectAttributes rttr) throws Exception{
 	   logger.info("mod post................");
@@ -76,11 +73,11 @@ public class EmployeeController{
 	   
 	   return "redirect:/shopmanage/shop_main?posNum="+employee.getPosNum();
    }
-
+   //직원 활성화
    @RequestMapping(value="/restart", method=RequestMethod.POST)
-   public String restart(EmployeeVO employee) throws Exception{
+   public String restart(EmployeeVO employee,RedirectAttributes rttr) throws Exception{
 	   service.restart(employee);
-	   
+	   rttr.addFlashAttribute("msg", "ReRegister");
 	   return "redirect:/shopmanage/shop_main?posNum="+employee.getPosNum();
    }
 }

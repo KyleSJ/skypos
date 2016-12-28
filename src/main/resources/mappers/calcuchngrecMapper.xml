@@ -35,10 +35,12 @@
         order by calcuChngNum desc
          ]]>
     </select>
+    
     <resultMap type="org.zerock.domain.CalendarVO" id="calendarvalue">
 		<result property="title" column="moneySales+cardSales"/>
 		<result property="start" column="calcuDay"/>
 	</resultMap>
+	
     <select id="calendarvalue" resultType ="org.zerock.domain.CalendarVO" resultMap="calendarvalue">
         <![CDATA[
         	select moneySales+cardSales, calcuDay
@@ -46,6 +48,5 @@
         	where c.posNum = #{posNum} and r.calcuChngNum = c.calcuChngNum
         ]]>
         
-    </select>
-    
+    </select>    
 </mapper>

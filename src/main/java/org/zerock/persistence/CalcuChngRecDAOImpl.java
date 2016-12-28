@@ -30,7 +30,6 @@ public class CalcuChngRecDAOImpl implements CalcuChngRecDAO{
 
 	@Override
 	public void update(CalcuChngRecVO vo) throws Exception {
-
 		session.update(namespace+".update",vo);
 	}
 

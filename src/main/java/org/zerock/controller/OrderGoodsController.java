@@ -25,30 +25,29 @@ public class OrderGoodsController{
    public void registerGET(OrderGoodsVO orderGoods, Model model)throws Exception{
       logger.info("register get .............");
    }
-   
+   //DB 등록
    @RequestMapping(value="/register",method=RequestMethod.POST)
    public String registPOST(OrderGoodsVO orderGoods, RedirectAttributes rttr)throws Exception{
       logger.info("regist post...............");
       logger.info(orderGoods.toString());
       
       service.regist(orderGoods);
-      
-      //return "/member/success";
+
       rttr.addFlashAttribute("msg","success");
       return "redirect:/ordergoods/listAll";
    }
-   
+   //DB 정보 list형식으로 불러오기
    @RequestMapping(value="/listAll", method=RequestMethod.GET)
    public void listAll(Model model)throws Exception{
 	   logger.info("show all list...............");
 	   model.addAttribute("list",service.listAll());
    }
-   
+   //DB 읽어오기
    @RequestMapping(value="/read", method= RequestMethod.GET)
    public void read(@RequestParam("orderGoodsNum") int orderGoodsNum, Model model) throws Exception{
 	   model.addAttribute(service.read(orderGoodsNum));
    }
-   
+   //DB 삭제
    @RequestMapping(value="/remove", method= RequestMethod.POST)
    public String remove(@RequestParam("orderGoodsNum") int orderGoodsNum, RedirectAttributes rttr)throws Exception{
 	   service.remove(orderGoodsNum);
@@ -62,7 +61,7 @@ public class OrderGoodsController{
    public void modifyGET(int orderGoodsNum,Model model)throws Exception{
 	   model.addAttribute(service.read(orderGoodsNum));
    }
-   
+   //DB 수정
    @RequestMapping(value="/modify", method=RequestMethod.POST)
    public String modifyPOST(OrderGoodsVO orderGoods, RedirectAttributes rttr) throws Exception{
 	   logger.info("mod post................");

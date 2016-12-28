@@ -23,6 +23,7 @@ public class OrderMenuVO {
 	public String getCloneorderTime() {
 		return CloneorderTime;
 	}
+	//String -> DateFormat
 	public void setCloneorderTime(String cloneorderTime) {
 		if(cloneorderTime == null){
 			this.orderTime = null;

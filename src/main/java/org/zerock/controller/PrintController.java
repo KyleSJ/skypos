@@ -25,30 +25,29 @@ public class PrintController{
    public void registerGET(PrintVO print, Model model)throws Exception{
       logger.info("register get .............");
    }
-   
+   //DB 등록
    @RequestMapping(value="/register",method=RequestMethod.POST)
    public String registPOST(PrintVO print, RedirectAttributes rttr)throws Exception{
       logger.info("regist post...............");
       logger.info(print.toString());
       
       service.regist(print);
-      
-      //return "/member/success";
+
       rttr.addFlashAttribute("msg","success");
       return "redirect:/print/listAll";
    }
-   
+   //DB 정보 list형식으로 불러오기
    @RequestMapping(value="/listAll", method=RequestMethod.GET)
    public void listAll(Model model)throws Exception{
 	   logger.info("show all list...............");
 	   model.addAttribute("list",service.listAll());
    }
-   
+   //DB 읽어오기
    @RequestMapping(value="/read", method= RequestMethod.GET)
    public void read(@RequestParam("printNum") int printNum, Model model) throws Exception{
 	   model.addAttribute(service.read(printNum));
    }
-   
+   //DB 삭제
    @RequestMapping(value="/remove", method= RequestMethod.POST)
    public String remove(@RequestParam("printNum") int printNum, RedirectAttributes rttr)throws Exception{
 	   service.remove(printNum);
@@ -62,7 +61,7 @@ public class PrintController{
    public void modifyGET(int printNum,Model model)throws Exception{
 	   model.addAttribute(service.read(printNum));
    }
-   
+   //DB 수정
    @RequestMapping(value="/modify", method=RequestMethod.POST)
    public String modifyPOST(PrintVO print, RedirectAttributes rttr) throws Exception{
 	   logger.info("mod post................");

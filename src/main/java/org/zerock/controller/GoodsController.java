@@ -25,31 +25,28 @@ public class GoodsController{
    public void registerGET(GoodsVO goods, Model model)throws Exception{
       logger.info("register get .............");
    }
-   
+   //DB 등록
    @RequestMapping(value="/register",method=RequestMethod.POST)
    public String registPOST(@RequestParam("posNum") int posNum,GoodsVO goods, RedirectAttributes rttr)throws Exception{
       logger.info("regist post...............");
       logger.info(goods.toString());
-      System.out.println("goods의 토스트링은? : "+ goods.toString());
       service.regist(goods);
-      
-      //return "/member/success";
+
       rttr.addFlashAttribute("msg","success");
-      return "redirect:/shopmanage/shop_main?posNum="+posNum;
-      //return "redirect:/shopmanage/shop_main?posNum="+employee.getPosNum();
+      return "redirect:/shopmanage/shop_main?posNum="+posNum;      
    }
-   
+   //DB 정보 list형식으로 불러오기
    @RequestMapping(value="/listAll", method=RequestMethod.GET)
    public void listAll(@RequestParam("posNum") int posNum, Model model)throws Exception{
 	   logger.info("show all list...............");
 	   model.addAttribute("list",service.listAll(posNum));
    }
-   
+   //DB 읽어오기
    @RequestMapping(value="/read", method= RequestMethod.GET)
    public void read(@RequestParam("goodsNum") int goodsNum,@RequestParam("posNum") int posNum,Model model) throws Exception{
 	   model.addAttribute(service.read(goodsNum));
    }
-   
+   //DB 삭제
    @RequestMapping(value="/remove", method= RequestMethod.POST)
    public String remove(@RequestParam("goodsNum") int goodsNum, @RequestParam("posNum") int posNum,RedirectAttributes rttr)throws Exception{
 	   service.remove(goodsNum);
@@ -62,7 +59,7 @@ public class GoodsController{
    public void modifyGET(int goodsNum,Model model)throws Exception{
 	   model.addAttribute(service.read(goodsNum));
    }
-   
+   //DB 수정
    @RequestMapping(value="/modify", method=RequestMethod.POST)
    public String modifyPOST(@RequestParam("posNum") int posNum,GoodsVO goods, RedirectAttributes rttr) throws Exception{
 	   logger.info("mod post................");
@@ -70,7 +67,6 @@ public class GoodsController{
 	   service.modify(goods);
 	   rttr.addFlashAttribute("msg","modifysuccess");
 	   
-	   //return "redirect:/goods/listAll";
 	   return "redirect:/shopmanage/shop_main?posNum="+posNum;
    }
 

@@ -16,6 +16,7 @@ public class CmplxPayVO {
 	public String getClonepayTime() {
 		return ClonepayTime;
 	}
+	//String -> DateFormat
 	public void setClonepayTime(String clonepayTime) {
 		String s = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S").format(Long.parseLong(clonepayTime));
 		this.payTime=Timestamp.valueOf(s);

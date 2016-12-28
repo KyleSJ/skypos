@@ -25,7 +25,7 @@ public class GoodsCatController{
    public void registerGET(GoodsCatVO goodscat, Model model)throws Exception{
       logger.info("register get .............");
    }
-   
+   //DB 등록
    @RequestMapping(value="/register",method=RequestMethod.POST)
    public String registPOST(@RequestParam("posNum") int posNum,GoodsCatVO goodscat, RedirectAttributes rttr)throws Exception{
       logger.info("regist post...............");
@@ -33,22 +33,21 @@ public class GoodsCatController{
       
       service.regist(goodscat);
       
-      //return "/member/success";
       rttr.addFlashAttribute("msg","success");
       return "redirect:/shopmanage/shop_main?posNum="+posNum;
    }
-   
+   //DB 정보 list형식으로 불러오기
    @RequestMapping(value="/listAll", method=RequestMethod.GET)
    public void listAll(@RequestParam("posNum") int posNum, Model model)throws Exception{
 	   logger.info("show all list...............");
 	   model.addAttribute("list",service.listAll(posNum));
    }
-   
+   //DB 읽어오기
    @RequestMapping(value="/read", method= RequestMethod.GET)
    public void read(@RequestParam("goodsCatNum") int goodsCatNum, Model model) throws Exception{
 	   model.addAttribute(service.read(goodsCatNum));
    }
-   
+   //DB 삭제
    @RequestMapping(value="/remove", method= RequestMethod.POST)
    public String remove(@RequestParam("goodsCatNum") int goodsCatNum,@RequestParam("posNum") int posNum, RedirectAttributes rttr)throws Exception{
 	   service.remove(goodsCatNum);
@@ -62,7 +61,7 @@ public class GoodsCatController{
    public void modifyGET(int goodsCatNum,Model model)throws Exception{
 	   model.addAttribute(service.read(goodsCatNum));
    }
-   
+   //DB 수정
    @RequestMapping(value="/modify", method=RequestMethod.POST)
    public String modifyPOST(@RequestParam("posNum")int posNum,GoodsCatVO goodscat, RedirectAttributes rttr) throws Exception{
 	   logger.info("mod post................");

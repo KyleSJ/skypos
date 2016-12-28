@@ -32,32 +32,29 @@ public class OpenController{
    public void registerGET(OpenVO open, Model model)throws Exception{
       logger.info("register get .............");
    }
-   
+   //DB 등록
    @RequestMapping(value="/register",method=RequestMethod.POST)
    public String registPOST(OpenVO open, RedirectAttributes rttr)throws Exception{
       logger.info("regist post...............");
       logger.info(open.toString());
       
       service.regist(open);
-      
-      //return "/member/success";
+
       rttr.addFlashAttribute("msg","success");
       return "redirect:/open/listAll";
    }
-   
+   //DB 정보 list형식으로 불러오기
    @RequestMapping(value="/listAll", method=RequestMethod.GET)
    public void listAll(Model model)throws Exception{
 	   logger.info("show all list...............");
-	  // List<OpenVO> test = service.listAll();
-	  //model.addAttribute("list",test);
 	   model.addAttribute("list",service.listAll());
    }
-   
+   //DB 읽어오기
    @RequestMapping(value="/read", method= RequestMethod.GET)
    public void read(@RequestParam("openDay") Date openDay, Model model) throws Exception{
 	   model.addAttribute(service.read(openDay));
    }
-   
+   //DB 삭제
    @RequestMapping(value="/remove", method= RequestMethod.POST)
    public String remove(@RequestParam("openDay")Date openDay, RedirectAttributes rttr)throws Exception{
 	   service.remove(openDay);
@@ -71,7 +68,7 @@ public class OpenController{
    public void modifyGET(Date openDay,Model model)throws Exception{
 	   model.addAttribute(service.read(openDay));
    }
-   
+   //DB 수정
    @RequestMapping(value="/modify", method=RequestMethod.POST)
    public String modifyPOST(OpenVO open, RedirectAttributes rttr) throws Exception{
 	   logger.info("mod post................");

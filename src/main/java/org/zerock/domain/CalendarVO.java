@@ -1,7 +1,7 @@
 package org.zerock.domain;
 
 import java.sql.Date;
-
+//Fullcalender 형식 맞추기
 public class CalendarVO {
 	private String title;
 	private Date start;

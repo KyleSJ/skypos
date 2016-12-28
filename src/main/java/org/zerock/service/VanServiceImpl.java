@@ -20,8 +20,7 @@ public class VanServiceImpl implements VanService{
 	}
 
 	@Override
-	public VanVO read(int vanNum) throws Exception{
-		//System.out.println(test.toString());
+	public VanVO read(int vanNum) throws Exception{		
 		return dao.read(vanNum);
 	}
 

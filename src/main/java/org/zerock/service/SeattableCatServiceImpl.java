@@ -20,8 +20,7 @@ public class SeattableCatServiceImpl implements SeattableCatService{
 	}
 
 	@Override
-	public SeattableCatVO read(int tableCatNum) throws Exception{
-		//System.out.println(test.toString());
+	public SeattableCatVO read(int tableCatNum) throws Exception{		
 		return dao.read(tableCatNum);
 	}
 

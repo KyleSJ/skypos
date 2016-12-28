@@ -21,8 +21,7 @@ public class SeattableServiceImpl implements SeattableService{
 	}
 
 	@Override
-	public SeattableVO read(int tableNum) throws Exception{
-		//System.out.println(test.toString());
+	public SeattableVO read(int tableNum) throws Exception{		
 		return dao.read(tableNum);
 	}
 
