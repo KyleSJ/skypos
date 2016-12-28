@@ -6,16 +6,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <!-- Bootstrap -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
-	crossorigin="anonymous">
-
-
-
+<link href="/resources/bootstrap/css/bootstrap.css" rel="stylesheet"
+	type="text/css" />
 
 <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요한 -->
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="//code.jquery.com/jquery.js"></script>
+
+<!-- 모든 합쳐진 플러그인을 포함하거나 (아래) 필요한 각각의 파일들을 포함하세요 -->
+<script src="/resources/bootstrap/js/bootstrap.min.js"></script>
 
 <title>매장 관리</title>
 
@@ -96,9 +94,9 @@ button {
 			<div id="div_right_up"></div>
 			<div id="div_right_down"></div>
 		</div>
+	</div>
 
-
-		<script>
+	<script>
 	      	var result = '${msg}';
 	      	if(result =='success'){
 	        	 alert("등록이 완료 되었습니다.");
@@ -139,6 +137,5 @@ button {
                     });
 			});
 		</script>
-	</div>
 </body>
 </html>

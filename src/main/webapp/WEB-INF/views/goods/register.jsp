@@ -7,16 +7,14 @@
 <title>Insert title here</title>
 
 <!-- Bootstrap -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
-	crossorigin="anonymous">
-
-
-
+<link href="/resources/bootstrap/css/bootstrap.css" rel="stylesheet"
+	type="text/css" />
 
 <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요한 -->
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="//code.jquery.com/jquery.js"></script>
+
+<!-- 모든 합쳐진 플러그인을 포함하거나 (아래) 필요한 각각의 파일들을 포함하세요 -->
+<script src="/resources/bootstrap/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -34,7 +32,7 @@ body {
 				<div class="panel-heading">
 					<div class="panel-title">상품 등록</div>
 				</div>
-				<div class="panel-body">					
+				<div class="panel-body">
 					<div class="control-label" for="goodsCatNum">
 						goodsCatNum <input id="goodsCatNum" class="form-control"
 							type="text" name='goodsCatNum' placeholder="Enter goodsCatNum"
@@ -65,8 +63,10 @@ body {
 					<br>
 					<div class="box-footer" align="center">
 						<button type="submit" class="btn btn-primary">등록</button>
-						<a href="/shopmanage/shop_main?posNum=<%=request.getParameter("posNum")%>">
-						<input type="button" class="btn btn-primary" value="매장관리"></a>
+						<a
+							href="/shopmanage/shop_main?posNum=<%=request.getParameter("posNum")%>">
+							<input type="button" class="btn btn-primary" value="매장관리">
+						</a>
 					</div>
 				</div>
 			</div>
