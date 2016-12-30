@@ -46,5 +46,10 @@ public class PayDAOImpl implements PayDAO{
 	public void updateORInsert(PayVO vo) throws Exception {		
 		session.update(namespaceForIU+".updateinsertPay",vo);
 	}
+
+	@Override
+	public List<PayVO> sendlistAll(int posNum) {
+		return session.selectList(namespace+".sendlistAll",posNum);
+	}
 	
 }

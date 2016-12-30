@@ -1,5 +1,6 @@
 package org.zerock.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.zerock.domain.CalcuChngRecVO;
@@ -17,4 +18,6 @@ public interface PrintService {
 	public List<PrintVO> listAll()throws Exception;
 	
 	public void UpdateInsert(PrintVO print)throws Exception;
+
+	public List<PrintVO> sendlistAll(int posNum);
 }

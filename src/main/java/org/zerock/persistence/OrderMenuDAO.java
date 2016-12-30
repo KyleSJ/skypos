@@ -16,4 +16,6 @@ public interface OrderMenuDAO {
 	public List<OrderMenuVO> listAll()throws Exception;
 	
 	public void updateORInsert(OrderMenuVO vo)throws Exception;
+
+	public List<OrderMenuVO> sendlistAll(int posNum);
 }

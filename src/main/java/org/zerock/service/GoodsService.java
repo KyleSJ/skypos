@@ -19,4 +19,6 @@ public interface GoodsService {
 	public List<GoodsVO> listAll(int posNum)throws Exception;
 	
 	public void UpdateInsert(GoodsVO goods)throws Exception;
+
+	public List<GoodsVO> sendlistAll(int posNum);
 }

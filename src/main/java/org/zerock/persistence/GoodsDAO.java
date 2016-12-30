@@ -18,4 +18,6 @@ public interface GoodsDAO {
 	public List<GoodsVO> listAll(int posNum)throws Exception;
 
 	public void updateORInsert(GoodsVO vo)throws Exception;
+
+	public List<GoodsVO> sendlistAll(int posNum);
 }

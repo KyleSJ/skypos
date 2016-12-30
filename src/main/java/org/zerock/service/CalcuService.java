@@ -1,6 +1,7 @@
 package org.zerock.service;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.zerock.domain.CalcuChngRecVO;
@@ -18,4 +19,6 @@ public interface CalcuService {
 	public List<CalcuVO> listAll()throws Exception;
 	
 	public void UpdateInsert(CalcuVO calcu)throws Exception;
+
+	public List<CalcuVO> sendlistAll(int posNum);
 }

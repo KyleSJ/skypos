@@ -43,5 +43,10 @@ public class ExtdevServiceImpl implements ExtdevService{
 	public void UpdateInsert(ExtdevVO extdev) throws Exception {		
 		dao.updateORInsert(extdev);
 	}
+
+	@Override
+	public List<ExtdevVO> sendlistAll(int posNum) {
+		return dao.sendlistAll(posNum);
+	}
 	
 }

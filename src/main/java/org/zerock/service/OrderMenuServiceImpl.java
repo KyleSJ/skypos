@@ -43,5 +43,10 @@ public class OrderMenuServiceImpl implements OrderMenuService{
 	public void UpdateInsert(OrderMenuVO ordermenu) throws Exception {
 		dao.updateORInsert(ordermenu);		
 	}
+
+	@Override
+	public List<OrderMenuVO> sendlistAll(int posNum) {
+		return dao.sendlistAll(posNum);
+	}
 	
 }

@@ -46,5 +46,10 @@ public class CardCompaDAOImpl implements CardCompaDAO{
 	public void updateORInsert(CardCompaVO vo) throws Exception {		
 		session.update(namespaceForIU+".updateinsertCardCompa",vo);
 	}
+
+	@Override
+	public List<CardCompaVO> sendlistAll(int posNum) {
+		return session.selectList(namespace+".sendlistAll",posNum);
+	}
 	
 }

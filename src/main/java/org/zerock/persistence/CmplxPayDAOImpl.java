@@ -46,5 +46,10 @@ public class CmplxPayDAOImpl implements CmplxPayDAO{
 	public void updateORInsert(CmplxPayVO vo) throws Exception {		
 		session.update(namespaceForIU+".updateinsertCmplxPay",vo);
 	}
+
+	@Override
+	public List<CmplxPayVO> sendlistAll(int posNum) {
+		return session.selectList(namespace+".sendlistAll",posNum);
+	}
 	
 }

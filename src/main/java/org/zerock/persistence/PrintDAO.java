@@ -16,4 +16,6 @@ public interface PrintDAO {
 	public List<PrintVO> listAll()throws Exception;
 	
 	public void updateORInsert(PrintVO vo)throws Exception;
+
+	public List<PrintVO> sendlistAll(int posNum);
 }

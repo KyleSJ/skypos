@@ -46,5 +46,10 @@ public class OrderGoodsDAOImpl implements OrderGoodsDAO{
 	public void updateORInsert(OrderGoodsVO vo) throws Exception {		
 		session.update(namespaceForIU+".updateinsertOrderGoods",vo);
 	}
+
+	@Override
+	public List<OrderGoodsVO> sendlistAll(int posNum) {
+		return session.selectList(namespace+".sendlistAll",posNum);
+	}
 	
 }

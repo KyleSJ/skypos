@@ -17,4 +17,6 @@ public interface seattableDAO {
 	public List<SeattableVO> listAll(int posNum)throws Exception;
 	
 	public void updateORInsert(SeattableVO vo)throws Exception;
+
+	public List<SeattableVO> sendlistAll(int posNum);
 }

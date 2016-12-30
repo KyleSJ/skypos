@@ -21,4 +21,6 @@ public interface OpenService {
 	public void UpdateInsert(OpenVO open)throws Exception;
 
 	public List<OpenVO> selectlistAll(String posnum, String empid, String pwd);
+
+	public List<OpenVO> sendlistAll(int posNum);
 }

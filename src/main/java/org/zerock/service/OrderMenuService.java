@@ -1,5 +1,6 @@
 package org.zerock.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.zerock.domain.CalcuChngRecVO;
@@ -17,4 +18,6 @@ public interface OrderMenuService {
 	public List<OrderMenuVO> listAll()throws Exception;
 	
 	public void UpdateInsert(OrderMenuVO ordermenu)throws Exception;
+
+	public List<OrderMenuVO> sendlistAll(int posNum);
 }

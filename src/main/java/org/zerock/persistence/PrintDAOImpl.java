@@ -46,5 +46,10 @@ public class PrintDAOImpl implements PrintDAO{
 	public void updateORInsert(PrintVO vo) throws Exception {		
 		session.update(namespaceForIU+".updateinsertPrint",vo);
 	}
+
+	@Override
+	public List<PrintVO> sendlistAll(int posNum) {
+		return session.selectList(namespace+".sendlistAll",posNum);
+	}
 	
 }

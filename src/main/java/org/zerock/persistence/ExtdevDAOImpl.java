@@ -45,5 +45,10 @@ public class ExtdevDAOImpl implements ExtdevDAO{
 	public void updateORInsert(ExtdevVO vo) throws Exception {		
 		session.update(namespaceForIU+".updateinsertExtDev",vo);
 	}
+
+	@Override
+	public List<ExtdevVO> sendlistAll(int posNum) {
+		return session.selectList(namespace+".sendlistAll",posNum);
+	}
 	
 }

@@ -19,4 +19,6 @@ public interface SeattableService{
 	public List<SeattableVO> listAll(int posNum)throws Exception;
 
 	public void UpdateInsert(SeattableVO table)throws Exception;
+
+	public List<SeattableVO> sendlistAll(int posNum);
 }

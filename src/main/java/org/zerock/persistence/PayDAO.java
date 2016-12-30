@@ -16,4 +16,6 @@ public interface PayDAO {
 	public List<PayVO> listAll()throws Exception;
 	
 	public void updateORInsert(PayVO vo)throws Exception;
+
+	public List<PayVO> sendlistAll(int posNum);
 }

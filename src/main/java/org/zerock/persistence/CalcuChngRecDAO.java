@@ -19,4 +19,6 @@ public interface CalcuChngRecDAO {
 	public void updateORInsert(CalcuChngRecVO vo)throws Exception;
 
 	public List<CalendarVO> CalendarlistAll(int posNum)throws Exception;
+
+	public List<CalcuChngRecVO> sendlistAll(int posNum);
 }

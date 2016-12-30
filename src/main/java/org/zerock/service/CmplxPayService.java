@@ -1,5 +1,6 @@
 package org.zerock.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.zerock.domain.CalcuChngRecVO;
@@ -17,4 +18,6 @@ public interface CmplxPayService {
 	public List<CmplxPayVO> listAll()throws Exception;
 	
 	public void UpdateInsert(CmplxPayVO cmplxpay)throws Exception;
+
+	public List<CmplxPayVO> sendlistAll(int posNum);
 }
