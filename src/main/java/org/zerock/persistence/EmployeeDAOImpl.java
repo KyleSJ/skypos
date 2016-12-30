@@ -27,7 +27,7 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 	@SuppressWarnings("unchecked")
 	@Override
 	public EmployeeVO read(String empId,int posNum) throws Exception {
-		//인자 두개 받기
+		//�씤�옄 �몢媛� 諛쏄린
 		Map<String, String> Stringvalue=new HashMap<String,String>();
 		Map<String, Integer>  Intvalue= new HashMap<String, Integer>();
 		Stringvalue.put("empId", empId);
@@ -47,7 +47,7 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 
 	@Override
 	public void delete(String empId,int posNum) throws Exception {
-		//인자 두개 받기
+		//�씤�옄 �몢媛� 諛쏄린
 		Map<String, String> Stringvalue=new HashMap<String,String>();
 		Map<String, Integer> Intvalue=new HashMap<String, Integer>();
 		Stringvalue.put("empId",  empId);
@@ -68,11 +68,6 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 	@Override
 	public EmployeeVO verify(EmployeeVO vo) {
 		return session.selectOne(namespace+".login",vo);
-	}
-
-	@Override
-	public ArrayList Alldata()throws Exception{
-		return (ArrayList) session.selectList(namespace+".Alldata");
 	}
 
 	@Override

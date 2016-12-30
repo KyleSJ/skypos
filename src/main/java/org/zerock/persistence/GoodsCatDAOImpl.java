@@ -48,11 +48,6 @@ public class GoodsCatDAOImpl implements GoodsCatDAO{
 	}
 
 	@Override
-	public List<GoodsCatVO> Alldata() {
-		return session.selectList(namespace+".Alldata");
-	}
-
-	@Override
 	public List<GoodsCatVO> sendlistAll(int posNum) {
 		return session.selectList(namespace+".sendlistAll",posNum);
 	}

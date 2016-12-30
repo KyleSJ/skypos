@@ -46,4 +46,13 @@
          ]]>
     </select>
     
+    <select id="sendlistAll" resultType ="org.zerock.domain.CardCompaVO">
+        <![CDATA[
+        select cardCompaNum, cardCompaName, cardCompaPhoneNum
+        from
+        card_compa
+        where cardCompaNum > 0 and posNum=#{posNum}
+        order by cardCompaNum desc
+         ]]>
+    </select>
 </mapper>

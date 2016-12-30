@@ -46,4 +46,13 @@
          ]]>
     </select>
     
+    <select id="sendlistAll" resultType ="org.zerock.domain.PayVO">
+        <![CDATA[
+        select payNum, cmplxPayNum, cardCompaNum, payWay, cardNum, payAmnt
+        from
+        pay
+        where payNum > 0 and posNum=#{posNum}
+        order by payNum desc
+         ]]>
+    </select>
 </mapper>

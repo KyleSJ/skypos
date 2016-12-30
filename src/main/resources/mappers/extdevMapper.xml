@@ -44,4 +44,14 @@
          ]]>
     </select>
     
+    <select id="sendlistAll" resultType ="org.zerock.domain.ExtdevVO">
+        <![CDATA[
+        select devName, devType, prtcl
+        from
+        ext_dev
+        where posNum=#{posNum}
+        order by devName desc
+         ]]>
+    </select>
+    
 </mapper>

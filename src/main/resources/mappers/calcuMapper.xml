@@ -36,4 +36,14 @@
          ]]>
     </select>
     
+    <select id="sendlistAll" resultType ="org.zerock.domain.CalcuVO">
+        <![CDATA[
+        select calcuDay, calcuChngNum, printNum, openDay
+        from
+        calcu
+        where calcuDay> 0 and posNum=#{posNum}
+        order by calcuDay desc
+         ]]>
+    </select>
+    
 </mapper>

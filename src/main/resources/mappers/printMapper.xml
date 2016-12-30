@@ -45,4 +45,14 @@
          ]]>
     </select>
     
+    <select id="sendlistAll" resultType="org.zerock.domain.PrintVO">
+    	<![CDATA[
+    	select printNum, devName, printName, printCntt
+        from
+        calcu_chng_rec
+        where printNum> 0 and posNum=#{posNum}
+        order by printNum desc
+    	]]>
+    </select>
+    
 </mapper>

@@ -42,11 +42,6 @@ public class GoodsDAOImpl implements GoodsDAO{
 	public List listAll(int posNum) throws Exception {
 		return session.selectList(namespace+".listAll",posNum);
 	}
-	
-	@Override
-	public ArrayList<GoodsVO> Alldata()throws Exception{
-		return(ArrayList) session.selectList(namespace+".Alldata");
-	}
 
 	@Override
 	public void updateORInsert(GoodsVO vo) throws Exception {		

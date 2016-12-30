@@ -45,10 +45,13 @@
          ]]>
     </select>
     
-    <select id="Alldata" resultType="org.zerock.domain.GoodsVO">
-    	<![CDATA[
-    	select goodsNum, goodsCatNum, goodsColor, goodsName, goodsPrice, goodsSeq
-    	from goods
-    	]]>
+    <select id="sendlistAll" resultType ="org.zerock.domain.GoodsVO">
+        <![CDATA[
+        select goodsNum, g.goodsCatNum, goodsColor, goodsName, goodsPrice, goodsSeq
+        from goods g, goods_cat gc
+        where gc.posNum=#{posNum} and gc.goodsCatNum=g.goodsCatNum
+        order by goodsNum desc
+         ]]>
     </select>
+    
 </mapper>

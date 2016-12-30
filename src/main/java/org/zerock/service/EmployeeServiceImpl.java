@@ -47,11 +47,6 @@ public class EmployeeServiceImpl implements EmployeeService{
 	}
 
 	@Override
-	public ArrayList<EmployeeVO> Alldata() throws Exception {
-		return dao.Alldata();
-	}
-
-	@Override
 	public void UpdateInsert(EmployeeVO employee) throws Exception {
 		dao.updateORInsert(employee);		
 	}

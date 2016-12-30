@@ -39,11 +39,6 @@ public class SeattableServiceImpl implements SeattableService{
 	public List<SeattableVO> listAll(int posNum) throws Exception {
 		return dao.listAll(posNum);
 	}
-
-	@Override
-	public ArrayList<SeattableVO> Alldata()throws Exception{
-		return dao.Alldata();
-	}
 	
 	@Override
 	public void UpdateInsert(SeattableVO table) throws Exception {

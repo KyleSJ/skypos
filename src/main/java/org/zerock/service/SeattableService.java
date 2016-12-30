@@ -17,8 +17,6 @@ public interface SeattableService{
 	public void remove(int tableNum)throws Exception;
 	
 	public List<SeattableVO> listAll(int posNum)throws Exception;
-	
-	public ArrayList<SeattableVO> Alldata()throws Exception;
 
 	public void UpdateInsert(SeattableVO table)throws Exception;
 }

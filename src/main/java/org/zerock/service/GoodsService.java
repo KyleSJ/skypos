@@ -18,7 +18,5 @@ public interface GoodsService {
 	
 	public List<GoodsVO> listAll(int posNum)throws Exception;
 	
-	public ArrayList<GoodsVO> Alldata()throws Exception;
-	
 	public void UpdateInsert(GoodsVO goods)throws Exception;
 }

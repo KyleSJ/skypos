@@ -45,11 +45,6 @@ public class seattableDAOImpl implements seattableDAO{
 	}
 
 	@Override
-	public ArrayList<SeattableVO> Alldata() throws Exception{
-		return (ArrayList) session.selectList(namespace+".Alldata");
-	}
-
-	@Override
 	public void updateORInsert(SeattableVO vo) throws Exception {		
 		session.update(namespaceForIU+".updateinsertSeattable",vo);
 	}

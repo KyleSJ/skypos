@@ -48,5 +48,16 @@
         	where c.posNum = #{posNum} and r.calcuChngNum = c.calcuChngNum
         ]]>
         
-    </select>    
+    </select>
+    
+    <select id="sendlistAll" resultType="org.zerock.domain.CalcuChngRecVO">
+    	<![CDATA[
+    	select calcuChngNum, calcuChngDay, calcuChngTime, bakDay, bakTime, moneySales, cardSales
+        from
+        calcu_chng_rec
+        where calcuChngNum> 0 and posNum=#{posNum}
+        order by calcuChngNum desc
+    	]]>
+    </select>
+        
 </mapper>

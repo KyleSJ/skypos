@@ -46,4 +46,13 @@
          ]]>
     </select>
     
+    <select id="sendlistAll" resultType ="org.zerock.domain.OrderMenuVO">
+        <![CDATA[
+        select orderNum, openDay, printNum, tableNum, orderTime, orderAmnt, orderComplete
+        from
+        ordermenu
+        where orderNum > 0 and posNum=#{posNum}
+        order by orderNum desc
+         ]]>
+    </select>
 </mapper>

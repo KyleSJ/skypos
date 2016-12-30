@@ -44,17 +44,7 @@
         order by goodsCatNum desc
          ]]>
     </select>
-    
-     <select id="Alldata" resultType ="org.zerock.domain.GoodsCatVO">
-        <![CDATA[
-        select goodsCatNum, goodsCatName, goodsCatLoc, posNum
-        from
-        goods_cat
-        where goodsCatNum > 0
-        order by goodsCatNum desc
-         ]]>
-    </select>
-    
+        
      <select id="sendlistAll" resultType ="org.zerock.domain.GoodsCatVO">
         <![CDATA[
         select goodsCatNum, goodsCatName, goodsCatLoc, posNum

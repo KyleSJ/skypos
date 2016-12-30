@@ -39,12 +39,6 @@ public class GoodsServiceImpl implements GoodsService{
 	public List<GoodsVO> listAll(int posNum) throws Exception {
 		return dao.listAll(posNum);
 	}
-	
-	@Override
-	public ArrayList<GoodsVO> Alldata()throws Exception{
-			return dao.Alldata();
-	}
-
 
 	@Override
 	public void UpdateInsert(GoodsVO goods) throws Exception {

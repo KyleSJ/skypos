@@ -45,11 +45,6 @@ public class GoodsCatServiceImpl implements GoodsCatService{
 	}
 
 	@Override
-	public List<GoodsCatVO> Alldata() {
-		return dao.Alldata();
-	}
-
-	@Override
 	public List<GoodsCatVO> sendlistAll(int posNum) {
 		return dao.sendlistAll(posNum);
 	}
