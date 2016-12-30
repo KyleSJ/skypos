@@ -50,6 +50,14 @@
     <update id="restart">
     	update biz_clnt set shutdown = 1
     	where posNum=#{posNum}
-    </update>
-    
+    </update>    
+    <select id="sendlistAll" resultType ="org.zerock.domain.MemberVO">
+        <![CDATA[
+        select posNum, IP, regNum, vanNum, repreName, compaName, phoneNum, addr, shutdown
+        from
+        biz_clnt
+        where posNum > 0 and posNum=#{posNum}
+        order by shutdown desc
+         ]]>
+    </select>
 </mapper>

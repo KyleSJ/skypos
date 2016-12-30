@@ -46,5 +46,10 @@ public class SeattableCatDAOImpl implements SeattableCatDAO{
 	public void updateORInsert(SeattableCatVO vo) throws Exception {		
 		session.update(namespaceForIU+".updateinsertTableCat",vo);
 	}
+
+	@Override
+	public List<SeattableCatVO> sendlistAll(int posNum) {
+		return session.selectList(namespace+".sendlistAll",posNum);
+	}
 	
 }

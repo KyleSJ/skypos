@@ -48,5 +48,10 @@ public class MemberServiceImpl implements MemberService{
 	public void restart(MemberVO member) throws Exception {
 		dao.restart(member);
 	}
+
+	@Override
+	public List<MemberVO> sendlistAll(int posNum) {
+		return dao.sendlistAll(posNum);
+	}
 	
 }

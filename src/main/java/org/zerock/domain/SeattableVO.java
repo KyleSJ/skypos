@@ -6,7 +6,14 @@ public class SeattableVO {
 	private int tableColor;
 	private int tableCatNum;
 	private String tableName;
-	
+	private int posNum;
+		
+	public int getPosNum() {
+		return posNum;
+	}
+	public void setPosNum(int posNum) {
+		this.posNum = posNum;
+	}
 	public int getTableNum() {
 		return tableNum;
 	}
@@ -39,8 +46,8 @@ public class SeattableVO {
 	}
 	@Override
 	public String toString() {
-		return "TableVO [tableNum=" + tableNum + ", tableLoc=" + tableLoc
+		return "SeattableVO [tableNum=" + tableNum + ", tableLoc=" + tableLoc
 				+ ", tableColor=" + tableColor + ", tableCatNum=" + tableCatNum
-				+ ", tableName=" + tableName + "]";
-	}	
+				+ ", tableName=" + tableName + ", posNum=" + posNum + "]";
+	}
 }

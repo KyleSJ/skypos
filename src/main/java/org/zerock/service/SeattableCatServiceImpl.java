@@ -43,5 +43,10 @@ public class SeattableCatServiceImpl implements SeattableCatService{
 	public void UpdateInsert(SeattableCatVO tablecat) throws Exception {
 		dao.updateORInsert(tablecat);
 	}
+
+	@Override
+	public List<SeattableCatVO> sendlistAll(int posNum) {
+		return dao.sendlistAll(posNum);
+	}
 	
 }

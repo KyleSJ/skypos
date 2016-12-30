@@ -45,4 +45,13 @@
          ]]>
     </select>
     
+    <select id="sendlistAll" resultType ="org.zerock.domain.SeattableCatVO">
+        <![CDATA[
+        select tableCatNum, tableCatName, tableCatLoc, posNum
+        from
+        table_cat
+        where tableCatNum > 0 and posNum=#{posNum}
+        order by tableCatNum desc
+         ]]>
+    </select>
 </mapper>

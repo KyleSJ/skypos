@@ -20,4 +20,6 @@ public interface GoodsCatService {
 	public void UpdateInsert(GoodsCatVO goodscat)throws Exception;
 
 	public List<GoodsCatVO> Alldata();
+
+	public List<GoodsCatVO> sendlistAll(int posNum);
 }

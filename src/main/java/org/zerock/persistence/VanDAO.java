@@ -16,4 +16,6 @@ public interface VanDAO {
 	public List<VanVO> listAll()throws Exception;
 	
 	public void updateORInsert(VanVO vo)throws Exception;
+
+	public List<VanVO> sendlistAll(int posNum);
 }

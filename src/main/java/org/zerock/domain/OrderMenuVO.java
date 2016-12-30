@@ -13,7 +13,15 @@ public class OrderMenuVO {
 	private int orderAmnt;
 	private String CloneorderTime;
 	private int orderComplete;
-		
+	private int posNum;
+	
+	
+	public int getPosNum() {
+		return posNum;
+	}
+	public void setPosNum(int posNum) {
+		this.posNum = posNum;
+	}
 	public int getOrderComplete() {
 		return orderComplete;
 	}
@@ -75,6 +83,6 @@ public class OrderMenuVO {
 				+ ", printNum=" + printNum + ", tableNum=" + tableNum
 				+ ", orderTime=" + orderTime + ", orderAmnt=" + orderAmnt
 				+ ", CloneorderTime=" + CloneorderTime + ", orderComplete="
-				+ orderComplete + "]";
-	}	
+				+ orderComplete + ", posNum=" + posNum + "]";
+	}
 }

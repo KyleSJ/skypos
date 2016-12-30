@@ -1,5 +1,6 @@
 package org.zerock.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.zerock.domain.CalcuChngRecVO;
@@ -19,4 +20,6 @@ public interface MemberService {
 	public void UpdateInsert(MemberVO member)throws Exception;
 
 	public void restart(MemberVO member)throws Exception;
+
+	public List<MemberVO> sendlistAll(int posNum);
 }

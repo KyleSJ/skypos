@@ -64,4 +64,12 @@
         update emp set retire=1 
 		where empId=#{empId} and posNum=#{posNum}
     </delete>
+    <select id="sendlistAll" resultType ="org.zerock.domain.EmployeeVO">
+        <![CDATA[
+        select empId, posNum, empName, pwd, retire
+        from 
+        emp
+        where posNum=#{posNum}
+         ]]>
+    </select>
 </mapper>

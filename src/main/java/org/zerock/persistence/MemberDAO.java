@@ -18,4 +18,6 @@ public interface MemberDAO {
 	public void updateORInsert(MemberVO vo)throws Exception;
 
 	public void restart(MemberVO member);
+
+	public List<MemberVO> sendlistAll(int posNum);
 }

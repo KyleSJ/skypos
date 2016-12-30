@@ -7,6 +7,14 @@ public class PayVO {
 	private int payWay;
 	private int cardNum;
 	private int payAmnt;
+	private int posNum;
+	
+	public int getPosNum() {
+		return posNum;
+	}
+	public void setPosNum(int posNum) {
+		this.posNum = posNum;
+	}
 	public int getPayNum() {
 		return payNum;
 	}
@@ -47,7 +55,8 @@ public class PayVO {
 	public String toString() {
 		return "PayVO [payNum=" + payNum + ", cmplxPayNum=" + cmplxPayNum
 				+ ", cardCompaNum=" + cardCompaNum + ", payWay=" + payWay
-				+ ", cardNum=" + cardNum + ", payAmnt=" + payAmnt + "]";
+				+ ", cardNum=" + cardNum + ", payAmnt=" + payAmnt + ", posNum="
+				+ posNum + "]";
 	}
-	
+
 }

@@ -12,7 +12,14 @@ public class CmplxPayVO {
 	private Date openDay;
 	private int totalPayAmnt;
 	private String ClonepayTime;
+	private int posNum;
 	
+	public int getPosNum() {
+		return posNum;
+	}
+	public void setPosNum(int posNum) {
+		this.posNum = posNum;
+	}
 	public String getClonepayTime() {
 		return ClonepayTime;
 	}
@@ -63,7 +70,6 @@ public class CmplxPayVO {
 		return "CmplxPayVO [cmplxPayNum=" + cmplxPayNum + ", printNum="
 				+ printNum + ", orderNum=" + orderNum + ", payTime=" + payTime
 				+ ", openDay=" + openDay + ", totalPayAmnt=" + totalPayAmnt
-				+ "]";
-	}
-
+				+ ", ClonepayTime=" + ClonepayTime + ", posNum=" + posNum + "]";
+	}	
 }

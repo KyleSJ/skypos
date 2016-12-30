@@ -16,7 +16,14 @@ public class CalcuChngRecVO {
 	private int cardSales;
 	private String ClonecalcuChngTime;
 	private String ClonebakTime;
+	private int posNum;	
 	
+	public int getPosNum() {
+		return posNum;
+	}
+	public void setPosNum(int posNum) {
+		this.posNum = posNum;
+	}
 	public String getClonecalcuChngTime() {
 		return ClonecalcuChngTime;
 	}
@@ -81,10 +88,11 @@ public class CalcuChngRecVO {
 	}
 	@Override
 	public String toString() {
-		return "CalcuChngNumVO [calcuChngNum=" + calcuChngNum
+		return "CalcuChngRecVO [calcuChngNum=" + calcuChngNum
 				+ ", calcuChngDay=" + calcuChngDay + ", calcuChngTime="
 				+ calcuChngTime + ", bakDay=" + bakDay + ", bakTime=" + bakTime
 				+ ", moneySales=" + moneySales + ", cardSales=" + cardSales
-				+ "]";
-	}
+				+ ", ClonecalcuChngTime=" + ClonecalcuChngTime
+				+ ", ClonebakTime=" + ClonebakTime + ", posNum=" + posNum + "]";
+	}	
 }

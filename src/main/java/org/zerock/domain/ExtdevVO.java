@@ -4,6 +4,14 @@ public class ExtdevVO {
 	private String devName;
 	private String devType;
 	private String prtcl;
+	private int posNum;
+	
+	public int getPosNum() {
+		return posNum;
+	}
+	public void setPosNum(int posNum) {
+		this.posNum = posNum;
+	}
 	public String getDevName() {
 		return devName;
 	}
@@ -25,6 +33,7 @@ public class ExtdevVO {
 	@Override
 	public String toString() {
 		return "ExtdevVO [devName=" + devName + ", devType=" + devType
-				+ ", prtcl=" + prtcl + "]";
+				+ ", prtcl=" + prtcl + ", posNum=" + posNum + "]";
 	}
+	
 }

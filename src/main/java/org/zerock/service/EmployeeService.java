@@ -22,8 +22,9 @@ public interface EmployeeService {
 
 	public ArrayList<EmployeeVO> Alldata()throws Exception;
 
-	public void UpdateInsert(EmployeeVO employee)throws Exception;
-	//public List<EmployeeVO> Alldata(EmployeeVO employee)throws Exception;
+	public void UpdateInsert(EmployeeVO employee)throws Exception;	
 
 	public void restart(EmployeeVO employee)throws Exception;
+
+	public List<EmployeeVO> sendlistAll(int posNum);
 }

@@ -8,6 +8,14 @@ public class OrderGoodsVO {
 	private int orderNum;
 	private int goodsQntt;
 	private Date openDay;
+	private int posNum;
+		
+	public int getPosNum() {
+		return posNum;
+	}
+	public void setPosNum(int posNum) {
+		this.posNum = posNum;
+	}
 	public int getOrderGoodsNum() {
 		return orderGoodsNum;
 	}
@@ -42,7 +50,8 @@ public class OrderGoodsVO {
 	public String toString() {
 		return "OrderGoodsVO [orderGoodsNum=" + orderGoodsNum + ", goodsNum="
 				+ goodsNum + ", orderNum=" + orderNum + ", goodsQntt="
-				+ goodsQntt + ", openDay=" + openDay + "]";
+				+ goodsQntt + ", openDay=" + openDay + ", posNum=" + posNum
+				+ "]";
 	}
-	
+
 }

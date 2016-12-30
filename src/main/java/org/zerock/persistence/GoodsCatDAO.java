@@ -18,4 +18,6 @@ public interface GoodsCatDAO {
 	public void updateORInsert(GoodsCatVO vo)throws Exception;
 
 	public List<GoodsCatVO> Alldata();
+
+	public List<GoodsCatVO> sendlistAll(int posNum);
 }

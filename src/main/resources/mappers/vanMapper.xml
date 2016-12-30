@@ -45,4 +45,12 @@
          ]]>
     </select>
     
+    <select id="sendlistAll" resultType ="org.zerock.domain.VanVO">
+        <![CDATA[
+        select v.vanNum, v.vanIP, v.vanName
+        from biz_clnt b, van v        
+        where v.vanNum > 0 and b.posNum=#{posNum} and b.vanNum = v.vanNum
+        order by vanNum desc
+         ]]>
+    </select>
 </mapper>

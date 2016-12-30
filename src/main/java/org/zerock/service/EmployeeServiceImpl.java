@@ -61,4 +61,9 @@ public class EmployeeServiceImpl implements EmployeeService{
 		dao.restart(employee);
 	}
 
+	@Override
+	public List<EmployeeVO> sendlistAll(int posNum) {
+		return dao.sendlistAll(posNum);
+	}
+
 }

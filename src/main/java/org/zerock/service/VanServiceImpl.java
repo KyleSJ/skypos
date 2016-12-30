@@ -43,5 +43,10 @@ public class VanServiceImpl implements VanService{
 	public void UpdateInsert(VanVO van) throws Exception {
 		dao.updateORInsert(van);
 	}
+
+	@Override
+	public List<VanVO> sendlistAll(int posNum) {
+		return dao.sendlistAll(posNum);
+	}
 	
 }

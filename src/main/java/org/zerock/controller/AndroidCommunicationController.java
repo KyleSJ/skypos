@@ -98,6 +98,11 @@ public class AndroidCommunicationController{
 		String empid = request.getParameter("empId");
 		String pwd = request.getParameter("pwd");*/
 		
+		//posNum에 맞는 DB정보를 주기 위해 client에서 posNum 받아오기
+		String stringposNum = request.getParameter("posNum");
+		System.out.println("send 맵핑에서의 포스넘은 = "+stringposNum.toString());
+		int posNum = Integer.parseInt(stringposNum);
+		
 		ArrayList<EmployeeVO> emplist=new ArrayList<EmployeeVO>();
 		ArrayList<VanVO> vanlist=new ArrayList<VanVO>();
 		ArrayList<MemberVO> memlist=new ArrayList<MemberVO>();
@@ -116,16 +121,16 @@ public class AndroidCommunicationController{
 		ArrayList<PrintVO> printlist = new ArrayList<PrintVO>();
 		ArrayList<SeattableCatVO> seattablecatlist = new ArrayList<SeattableCatVO>();
 		
-		seatlist=seatservice.Alldata();
-		vanlist=(ArrayList<VanVO>) vanservice.listAll();
-		memlist=(ArrayList<MemberVO>) memservice.listAll();
-		emplist=empservice.Alldata();
+		seatlist=(ArrayList<SeattableVO>) seatservice.listAll(posNum);		
+		vanlist=(ArrayList<VanVO>) vanservice.sendlistAll(posNum);		
+		memlist=(ArrayList<MemberVO>) memservice.sendlistAll(posNum);		
+		emplist=(ArrayList<EmployeeVO>) empservice.sendlistAll(posNum);
 		calcuchngreclist = (ArrayList<CalcuChngRecVO>) calcuchngrecservice.listAll();
 		cardcompalist = (ArrayList<CardCompaVO>) cardcompaservice.listAll();
 		extdevlist = (ArrayList<ExtdevVO>) extdevservice.listAll();
-		goodscatlist = (ArrayList<GoodsCatVO>) goodscatservice.Alldata();
-		seattablecatlist = (ArrayList<SeattableCatVO>) seattablecatservice.listAll();
-		goodslist =  goodsservice.Alldata();
+		goodscatlist = (ArrayList<GoodsCatVO>) goodscatservice.sendlistAll(posNum);
+		seattablecatlist = (ArrayList<SeattableCatVO>) seattablecatservice.sendlistAll(posNum);
+		goodslist =  (ArrayList<GoodsVO>) goodsservice.listAll(posNum);
 		openlist = (ArrayList<OpenVO>) openservice.listAll();
 		printlist = (ArrayList<PrintVO>) printservice.listAll();
 		calculist = (ArrayList<CalcuVO>) calcuservice.listAll();
@@ -146,7 +151,8 @@ public class AndroidCommunicationController{
 	public void andoridToServerreceive(HttpServletRequest request,EmployeeVO empvo, CalcuChngRecVO calcuchngrecvo, 
 			CalcuVO calcuvo, CardCompaVO cardcompavo, CmplxPayVO cmplxpayvo,ExtdevVO extdevvo, GoodsCatVO goodscatvo, 
 			GoodsVO goodsvo, MemberVO membervo, OpenVO openvo, OrderGoodsVO ordergoodsvo,OrderMenuVO ordermenuvo, 
-			PayVO payvo, PrintVO printvo, SeattableCatVO seattablecatvo,SeattableVO seattablevo, VanVO vanvo) throws Exception{	
+			PayVO payvo, PrintVO printvo, SeattableCatVO seattablecatvo,SeattableVO seattablevo, VanVO vanvo) throws Exception{
+		
 		String van=request.getParameter("van");
 		String calcuchngrec=request.getParameter("calcu_chng_rec");
 		String cardcompa=request.getParameter("card_compa");
@@ -163,9 +169,10 @@ public class AndroidCommunicationController{
 		String ordermenu=request.getParameter("ordermenu");
 		String ordergoods=request.getParameter("order_goods");
 		String cmplxpay=request.getParameter("cmplx_pay");
-		String pay=request.getParameter("pay");
+		String pay=request.getParameter("pay");		
 		
 		Gson gson=new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
+		
 		VanVO[] Vobj=gson.fromJson(van, VanVO[].class);
 		CalcuChngRecVO[] CCRobj=gson.fromJson(calcuchngrec, CalcuChngRecVO[].class);		
 		CardCompaVO[] CCobj=gson.fromJson(cardcompa, CardCompaVO[].class);

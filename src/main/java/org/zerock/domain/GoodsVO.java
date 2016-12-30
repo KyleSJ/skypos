@@ -7,7 +7,16 @@ public class GoodsVO {
 	private String goodsName;
 	private int goodsPrice;
 	private int goodsSeq;
-	
+	private int posNum;
+		
+	public int getPosNum() {
+		return posNum;
+	}
+
+	public void setPosNum(int posNum) {
+		this.posNum = posNum;
+	}
+
 	public int getGoodsNum() {
 		return goodsNum;
 	}
@@ -45,12 +54,12 @@ public class GoodsVO {
 	public void setGoodsSeq(int goodsSeq) {
 		this.goodsSeq = goodsSeq;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "GoodsVO [goodsNum=" + goodsNum + ", goodsCatNum=" + goodsCatNum
 				+ ", goodsColor=" + goodsColor + ", goodsName=" + goodsName
-				+ ", goodsPrice=" + goodsPrice + ", goodsSeq=" + goodsSeq + "]";
+				+ ", goodsPrice=" + goodsPrice + ", goodsSeq=" + goodsSeq
+				+ ", posNum=" + posNum + "]";
 	}
-
 }

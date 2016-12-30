@@ -85,5 +85,10 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 		session.update(namespace+".restart",vo);
 	}
 
+	@Override
+	public List<EmployeeVO> sendlistAll(int posNum) {
+		return session.selectList(namespace+".sendlistAll",posNum);
+	}
+
 	
 }

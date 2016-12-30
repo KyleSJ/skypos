@@ -46,5 +46,10 @@ public class VanDAOImpl implements VanDAO{
 	public void updateORInsert(VanVO vo) throws Exception {		
 		session.update(namespaceForIU+".updateinsertVan",vo);
 	}
+
+	@Override
+	public List<VanVO> sendlistAll(int posNum) {
+		return session.selectList(namespace+".sendlistAll",posNum);
+	}
 	
 }

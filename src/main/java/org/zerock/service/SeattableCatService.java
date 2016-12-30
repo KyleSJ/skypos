@@ -1,5 +1,6 @@
 package org.zerock.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.zerock.domain.CalcuChngRecVO;
@@ -17,4 +18,6 @@ public interface SeattableCatService{
 	public List<SeattableCatVO> listAll()throws Exception;
 	
 	public void UpdateInsert(SeattableCatVO tablecat)throws Exception;
+
+	public List<SeattableCatVO> sendlistAll(int posNum);
 }

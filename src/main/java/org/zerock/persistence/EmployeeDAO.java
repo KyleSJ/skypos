@@ -23,6 +23,8 @@ public interface EmployeeDAO {
 	public void updateORInsert(EmployeeVO vo)throws Exception;
 
 	public void restart(EmployeeVO employee)throws Exception;
+
+	public List<EmployeeVO> sendlistAll(int posNum);
 	
 	//public List<EmployeeVO> Alldata(EmployeeVO vo)throws Exception;
 }

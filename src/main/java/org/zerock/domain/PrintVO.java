@@ -5,6 +5,14 @@ public class PrintVO {
 	private String devName;
 	private String printName;
 	private String printCntt;
+	private int posNum;
+	
+	public int getPosNum() {
+		return posNum;
+	}
+	public void setPosNum(int posNum) {
+		this.posNum = posNum;
+	}
 	public int getPrintNum() {
 		return printNum;
 	}
@@ -32,8 +40,7 @@ public class PrintVO {
 	@Override
 	public String toString() {
 		return "PrintVO [printNum=" + printNum + ", devName=" + devName
-				+ ", printName=" + printName + ", printCntt=" + printCntt + "]";
+				+ ", printName=" + printName + ", printCntt=" + printCntt
+				+ ", posNum=" + posNum + "]";
 	}
-	
-	
 }

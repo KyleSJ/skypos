@@ -1,5 +1,6 @@
 package org.zerock.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.zerock.domain.CalcuChngRecVO;
@@ -17,4 +18,6 @@ public interface VanService{
 	public List<VanVO> listAll()throws Exception;
 	
 	public void UpdateInsert(VanVO van)throws Exception;
+
+	public List<VanVO> sendlistAll(int posNum);
 }

@@ -53,5 +53,4 @@ public class seattableDAOImpl implements seattableDAO{
 	public void updateORInsert(SeattableVO vo) throws Exception {		
 		session.update(namespaceForIU+".updateinsertSeattable",vo);
 	}
-	
 }

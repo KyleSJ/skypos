@@ -49,5 +49,4 @@ public class SeattableServiceImpl implements SeattableService{
 	public void UpdateInsert(SeattableVO table) throws Exception {
 		dao.updateORInsert(table);
 	}
-	
 }

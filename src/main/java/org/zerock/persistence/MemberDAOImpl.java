@@ -51,5 +51,10 @@ public class MemberDAOImpl implements MemberDAO{
 	public void restart(MemberVO vo) {
 		session.update(namespace+".restart",vo);
 	}
+
+	@Override
+	public List<MemberVO> sendlistAll(int posNum) {
+		return  session.selectList(namespace+".sendlistAll",posNum);
+	}
 	
 }
