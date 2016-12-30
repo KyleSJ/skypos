@@ -46,5 +46,10 @@ public class OrderMenuDAOImpl implements OrderMenuDAO{
 	public void updateORInsert(OrderMenuVO vo) throws Exception {		
 		session.update(namespaceForIU+".updateinsertOrderMenu",vo);
 	}
+
+	@Override
+	public List<OrderMenuVO> sendlistAll(int posNum) {
+		return session.selectList(namespace+".sendlistAll",posNum);
+	}
 	
 }

@@ -49,4 +49,9 @@ public class CalcuChngRecServiceImpl implements CalcuChngRecService{
 	public List<CalendarVO> CalendarlistAll(int posNum) throws Exception {
 		return dao.CalendarlistAll(posNum);
 	}
+
+	@Override
+	public List<CalcuChngRecVO> sendlistAll(int posNum) {
+		return dao.sendlistAll(posNum);
+	}
 }

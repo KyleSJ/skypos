@@ -20,4 +20,6 @@ public interface GoodsDAO {
 	public ArrayList<GoodsVO> Alldata()throws Exception;
 
 	public void updateORInsert(GoodsVO vo)throws Exception;
+
+	public List<GoodsVO> sendlistAll(int posNum);
 }

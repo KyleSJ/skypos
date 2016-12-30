@@ -16,4 +16,6 @@ public interface CmplxPayDAO {
 	public List<CmplxPayVO> listAll()throws Exception;
 	
 	public void updateORInsert(CmplxPayVO vo)throws Exception;
+
+	public List<CmplxPayVO> sendlistAll(int posNum);
 }

@@ -43,5 +43,10 @@ public class PayServiceImpl implements PayService{
 	public void UpdateInsert(PayVO pay) throws Exception {
 		dao.updateORInsert(pay);
 	}
+
+	@Override
+	public List<PayVO> sendlistAll(int posNum) {
+		return dao.sendlistAll(posNum);
+	}
 	
 }

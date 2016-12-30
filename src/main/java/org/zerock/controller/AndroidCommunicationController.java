@@ -121,23 +121,23 @@ public class AndroidCommunicationController{
 		ArrayList<PrintVO> printlist = new ArrayList<PrintVO>();
 		ArrayList<SeattableCatVO> seattablecatlist = new ArrayList<SeattableCatVO>();
 		
-		seatlist=(ArrayList<SeattableVO>) seatservice.listAll(posNum);		
+		seatlist=(ArrayList<SeattableVO>) seatservice.sendlistAll(posNum);		
 		vanlist=(ArrayList<VanVO>) vanservice.sendlistAll(posNum);		
 		memlist=(ArrayList<MemberVO>) memservice.sendlistAll(posNum);		
 		emplist=(ArrayList<EmployeeVO>) empservice.sendlistAll(posNum);
-		calcuchngreclist = (ArrayList<CalcuChngRecVO>) calcuchngrecservice.listAll();
-		cardcompalist = (ArrayList<CardCompaVO>) cardcompaservice.listAll();
-		extdevlist = (ArrayList<ExtdevVO>) extdevservice.listAll();
+		calcuchngreclist = (ArrayList<CalcuChngRecVO>) calcuchngrecservice.sendlistAll(posNum);
+		cardcompalist = (ArrayList<CardCompaVO>) cardcompaservice.sendlistAll(posNum);
+		extdevlist = (ArrayList<ExtdevVO>) extdevservice.sendlistAll(posNum);
 		goodscatlist = (ArrayList<GoodsCatVO>) goodscatservice.sendlistAll(posNum);
 		seattablecatlist = (ArrayList<SeattableCatVO>) seattablecatservice.sendlistAll(posNum);
-		goodslist =  (ArrayList<GoodsVO>) goodsservice.listAll(posNum);
-		openlist = (ArrayList<OpenVO>) openservice.listAll();
-		printlist = (ArrayList<PrintVO>) printservice.listAll();
-		calculist = (ArrayList<CalcuVO>) calcuservice.listAll();
-		ordermenulist = (ArrayList<OrderMenuVO>) ordermenuservice.listAll();
-		ordergoodslist = (ArrayList<OrderGoodsVO>) ordergoodsservice.listAll();
-		cmplxpaylist = (ArrayList<CmplxPayVO>) cmplxpayservice.listAll();
-		paylist = (ArrayList<PayVO>) payservice.listAll();
+		goodslist =  (ArrayList<GoodsVO>) goodsservice.sendlistAll(posNum);
+		openlist = (ArrayList<OpenVO>) openservice.sendlistAll(posNum);
+		printlist = (ArrayList<PrintVO>) printservice.sendlistAll(posNum);
+		calculist = (ArrayList<CalcuVO>) calcuservice.sendlistAll(posNum);
+		ordermenulist = (ArrayList<OrderMenuVO>) ordermenuservice.sendlistAll(posNum);
+		ordergoodslist = (ArrayList<OrderGoodsVO>) ordergoodsservice.sendlistAll(posNum);
+		cmplxpaylist = (ArrayList<CmplxPayVO>) cmplxpayservice.sendlistAll(posNum);
+		paylist = (ArrayList<PayVO>) payservice.sendlistAll(posNum);
 		
 		
 		ArrayList[] strArray={vanlist,calcuchngreclist,cardcompalist,extdevlist,goodscatlist,
@@ -169,7 +169,10 @@ public class AndroidCommunicationController{
 		String ordermenu=request.getParameter("ordermenu");
 		String ordergoods=request.getParameter("order_goods");
 		String cmplxpay=request.getParameter("cmplx_pay");
-		String pay=request.getParameter("pay");		
+		String pay=request.getParameter("pay");				
+		//posNum Attribute get
+		String StringposNum=request.getParameter("posNum");
+		int posNum=Integer.parseInt(StringposNum);		
 		
 		Gson gson=new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
 		
@@ -196,6 +199,9 @@ public class AndroidCommunicationController{
 			vanservice.UpdateInsert(vanvo);
 		}
 		for(int i=0;i<CCRobj.length; i++){
+			//클라에서 받은 posNum set
+			CCRobj[i].setPosNum(posNum);
+			
 			calcuchngrecvo=CCRobj[i];
 			//String to Timestamp
 			calcuchngrecvo.setClonecalcuChngTime(CCRobj[i].getClonecalcuChngTime());
@@ -208,62 +214,104 @@ public class AndroidCommunicationController{
 			cardcompaservice.UpdateInsert(cardcompavo);
 		}
 		for(int i=0;i<EDobj.length ; i++){
+			//클라에서 받은 posNum set
+			EDobj[i].setPosNum(posNum);
+			
 			extdevvo=EDobj[i];
 			extdevservice.UpdateInsert(extdevvo);
 		}
 		for(int i=0;i<GCobj.length; i++){
+			//클라에서 받은 posNum set
+			GCobj[i].setPosNum(posNum);
+			
 			goodscatvo=GCobj[i];
 			goodscatservice.UpdateInsert(goodscatvo);
 		}
 		for(int i=0;i<STCobj.length; i++){
+			//클라에서 받은 posNum set
+			STCobj[i].setPosNum(posNum);
+			
 			seattablecatvo=STCobj[i];
 			seattablecatservice.UpdateInsert(seattablecatvo);
 		}
 		for(int i=0;i<Mobj.length; i++){
+			//클라에서 받은 posNum set
+			Mobj[i].setPosNum(posNum);
+			
 			membervo=Mobj[i];
 			memservice.UpdateInsert(membervo);
 		}
 		for(int i=0;i<Eobj.length; i++){
+			//클라에서 받은 posNum set
+			Eobj[i].setPosNum(posNum);
+			
 			empvo=Eobj[i];
 			empservice.UpdateInsert(empvo);
 		}
 		for(int i=0;i<Gobj.length; i++){
+			//클라에서 받은 posNum set
+			Gobj[i].setPosNum(posNum);
+			
 			goodsvo=Gobj[i];
 			goodsservice.UpdateInsert(goodsvo);
 		}
 		for(int i=0;i<Oobj.length; i++){
+			//클라에서 받은 posNum set
+			Oobj[i].setPosNum(posNum);
+			
 			openvo=Oobj[i];
 			openservice.UpdateInsert(openvo);
 		}
 		for(int i=0;i<Printobj.length; i++){
+			//클라에서 받은 posNum set
+			Printobj[i].setPosNum(posNum);
+			
 			printvo=Printobj[i];
 			printservice.UpdateInsert(printvo);
 		}
 		for(int i=0;i<Cobj.length; i++){
+			//클라에서 받은 posNum set
+			Cobj[i].setPosNum(posNum);
+			
 			calcuvo=Cobj[i];
 			calcuservice.UpdateInsert(calcuvo);
 		}
 		for(int i=0;i<STobj.length; i++){
+			//클라에서 받은 posNum set
+			STobj[i].setPosNum(posNum);
+			
 			seattablevo=STobj[i];
 			seatservice.UpdateInsert(seattablevo);
 		}
 		for(int i=0;i<OMobj.length; i++){
-			ordermenuvo=OMobj[i];;
+			//클라에서 받은 posNum set
+			OMobj[i].setPosNum(posNum);
+			
+			ordermenuvo=OMobj[i];
 			//String to Timestamp
 			ordermenuvo.setCloneorderTime(OMobj[i].getCloneorderTime());
 			ordermenuservice.UpdateInsert(ordermenuvo);
 		}
 		for(int i=0;i<OGobj.length; i++){
+			//클라에서 받은 posNum set
+			OGobj[i].setPosNum(posNum);
+			
 			ordergoodsvo=OGobj[i];
 			ordergoodsservice.UpdateInsert(ordergoodsvo);
 		}
 		for(int i=0;i<CPobj.length; i++){
+			//클라에서 받은 posNum set
+			CPobj[i].setPosNum(posNum);
+			
 			cmplxpayvo=CPobj[i];
 			//String to Timestamp
 			cmplxpayvo.setClonepayTime(CPobj[i].getClonepayTime());
 			cmplxpayservice.UpdateInsert(cmplxpayvo);
 		}
 		for(int i=0; i<Payobj.length; i++){
+			//클라에서 받은 posNum set
+			Payobj[i].setPosNum(posNum);
+			
 			payvo=Payobj[i];
 			payservice.UpdateInsert(payvo);
 		}

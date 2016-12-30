@@ -43,5 +43,10 @@ public class OrderGoodsServiceImpl implements OrderGoodsService{
 	public void UpdateInsert(OrderGoodsVO orderGoods) throws Exception {
 		dao.updateORInsert(orderGoods);
 	}
+
+	@Override
+	public List<OrderGoodsVO> sendlistAll(int posNum) {
+		return dao.sendlistAll(posNum);
+	}
 	
 }

@@ -21,4 +21,6 @@ public interface GoodsService {
 	public ArrayList<GoodsVO> Alldata()throws Exception;
 	
 	public void UpdateInsert(GoodsVO goods)throws Exception;
+
+	public List<GoodsVO> sendlistAll(int posNum);
 }

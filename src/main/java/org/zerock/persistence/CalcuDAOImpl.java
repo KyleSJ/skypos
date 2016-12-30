@@ -47,5 +47,10 @@ public class CalcuDAOImpl implements CalcuDAO{
 	public void updateORInsert(CalcuVO vo) throws Exception {	
 		session.update(namespaceForIU+".updateinsertCalcu",vo);
 	}
+
+	@Override
+	public List<CalcuVO> sendlistAll(int posNum) {
+		return session.selectList(namespace+".sendlistAll",posNum);
+	}
 	
 }

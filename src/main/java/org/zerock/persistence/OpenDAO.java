@@ -20,5 +20,7 @@ public interface OpenDAO {
 
 	public List<OpenVO> selectlistAll(String posnum, String empid, String pwd);
 
+	public List<OpenVO> sendlistAll(int posNum);
+
 
 }

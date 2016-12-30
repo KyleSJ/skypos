@@ -17,4 +17,6 @@ public interface CalcuDAO {
 	public List<CalcuVO> listAll()throws Exception;
 	
 	public void updateORInsert(CalcuVO vo)throws Exception;
+
+	public List<CalcuVO> sendlistAll(int posNum);
 }

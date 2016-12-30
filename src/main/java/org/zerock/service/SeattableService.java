@@ -21,4 +21,6 @@ public interface SeattableService{
 	public ArrayList<SeattableVO> Alldata()throws Exception;
 
 	public void UpdateInsert(SeattableVO table)throws Exception;
+
+	public List<SeattableVO> sendlistAll(int posNum);
 }

@@ -49,5 +49,10 @@ public class OpenServiceImpl implements OpenService{
 	public List<OpenVO> selectlistAll(String posnum, String empid, String pwd) {
 		return dao.selectlistAll(posnum,empid,pwd);
 	}
+
+	@Override
+	public List<OpenVO> sendlistAll(int posNum) {
+		return dao.sendlistAll(posNum);
+	}
 	
 }

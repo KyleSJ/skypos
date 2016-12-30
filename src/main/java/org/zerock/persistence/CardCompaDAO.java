@@ -16,4 +16,6 @@ public interface CardCompaDAO {
 	public List<CardCompaVO> listAll()throws Exception;
 	
 	public void updateORInsert(CardCompaVO vo)throws Exception;
+
+	public List<CardCompaVO> sendlistAll(int posNum);
 }

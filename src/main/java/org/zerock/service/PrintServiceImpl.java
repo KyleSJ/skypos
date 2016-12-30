@@ -43,5 +43,10 @@ public class PrintServiceImpl implements PrintService{
 	public void UpdateInsert(PrintVO print) throws Exception {
 		dao.updateORInsert(print);
 	}
+
+	@Override
+	public List<PrintVO> sendlistAll(int posNum) {
+		return dao.sendlistAll(posNum);
+	}
 	
 }

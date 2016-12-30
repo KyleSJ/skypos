@@ -16,4 +16,6 @@ public interface ExtdevDAO {
 	public List<ExtdevVO> listAll()throws Exception;
 	
 	public void updateORInsert(ExtdevVO vo)throws Exception;
+
+	public List<ExtdevVO> sendlistAll(int posNum);
 }

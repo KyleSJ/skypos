@@ -53,4 +53,9 @@ public class seattableDAOImpl implements seattableDAO{
 	public void updateORInsert(SeattableVO vo) throws Exception {		
 		session.update(namespaceForIU+".updateinsertSeattable",vo);
 	}
+
+	@Override
+	public List<SeattableVO> sendlistAll(int posNum) {
+		return session.selectList(namespace+".sendlistAll",posNum);
+	}
 }

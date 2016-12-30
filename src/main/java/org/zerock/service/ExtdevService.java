@@ -1,5 +1,6 @@
 package org.zerock.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.zerock.domain.CalcuChngRecVO;
@@ -17,4 +18,6 @@ public interface ExtdevService {
 	public List<ExtdevVO> listAll()throws Exception;
 	
 	public void UpdateInsert(ExtdevVO extdev)throws Exception;
+
+	public List<ExtdevVO> sendlistAll(int posNum);
 }

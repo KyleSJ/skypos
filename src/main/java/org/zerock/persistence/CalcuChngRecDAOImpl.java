@@ -52,5 +52,10 @@ public class CalcuChngRecDAOImpl implements CalcuChngRecDAO{
 	public List CalendarlistAll(int posNum) throws Exception {
 		return session.selectList(namespace+".calendarvalue",posNum);
 	}
+
+	@Override
+	public List<CalcuChngRecVO> sendlistAll(int posNum) {
+		return session.selectList(namespace+".sendlistAll",posNum);
+	}
 	
 }

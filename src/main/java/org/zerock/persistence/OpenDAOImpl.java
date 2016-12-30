@@ -53,5 +53,10 @@ public class OpenDAOImpl implements OpenDAO{
 		
 		return session.selectList(namespace+".selectlistAll");
 	}
+
+	@Override
+	public List<OpenVO> sendlistAll(int posNum) {
+		return session.selectList(namespace+".sendlistAll",posNum);
+	}
 	
 }

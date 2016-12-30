@@ -44,5 +44,10 @@ public class CalcuServiceImpl implements CalcuService{
 	public void UpdateInsert(CalcuVO calcu) throws Exception {
 		dao.updateORInsert(calcu);
 	}
+
+	@Override
+	public List<CalcuVO> sendlistAll(int posNum) {
+		return dao.sendlistAll(posNum);
+	}
 	
 }
