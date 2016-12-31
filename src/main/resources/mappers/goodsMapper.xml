@@ -47,9 +47,9 @@
     
     <select id="sendlistAll" resultType ="org.zerock.domain.GoodsVO">
         <![CDATA[
-        select goodsNum, g.goodsCatNum, goodsColor, goodsName, goodsPrice, goodsSeq
-        from goods g, goods_cat gc
-        where gc.posNum=#{posNum} and gc.goodsCatNum=g.goodsCatNum
+        select goodsNum, goodsCatNum, goodsColor, goodsName, goodsPrice, goodsSeq
+        from goods
+        where posNum=#{posNum}
         order by goodsNum desc
          ]]>
     </select>

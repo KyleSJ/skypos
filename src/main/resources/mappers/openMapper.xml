@@ -50,4 +50,14 @@
         from open o, emp e
         where e.empId = o.empId and e.posNum = o.posNum         
     </select>
+    
+    <select id="sendlistAll" resultType ="org.zerock.domain.OpenVO">
+        <![CDATA[
+        select openDay, empId, posNum, cashAmnt
+        from
+        open
+        where posNum=#{posNum}
+        order by openDay desc
+         ]]>
+    </select>
 </mapper>

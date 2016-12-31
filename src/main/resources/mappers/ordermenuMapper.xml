@@ -15,8 +15,10 @@
 	</resultMap> -->
 	
     <insert id="create">
-        insert into ordermenu (openDay, printNum, tableNum, orderTime, orderAmnt)
-        values(#{openDay},#{printNum},#{tableNum},#{orderTime},#{orderAmnt})
+        insert into ordermenu (orderNum, openDay, printNum, tableNum, orderTime, orderAmnt,
+        orderComplete, posNum, payComplete)
+        values(#{orderNum},#{openDay},#{printNum},#{tableNum},#{orderTime},#{orderAmnt},
+        #{orderComplete},#{posNum},#{payComplete})
     </insert>
     
     <select id="read" resultType="org.zerock.domain.OrderMenuVO">

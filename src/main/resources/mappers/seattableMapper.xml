@@ -55,9 +55,9 @@
     </select>    
     <select id="sendlistAll" resultType ="org.zerock.domain.SeattableVO">
         <![CDATA[
-        select s.tableNum, s.tableLoc, s.tableColor, s.tableCatNum, s.tableName
-        from seattable s, table_cat c
-        where s.tableCatNum = c.tableCatNum and posNum=#{posNum}
+        select tableNum, tableLoc, tableColor, tableCatNum, tableName
+        from seattable
+        where posNum=#{posNum}
          ]]>
     </select>
 </mapper>

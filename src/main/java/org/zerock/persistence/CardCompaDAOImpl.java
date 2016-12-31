@@ -48,8 +48,8 @@ public class CardCompaDAOImpl implements CardCompaDAO{
 	}
 
 	@Override
-	public List<CardCompaVO> sendlistAll(int posNum) {
-		return session.selectList(namespace+".sendlistAll",posNum);
+	public List<CardCompaVO> sendlistAll() {
+		return session.selectList(namespace+".sendlistAll");
 	}
 	
 }

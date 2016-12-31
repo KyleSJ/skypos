@@ -19,5 +19,5 @@ public interface CardCompaService {
 	
 	public void UpdateInsert(CardCompaVO cardcompa)throws Exception;
 
-	public List<CardCompaVO> sendlistAll(int posNum);
+	public List<CardCompaVO> sendlistAll();
 }

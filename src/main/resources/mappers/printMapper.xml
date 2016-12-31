@@ -49,8 +49,8 @@
     	<![CDATA[
     	select printNum, devName, printName, printCntt
         from
-        calcu_chng_rec
-        where printNum> 0 and posNum=#{posNum}
+	    print
+        where printNum > 0 and posNum=#{posNum}
         order by printNum desc
     	]]>
     </select>

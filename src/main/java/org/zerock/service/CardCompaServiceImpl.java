@@ -45,8 +45,8 @@ public class CardCompaServiceImpl implements CardCompaService{
 	}
 
 	@Override
-	public List<CardCompaVO> sendlistAll(int posNum) {
-		return dao.sendlistAll(posNum);
+	public List<CardCompaVO> sendlistAll() {
+		return dao.sendlistAll();
 	}
 	
 }

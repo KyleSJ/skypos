@@ -17,8 +17,6 @@ public interface EmployeeDAO {
 	public List<EmployeeVO> listAll(int posNum)throws Exception;
 
 	public EmployeeVO verify(EmployeeVO vo);
-
-	public ArrayList<EmployeeVO> Alldata() throws Exception;
 	
 	public void updateORInsert(EmployeeVO vo)throws Exception;
 

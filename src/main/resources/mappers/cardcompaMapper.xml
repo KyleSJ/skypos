@@ -51,7 +51,7 @@
         select cardCompaNum, cardCompaName, cardCompaPhoneNum
         from
         card_compa
-        where cardCompaNum > 0 and posNum=#{posNum}
+        where cardCompaNum > 0
         order by cardCompaNum desc
          ]]>
     </select>

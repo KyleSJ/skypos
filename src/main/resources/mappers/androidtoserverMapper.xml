@@ -22,9 +22,9 @@
         cardCompaPhoneNum=#{cardCompaPhoneNum}
 	</update>
 	<update id="updateinsertExtDev">	
-		insert into ext_dev (devName, devType, prtcl)
-        values(#{devName},#{devType},#{prtcl})
-		on duplicate key update devName=#{devName}, devType=#{devType}, prtcl=#{prtcl}
+		insert into ext_dev (devName, devType, prtcl,posNum)
+        values(#{devName},#{devType},#{prtcl},#{posNum})
+		on duplicate key update devName=#{devName}, devType=#{devType}, prtcl=#{prtcl},posNum=#{posNum}
 	</update>
 	<update id="updateinsertGoodsCat">
         insert into goods_cat (goodsCatNum, goodsCatName, goodsCatLoc, posNum)
@@ -48,10 +48,10 @@
 		on duplicate key update empId=#{empId}, posNum=#{posNum}, empName=#{empName}, pwd=#{pwd},retire=#{retire}
 	</update>	
 	<update id="updateinsertGoods">
-		insert into goods (goodsNum, goodsCatNum, goodsColor, goodsName, goodsPrice, goodsSeq)
-        values(#{goodsNum},#{goodsCatNum},#{goodsColor},#{goodsName},#{goodsPrice},#{goodsSeq})
+		insert into goods (goodsNum, goodsCatNum, goodsColor, goodsName, goodsPrice, goodsSeq,posNum)
+        values(#{goodsNum},#{goodsCatNum},#{goodsColor},#{goodsName},#{goodsPrice},#{goodsSeq},#{posNum})
 		on duplicate key update goodsNum=#{goodsNum}, goodsCatNum=#{goodsCatNum}, goodsColor=#{goodsColor}, goodsName=#{goodsName},
-        goodsPrice=#{goodsPrice}, goodsSeq=#{goodsSeq}
+        goodsPrice=#{goodsPrice}, goodsSeq=#{goodsSeq}, posNum=#{posNum}
 	</update>
 	<update id="updateinsertOpen">
 		insert into open(openDay, empId, posNum, cashAmnt)
@@ -59,9 +59,9 @@
 		on duplicate key update openDay=#{openDay}, empId=#{empId}, posNum=#{posNum}, cashAmnt=#{cashAmnt}
 	</update>	
 	<update id="updateinsertPrint">
-		insert into print (printNum, devName, printName, printCntt)
-        values(#{printNum},#{devName},#{printName},#{printCntt})
-		on duplicate key update printNum=#{printNum}, devName=#{devName}, printName=#{printName}, printCntt=#{printCntt}
+		insert into print (printNum, devName, printName, printCntt,posNum)
+        values(#{printNum},#{devName},#{printName},#{printCntt},#{posNum})
+		on duplicate key update printNum=#{printNum}, devName=#{devName}, printName=#{printName}, printCntt=#{printCntt},posNum=#{posNum}
 	</update>
 	<update id="updateinsertCalcu">
 		insert into calcu (calcuDay, calcuChngNum, printNum, posNum,openDay)
@@ -70,33 +70,33 @@
         openDay=#{openDay},posNum=#{posNum}
 	</update>
 	<update id="updateinsertSeattable">
-		insert into seattable (tableNum, tableLoc, tableColor, tableCatNum, tableName)
-        values(#{tableNum},#{tableLoc},#{tableColor},#{tableCatNum},#{tableName})
+		insert into seattable (tableNum, tableLoc, tableColor, tableCatNum, tableName,posNum)
+        values(#{tableNum},#{tableLoc},#{tableColor},#{tableCatNum},#{tableName},#{posNum})
 		on duplicate key update tableNum=#{tableNum}, tableLoc=#{tableLoc}, tableColor=#{tableColor}, tableCatNum=#{tableCatNum},
-        tableName=#{tableName}
+        tableName=#{tableName},posNum=#{posNum}
 	</update>
 	<update id="updateinsertOrderMenu">
-		insert into ordermenu (orderNum, openDay, printNum, tableNum, orderTime, orderAmnt, orderComplete)
-        values(#{orderNum},#{openDay},#{printNum},#{tableNum},#{orderTime},#{orderAmnt},#{orderComplete})
+		insert into ordermenu (orderNum, openDay, printNum, tableNum, orderTime, orderAmnt, orderComplete,posNum,payComplete)
+        values(#{orderNum},#{openDay},#{printNum},#{tableNum},#{orderTime},#{orderAmnt},#{orderComplete},#{posNum},#{payComplete})
 		on duplicate key update orderNum=#{orderNum}, openDay=#{openDay}, printNum=#{printNum}, tableNum=#{tableNum},
-        orderTime=#{orderTime}, orderAmnt=#{orderAmnt}, orderComplete=#{orderComplete}
+        orderTime=#{orderTime}, orderAmnt=#{orderAmnt}, orderComplete=#{orderComplete} posNum=#{posNum}, payComplete=#{payComplete}
 	</update>
 	<update id="updateinsertOrderGoods">
-		insert into order_goods (orderGoodsNum, goodsNum, orderNum, goodsQntt, openDay)
-        values(#{orderGoodsNum},#{goodsNum},#{orderNum},#{goodsQntt},#{openDay})
-		on duplicate key update orderGoodsNum=#{orderGoodsNum}, goodsNum=#{goodsNum}, orderNum=#{orderNum},goodsQntt=#{goodsQntt}, openDay=#{openDay}
+		insert into order_goods (orderGoodsNum, goodsNum, orderNum, goodsQntt, openDay,posNum)
+        values(#{orderGoodsNum},#{goodsNum},#{orderNum},#{goodsQntt},#{openDay},#{posNum})
+		on duplicate key update orderGoodsNum=#{orderGoodsNum}, goodsNum=#{goodsNum}, orderNum=#{orderNum},goodsQntt=#{goodsQntt}, openDay=#{openDay},posNum=#{posNum}
 	</update>
 	<update id="updateinsertCmplxPay">
-		insert into cmplx_pay (cmplxPayNum, printNum, orderNum, payTime, openDay, totalPayAmnt)
-        values(#{cmplxPayNum},#{printNum},#{orderNum},#{payTime},#{openDay},#{totalPayAmnt})
+		insert into cmplx_pay (cmplxPayNum, printNum, orderNum, payTime, openDay, totalPayAmnt,posNum)
+        values(#{cmplxPayNum},#{printNum},#{orderNum},#{payTime},#{openDay},#{totalPayAmnt},#{posNum})
 		on duplicate key update cmplxPayNum=#{cmplxPayNum}, printNum=#{printNum}, orderNum=#{orderNum}, 
-        payTime=#{payTime}, openDay=#{openDay}, totalPayAmnt=#{totalPayAmnt}
+        payTime=#{payTime}, openDay=#{openDay}, totalPayAmnt=#{totalPayAmnt}, posNum=#{posNum}
 	</update>
 	<update id="updateinsertPay">	
-        insert into pay (payNum, cmplxPayNum, cardCompaNum, payWay, cardNum, payAmnt)
-        values(#{payNum},#{cmplxPayNum},#{cardCompaNum},#{payWay},#{cardNum},#{payAmnt})
+        insert into pay (payNum, cmplxPayNum, cardCompaNum, payWay, cardNum, payAmnt,posNum)
+        values(#{payNum},#{cmplxPayNum},#{cardCompaNum},#{payWay},#{cardNum},#{payAmnt},#{posNum})
         on duplicate key update payNum=#{payNum}, cmplxPayNum=#{cmplxPayNum}, cardCompaNum=#{cardCompaNum}, payWay=#{payWay},
-        cardNum=#{cardNum}, payAmnt=#{payAmnt}
+        cardNum=#{cardNum}, payAmnt=#{payAmnt}, posNum=#{posNum}
     </update>
     
 </mapper>

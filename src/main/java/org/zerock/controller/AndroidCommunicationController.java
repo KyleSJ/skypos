@@ -1,6 +1,11 @@
 package org.zerock.controller;
 
+import java.sql.Date;
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -126,7 +131,7 @@ public class AndroidCommunicationController{
 		memlist=(ArrayList<MemberVO>) memservice.sendlistAll(posNum);		
 		emplist=(ArrayList<EmployeeVO>) empservice.sendlistAll(posNum);
 		calcuchngreclist = (ArrayList<CalcuChngRecVO>) calcuchngrecservice.sendlistAll(posNum);
-		cardcompalist = (ArrayList<CardCompaVO>) cardcompaservice.sendlistAll(posNum);
+		cardcompalist = (ArrayList<CardCompaVO>) cardcompaservice.sendlistAll();
 		extdevlist = (ArrayList<ExtdevVO>) extdevservice.sendlistAll(posNum);
 		goodscatlist = (ArrayList<GoodsCatVO>) goodscatservice.sendlistAll(posNum);
 		seattablecatlist = (ArrayList<SeattableCatVO>) seattablecatservice.sendlistAll(posNum);
@@ -172,7 +177,10 @@ public class AndroidCommunicationController{
 		String pay=request.getParameter("pay");				
 		//posNum Attribute get
 		String StringposNum=request.getParameter("posNum");
-		int posNum=Integer.parseInt(StringposNum);		
+		int posNum=Integer.parseInt(StringposNum);	
+		
+		System.out.println("ordermenu"+ordermenu);
+		System.out.println("Receive 받을떄 포스넘은?="+request.getParameter("posNum"));
 		
 		Gson gson=new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
 		
@@ -210,7 +218,7 @@ public class AndroidCommunicationController{
 			calcuchngrecservice.UpdateInsert(calcuchngrecvo);
 		}
 		for(int i=0;i<CCobj.length; i++){
-			cardcompavo=CCobj[i];
+			cardcompavo=CCobj[i];  
 			cardcompaservice.UpdateInsert(cardcompavo);
 		}
 		for(int i=0;i<EDobj.length ; i++){
@@ -319,7 +327,7 @@ public class AndroidCommunicationController{
 	
 	@RequestMapping("/login")
 	@ResponseBody
-	public EmployeeVO andoridLogin(HttpServletRequest request,EmployeeVO vo,MemberVO memvo) throws Exception{	
+	public EmployeeVO andoridLogin(HttpServletRequest request,EmployeeVO vo,MemberVO memvo) throws Exception{
 		vo.setEmpId(request.getParameter("empId"));
 		vo.setPosNum(Integer.parseInt(request.getParameter("posNum")));
 		vo.setPwd(request.getParameter("pwd"));
@@ -329,7 +337,7 @@ public class AndroidCommunicationController{
 		System.out.println(request.getParameter("posNum"));
 		
 		memvo.setIP(request.getParameter("IP"));
-		vo=empservice.login(vo);
+		vo=empservice.login(vo);			
 		
 		return vo;		
 	}
