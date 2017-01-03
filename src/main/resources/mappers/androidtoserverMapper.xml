@@ -10,10 +10,10 @@
 		on duplicate key update vanNum=#{vanNum}, vanIP=#{vanIP}, vanName=#{vanName}
 	</update>
 	<update id="updateinsertCalcuChngRec">
-		insert into calcu_chng_rec (calcuChngNum, calcuChngDay, calcuChngTime, bakDay, bakTime, moneySales, cardSales)
-		values(#{calcuChngNum},#{calcuChngDay},#{calcuChngTime},#{bakDay},#{bakTime},#{moneySales},#{cardSales})
+		insert into calcu_chng_rec (calcuChngNum, calcuChngDay, calcuChngTime, bakDay, bakTime, moneySales, cardSales,posNum)
+		values(#{calcuChngNum},#{calcuChngDay},#{calcuChngTime},#{bakDay},#{bakTime},#{moneySales},#{cardSales},#{posNum})
 		on duplicate key update calcuChngNum=#{calcuChngNum}, calcuChngDay=#{calcuChngDay}, calcuChngTime=#{calcuChngTime},
-        bakDay=#{bakDay}, bakTime=#{bakTime}, moneySales=#{moneySales}, cardSales=#{cardSales}
+        bakDay=#{bakDay}, bakTime=#{bakTime}, moneySales=#{moneySales}, cardSales=#{cardSales}, posNum=#{posNum}
 	</update>
 	<update id="updateinsertCardCompa">
 		insert into card_compa (cardCompaNum, cardCompaName, cardCompaPhoneNum)

@@ -1,11 +1,8 @@
 package org.zerock.controller;
 
-import java.sql.Date;
-import java.sql.Timestamp;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+
 import java.util.ArrayList;
-import java.util.Locale;
+
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -141,7 +138,7 @@ public class AndroidCommunicationController{
 		calculist = (ArrayList<CalcuVO>) calcuservice.sendlistAll(posNum);
 		ordermenulist = (ArrayList<OrderMenuVO>) ordermenuservice.sendlistAll(posNum);
 		ordergoodslist = (ArrayList<OrderGoodsVO>) ordergoodsservice.sendlistAll(posNum);
-		cmplxpaylist = (ArrayList<CmplxPayVO>) cmplxpayservice.sendlistAll(posNum);
+		cmplxpaylist = (ArrayList<CmplxPayVO>) cmplxpayservice.sendlistAll(posNum);		
 		paylist = (ArrayList<PayVO>) payservice.sendlistAll(posNum);
 		
 		
@@ -178,14 +175,17 @@ public class AndroidCommunicationController{
 		//posNum Attribute get
 		String StringposNum=request.getParameter("posNum");
 		int posNum=Integer.parseInt(StringposNum);	
-		
+		System.out.println(calcu);
+		System.out.println("calcuchngrec"+calcuchngrec);
 		System.out.println("ordermenu"+ordermenu);
+		System.out.println("cmplxpay"+cmplxpay);
+		System.out.println("pay"+pay);
 		System.out.println("Receive 받을떄 포스넘은?="+request.getParameter("posNum"));
 		
 		Gson gson=new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
 		
 		VanVO[] Vobj=gson.fromJson(van, VanVO[].class);
-		CalcuChngRecVO[] CCRobj=gson.fromJson(calcuchngrec, CalcuChngRecVO[].class);		
+		CalcuChngRecVO[] CCRobj=gson.fromJson(calcuchngrec, CalcuChngRecVO[].class);
 		CardCompaVO[] CCobj=gson.fromJson(cardcompa, CardCompaVO[].class);
 		ExtdevVO[] EDobj=gson.fromJson(extdev, ExtdevVO[].class);
 		GoodsCatVO[] GCobj=gson.fromJson(goodscat, GoodsCatVO[].class);
@@ -328,7 +328,7 @@ public class AndroidCommunicationController{
 	@RequestMapping("/login")
 	@ResponseBody
 	public EmployeeVO andoridLogin(HttpServletRequest request,EmployeeVO vo,MemberVO memvo) throws Exception{
-		vo.setEmpId(request.getParameter("empId"));
+		vo.setEmpId(request.getParameter("empId"));				
 		vo.setPosNum(Integer.parseInt(request.getParameter("posNum")));
 		vo.setPwd(request.getParameter("pwd"));
 		
@@ -338,7 +338,7 @@ public class AndroidCommunicationController{
 		
 		memvo.setIP(request.getParameter("IP"));
 		vo=empservice.login(vo);			
-		
+		System.out.println(vo.toString());
 		return vo;		
 	}
 }

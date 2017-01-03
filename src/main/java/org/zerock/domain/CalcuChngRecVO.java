@@ -29,8 +29,12 @@ public class CalcuChngRecVO {
 	}
 	//String -> DateFormat
 	public void setClonecalcuChngTime(String clonecalcuChngTime) {
+		if(clonecalcuChngTime== null || clonecalcuChngTime=="null"){
+			this.calcuChngTime = null;
+		}else{
 		String s= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S").format(Long.parseLong(clonecalcuChngTime));
 		this.calcuChngTime = Timestamp.valueOf(s);
+		}
 	}
 	
 	public String getClonebakTime() {
@@ -38,8 +42,12 @@ public class CalcuChngRecVO {
 	}
 	//String -> DateFormat
 	public void setClonebakTime(String clonebakTime) {
+		if(clonebakTime== null || clonebakTime=="null"){
+			this.bakTime = null;
+		}else{
 		String s= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S").format(Long.parseLong(clonebakTime));
 		this.bakTime=Timestamp.valueOf(s);
+		}
 	}
 	
 	public int getCalcuChngNum() {
@@ -53,7 +61,11 @@ public class CalcuChngRecVO {
 		return calcuChngDay;
 	}
 	public void setCalcuChngDay(Date calcuChngDay) {
+		if(calcuChngDay == null){
+		this.calcuChngDay=null;	
+		}else{
 		this.calcuChngDay = calcuChngDay;
+		}
 	}
 	
 	public Timestamp getCalcuChngTime() {
@@ -66,7 +78,11 @@ public class CalcuChngRecVO {
 		return bakDay;
 	}
 	public void setBakDay(Date bakDay) {
+	if(calcuChngDay == null){
+		this.calcuChngDay=null;	
+		}else{
 		this.bakDay = bakDay;
+		}
 	}
 	public Timestamp getBakTime() {
 		return bakTime;

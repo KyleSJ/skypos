@@ -4,7 +4,7 @@ public class PayVO {
 	private int payNum;
 	private int cmplxPayNum;
 	private int cardCompaNum;
-	private int payWay;
+	private String payWay;
 	private int cardNum;
 	private int payAmnt;
 	private int posNum;
@@ -33,10 +33,11 @@ public class PayVO {
 	public void setCardCompaNum(int cardCompaNum) {
 		this.cardCompaNum = cardCompaNum;
 	}
-	public int getPayWay() {
+	
+	public String getPayWay() {
 		return payWay;
 	}
-	public void setPayWay(int payWay) {
+	public void setPayWay(String payWay) {
 		this.payWay = payWay;
 	}
 	public int getCardNum() {
@@ -58,5 +59,4 @@ public class PayVO {
 				+ ", cardNum=" + cardNum + ", payAmnt=" + payAmnt + ", posNum="
 				+ posNum + "]";
 	}
-
 }
